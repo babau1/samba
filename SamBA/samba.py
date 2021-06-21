@@ -49,6 +49,8 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin):
         self.feature_importances_ = None
 
     def fit(self, X, y, save_data=False, **fit_params):
+        if isinstance(y, list):
+            y = np.array(y)
         sign_y = self.minus_binarizer.fit_transform(y).reshape(y.shape)
         self._init_containers(X)
         self._init_greedy(X, sign_y, save_data)
@@ -118,7 +120,6 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin):
         out_str+= add_limit
         return out_str
 
-
     def _plot_2d(self, X, y, sec_dim=None, contour=False):
         if sec_dim is None:
             sec_dim = X[:, self.support_feats[1]]
@@ -151,8 +152,7 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin):
         importances /= np.sum(importances)
         return importances
 
-
-    def _predict_vote(self, X):
+    def _predict_vote(self, X, base_decision=-1):
         # TODO : Predict only on the required features : nécessite une refaction
         #  de X, peut-être en sparse matrix, avec uniquement les valeurs des
         #  features utilisés non nuls, ou une réécriture du DT.
@@ -165,6 +165,8 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin):
         for sample_index, sample in enumerate(X):
             dists = self.distance(sample, self.train_samples, self.features_mask)
             vote = np.sum(self.estim_weights*np.sum(np.transpose(self.neig_weights)*dists, axis=1)*preds[sample_index])
+            if vote==0:
+                vote = -1
             self.votes[sample_index] = vote
         return self.votes/np.max(np.abs(self.votes))
 
