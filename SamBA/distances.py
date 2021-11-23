@@ -14,7 +14,7 @@ class Distances:
             return np.arange(set.shape[1])
         return indices
 
-    def get_norms(self, sample, set, feature_mask, base_val=1/5):
+    def get_norms(self, sample, set, feature_mask, base_val=1/1000):
         indices = self.keep_chosen_features(sample, set, feature_mask)
         norms = np.linalg.norm(sample[indices] - set[:, indices], axis=1)
         norms[norms == 0] = base_val
@@ -23,16 +23,16 @@ class Distances:
 
 class EuclidianDist(Distances):
 
-    def __call__(self, sample, set, feature_mask, base_val=1/5,*args, **kwargs):
+    def __call__(self, sample, set, feature_mask, base_val=1/1000,*args, **kwargs):
         norms = self.get_norms(sample, set, feature_mask, base_val)
-        return 1/norms
+        return norms
 
 
 class ExpEuclidianDist(Distances):
 
-    def __call__(self, sample, set, feature_mask, base_val=1/5,*args, **kwargs):
-        norms = self.get_norms(sample, set, feature_mask, base_val)
-        return 1/np.exp(norms)
+    def __call__(self, sample, set, feature_mask,*args, **kwargs):
+        norms = self.get_norms(sample, set, feature_mask, base_val=0)
+        return np.exp(norms)
 
 
 class PolarDist(Distances):
@@ -42,8 +42,15 @@ class PolarDist(Distances):
         phi = np.arctan2(y, x)
         return (rho, phi)
 
-    def __call__(self,  sample, set, feature_mask, base_val=1/5, *args, **kwargs):
+    def __call__(self,  sample, set, feature_mask, base_val=1/1000, *args, **kwargs):
         indices = self.keep_chosen_features(sample, set, feature_mask)
         vals = (np.linalg.norm(sample[indices])-np.linalg.norm(set[:, indices], axis=1))**2
         vals[vals==0] = base_val
-        return 1/vals
+        return vals
+
+
+class ExpPolarDist(PolarDist):
+
+    def __call__(self,  sample, set, feature_mask, base_val=1/1000, *args, **kwargs):
+        return np.exp(1/PolarDist.__call__(self, sample, set, feature_mask,
+                                         base_val=base_val, *args, **kwargs))

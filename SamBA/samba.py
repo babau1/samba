@@ -1,31 +1,66 @@
 from sklearn.base import ClassifierMixin, clone
 from sklearn.ensemble import BaseEnsemble
-from sklearn.tree import DecisionTreeClassifier
-import numpy as np
+from sklearn.metrics import accuracy_score
 import pandas as pd
-from sklearn.preprocessing import LabelBinarizer
+from sklearn.preprocessing import LabelBinarizer, RobustScaler
 from plotly import graph_objects as go
 import plotly
-import os
+from six import iteritems
 
 from SamBA.distances import *
 from SamBA.relevances import *
+from SamBA.vizualization import VizSamba
+from SamBA.utils import set_class_from_str
 
 
-class ExpTrainWeighing():
-
-    def __init__(self):
+class TrainWeighting:
+    def __init__(self, pred_train=True):
         self.minus_binarizer = LabelBinarizer(neg_label=-1, pos_label=1)
+        self.pred_train=pred_train
 
-    def __call__(self, estim, X, y, *args, **kwargs):
+
+class ExpTrainWeighting(TrainWeighting):
+
+    def __init__(self, factor=1, pred_train=True):
+        TrainWeighting.__init__(self, pred_train=pred_train)
+        self.factor = factor
+
+    def __call__(self, estim, X, y, n_estimators=1, *args, **kwargs):
+
         if isinstance(estim, NeighborHoodClassifier):
-            exps = np.exp(-estim._predict_vote(X)*y)
+            if self.pred_train:
+                exps = np.exp(-estim._predict_on_train(X, n_estimators=n_estimators)*y*self.factor)
+            else:
+                exps = np.exp(-estim._predict_vote(X, n_estimators=n_estimators)*y*self.factor)
         else:
-            exps = np.exp(-estim.predict(X) * y)
+            exps = np.exp(-estim.predict(X) * y*self.factor)
         return exps/np.sum(exps)
 
 
-class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin):
+class SqExpTrainWeighting(ExpTrainWeighting):
+
+    def __call__(self, estim, X, y, n_estimators=1, *args, **kwargs):
+        exps = ExpTrainWeighting.__call__(self, estim, X, y, n_estimators=n_estimators)
+        return exps**2
+
+
+class ZeroOneTrainWeighting(TrainWeighting):
+
+    def __init__(self, pred_train=True):
+        TrainWeighting.__init__(self, pred_train=pred_train)
+
+    def __call__(self, estim, X, y, n_estimators=1, *args, **kwargs):
+        if isinstance(estim, NeighborHoodClassifier):
+            if self.pred_train:
+                preds = -(np.sign(estim._predict_on_train(X, n_estimators=n_estimators))*y-1)
+            else:
+                preds = -(np.sign(estim._predict_vote(X, n_estimators=n_estimators))*y-1)
+        else:
+            preds = -(estim.predict(X)*y-1)
+        return preds/2
+
+
+class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin, VizSamba):
 
     def __init__(self,
                  base_estimator=DecisionTreeClassifier(max_depth=1,
@@ -33,225 +68,223 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin):
                                                        criterion='gini'),
                  n_estimators=2,
                  estimator_params=tuple(),
-                 relevance=ExpRelevance,
-                 distance=EuclidianDist,
-                 train_weighting=ExpTrainWeighing,
-                 keep_selected_features=True):
+                 relevance=ExpRelevance(),
+                 distance=EuclidianDist(),
+                 train_weighting=ExpTrainWeighting(),
+                 keep_selected_features=True,
+                 vote_compensate=True,
+                 b=1,
+                 normalizer=None,
+                 forced_diversity=False,
+                 pred_train=True):
         BaseEnsemble.__init__(self, base_estimator=base_estimator,
                               n_estimators=n_estimators,
                               estimator_params=estimator_params)
         self.zero_binarizer = LabelBinarizer(neg_label=0, pos_label=1)
         self.minus_binarizer = LabelBinarizer(neg_label=-1, pos_label=1)
-        self.relevance = relevance()
-        self.distance = distance(keep_selected_features=keep_selected_features)
-        self.train_weighting = train_weighting()
+        self.b = b
+        self.pred_train = pred_train
+        self.relevance = set_class_from_str(relevance)
+        self.distance = set_class_from_str(distance)
+        self.train_weighting = set_class_from_str(train_weighting)
+        self.distance.keep_selected_features = keep_selected_features
         self.keep_selected_features = keep_selected_features
         self.feature_importances_ = None
+        self.vote_compensate = vote_compensate
+        self.normalizer = set_class_from_str(normalizer)
+        self.forced_diversity = forced_diversity
+
 
     def fit(self, X, y, save_data=False, **fit_params):
+        self.train_size = X.shape[0]
         if isinstance(y, list):
             y = np.array(y)
+        if self.normalizer is not None:
+            X = self.normalizer.fit_transform(X)
+
+        self.train_weighting.pred_train = self.pred_train
         sign_y = self.minus_binarizer.fit_transform(y).reshape(y.shape)
         self._init_containers(X)
+
         self._init_greedy(X, sign_y, save_data)
         for iter_index in range(self.n_estimators-1):
-            self._boost_loop(X, sign_y, iter_index, save_data)
-
-        self.feature_importances_/=np.sum(self.feature_importances_)
-        self.support_feats = np.where(self.feature_importances_!=0)[0]
+            self._boost_loop(X, sign_y, iter_index+1, save_data)
+            if self.pred_train:
+                preds = np.sign(self._predict_on_train(X))
+            else:
+                preds = np.sign(self._predict_vote(X))
+            if accuracy_score(preds, sign_y)==1.0:
+                print("Broken because perfect {}/{}".format(iter_index+2, self.n_estimators))
+                self.n_estimators = iter_index+2
+                break
+        if np.sum(self.feature_importances_) != 0:
+            self.feature_importances_/=np.sum(self.feature_importances_)
+        self.support_feats = np.argsort(-self.feature_importances_)[:len(np.where(self.feature_importances_!=0)[0])]
         self.support_ratio = len(self.support_feats)/self.n_estimators
+
         return self
 
-    def predict(self, X):
-        self._predict_vote(X)
-        return self.zero_binarizer.fit_transform(np.sign(self.votes)).reshape(X.shape[0])
+    def predict(self, X, save_data=None):
+        vote = self._predict_vote(X, save_data=save_data)
+        return self.zero_binarizer.fit_transform(np.sign(vote)).reshape(X.shape[0])
 
     def predict_proba(self, X):
         probas = np.zeros((X.shape[0], self.n_classes))
         self._predict_vote(X)
         for sample_ind, vote in enumerate(self.votes):
-            if vote<1:
+            if vote<0:
                 probas[sample_ind, 0] = -vote
             else:
                 probas[sample_ind, 1] = vote
-        return probas/np.max(probas)
+        probas /= np.max(probas)
+        for sample_ind, [proba_1, proba_2] in enumerate(probas):
+            if proba_1 == 0:
+                probas[sample_ind, 0] = 1 - proba_2
+            if proba_2 == 0:
+                probas[sample_ind, 1] = 1 - proba_1
+        return probas
 
-    def plot_projection(self, X, y, save=True, path=".", rs=42, contour=False):
-        if self.support_feats.shape[0] == 1:
-            sec_dim = np.random.RandomState(rs).uniform(0,1, size=X.shape[0])
-            fig = self._plot_2d(X, y, sec_dim=sec_dim, contour=contour)
-        elif self.support_feats.shape[0]==2:
-            fig = self._plot_2d(X, y, contour=contour)
-        else:
-            best_feats = np.argsort(-self.feature_importances_)[:3]
-            fig = go.Figure()
-            labels = np.unique(y)
-            for label in labels:
-                data = X[np.where(y == label)[0], best_feats]
-                fig.add_trace(go.Scatter3d(x=data[:, 0],
-                                           y=data[:, 1],
-                                           z=data[:, 2],
-                                           name="Class {}".format(label + 1),
-                                           mode="markers",
-                                           marker=dict(
-                                               size=1, )))
-        if save:
-            plotly.offline.plot(fig, filename=os.path.join(path, "projection_fig.html"), auto_open=False)
-        else:
-            fig.show()
+    def set_params(self, **kwargs):
+        for parameter, value in iteritems(kwargs):
+            setattr(self, parameter, value)
+        if "pred_train" in kwargs:
+            self.train_weighting.pred_train = kwargs["pred_train"]
+        return self
 
-    def get_feature_importance(self, x_test, sample_name="NoName",
-                               feature_names=None, limit=10):
-        if feature_names is None:
-            feature_names = ["Feat {}".format(ind) for ind in range(x_test.shape[0])]
-        feat_imp = self._predict_one_sample(x_test)
-        n_important_feat = len(np.where(feat_imp!=0)[0])
-        if n_important_feat>limit:
-            add_limit = "The list was shortened, because, there were more than " \
-                        "{} important features, but you can increase this limit " \
-                        "by setting limit=<your value> in " \
-                        "`get_feature_importance` arguments.".format(limit)
-        else:
-            add_limit = ""
-        best_feats_ind = np.argsort(-feat_imp)
-        out_str = "For sample {}, the feature importances are : \n".format(sample_name)
-        for i in range(min(n_important_feat, limit)):
-            out_str += "\t - {} has an importance of {}% \n".format(feature_names[best_feats_ind[i]], round(feat_imp[best_feats_ind[i]], 2),)
-        out_str+= add_limit
-        return out_str
+    def _predict_on_train(self, X, n_estimators=None):
+        if n_estimators is None:
+            n_estimators = self.n_estimators
+        pred = np.sum(np.array([estim.predict(X)*self.neig_weights[:, estim_ind]
+                       for estim_ind, estim in enumerate(self.estimators_[:n_estimators])]), axis=0)
+        return pred
 
-    def _plot_2d(self, X, y, sec_dim=None, contour=False):
-        if sec_dim is None:
-            sec_dim = X[:, self.support_feats[1]]
-        fig = go.Figure()
-        labels = np.unique(y)
-        for label in labels:
-            indices = np.where(y == label)[0]
-            fig.add_trace(go.Scatter(x=X[indices, self.support_feats[0]],
-                                     y=sec_dim[indices],
-                                     name="Class {}".format(label + 1),
-                                     mode="markers",
-                                     marker=dict(
-                                         size=3, )))
-        if contour:
-            fig.add_trace(go.Contour(
-                z=-self._predict_vote(X),
-                x=X[:, self.support_feats[0]],
-                y=sec_dim,
-                line_smoothing=0.85,
-                contours_coloring='heatmap',
-                colorscale='RdBu',
-            ))
-        return fig
+    def _step_predict_on_train(self, X):
+        preds = np.zeros((X.shape[0], self.n_estimators))
+        for n_estimators in range(self.n_estimators):
+            preds[:, n_estimators] = self.zero_binarizer.fit_transform(np.sign(
+                self._predict_on_train(X, n_estimators=n_estimators + 1))).reshape(
+                X.shape[0])
+        return preds
 
-    def _predict_one_sample(self, sample):
-        feat_importances = np.array([estim.feature_importances_ for estim in self.estimators_])
-        dists = self.distance(sample, self.train_samples, self.features_mask)
-        weights = self.estim_weights*np.sum(np.transpose(self.neig_weights)*dists, axis=1)
-        importances = np.sum(feat_importances*weights.reshape((10,1)), axis=0)
-        importances /= np.sum(importances)
-        return importances
-
-    def _predict_vote(self, X, base_decision=-1):
+    def _predict_vote(self, X, base_decision=-1, n_estimators=None,
+                      save_data=None):
         # TODO : Predict only on the required features : nécessite une refaction
         #  de X, peut-être en sparse matrix, avec uniquement les valeurs des
         #  features utilisés non nuls, ou une réécriture du DT.
-        preds = np.zeros((X.shape[0], self.n_estimators))
+        if n_estimators is None:
+            n_estimators = self.n_estimators
+        if self.normalizer is not None:
+            X = self.normalizer.fit_transform(X)
+        if save_data is not None:
+            self.saved_test = pd.DataFrame(columns=['Index', "Distance", "Relevance", "Weight", "Estim Index"])
+        preds = np.zeros((X.shape[0], n_estimators))
         self.features_mask = np.zeros(X.shape[1], dtype=np.int64)
-        for estim_index, estim in enumerate(self.estimators_):
+        for estim_index, estim in enumerate(self.estimators_[:n_estimators]):
             self.features_mask[np.where(estim.feature_importances_ != 0)[0]] = 1
             preds[:, estim_index] = estim.predict(X)
         self.votes = np.zeros(X.shape[0])
         for sample_index, sample in enumerate(X):
             dists = self.distance(sample, self.train_samples, self.features_mask)
-            vote = np.sum(self.estim_weights*np.sum(np.transpose(self.neig_weights)*dists, axis=1)*preds[sample_index])
-            if vote==0:
-                vote = -1
+            weights = 1 / (dists) ** self.b
+            if isinstance(self.relevance, MarginRelevance):
+                weights /= np.sum(weights)
+                weights = weights.reshape((self.train_size, 1))*np.sign(self.neig_weights[:, :n_estimators])
+            else:
+                weights = weights.reshape((self.train_size, 1))*self.neig_weights[:, :n_estimators]
+                weights /= np.sum(weights)
+            if sample_index==save_data:
+                for estim_index in range(self.n_estimators):
+                    for train_sample_ind, (dist, relevance, weight) in enumerate(zip(dists, self.neig_weights[:, estim_index], weights)):
+                        self.saved_test = self.saved_test.append({"Index": train_sample_ind,
+                                                                  'Distance': dist,
+                                                                  "Relevance": relevance,
+                                                                  "Weight": weight,
+                                                                  "Estim Index": estim_index},ignore_index=True)
+            vote = np.sum(
+                self.estim_weights[:n_estimators] * np.sum(weights, axis=0) *
+                preds[sample_index])
+            if vote == 0:
+                vote = base_decision
             self.votes[sample_index] = vote
         return self.votes/np.max(np.abs(self.votes))
 
-    def _save_data(self, preds, iter, y):
-        for sample_index, (sample_class, sample, prediction, vote, weight) in enumerate(zip(y, self.train_samples, preds, self.votes, self.train_weights[:, iter-1])):
-            self.saved_data = self.saved_data.append({"Iteration":int(iter),
-                                                      "Pred": np.sign(prediction),
-                                                      "Margin": vote,
-                                                      "Class": sample_class,
-                                                      "X": sample[0],
-                                                      "Y": sample[1],
-                                                      "Weight":weight},
-                                                     ignore_index=True)
+    def step_predict(self, X):
+        preds = np.zeros((X.shape[0], self.n_estimators))
+        for n_estimators in range(self.n_estimators):
+            preds[:, n_estimators] = self.zero_binarizer.fit_transform(np.sign(self._predict_vote(X, n_estimators=n_estimators+1))).reshape(X.shape[0])
+        return preds
 
-    def _boost_loop(self, X, y, iter_index=0, save_data=False):
+    def step_vote_predict(self, X):
+        preds = np.zeros((X.shape[0], self.n_estimators))
+        for n_estimators in range(self.n_estimators):
+            preds[:, n_estimators] = self._predict_vote(X, n_estimators=n_estimators + 1)
+        return preds
+
+    def _boost_loop(self, X, y, iter_index=1, save_data=False):
         next_estimator = clone(self.base_estimator)
-        next_estimator.fit(X, y,
-                           sample_weight=self.train_weights[:, iter_index])
+        if self.forced_diversity and iter_index == 1:
+            modded_X = X.copy()
+            chosen_features = np.where(self.estimators_[0].feature_importances_ !=0)
+            modded_X[:, chosen_features] = 0
+            next_estimator.fit(modded_X, y,
+                               sample_weight=self.train_weights[:, iter_index])
+            del modded_X
+        else:
+            next_estimator.fit(X, y,
+                               sample_weight=self.train_weights[:, iter_index])
         self.estimators_.append(next_estimator)
-        self.train_weights[:, iter_index + 1] = self.train_weighting(
-            self, X, y)
+        self.neig_weights[:, iter_index] = self.relevance(X, y, next_estimator)
+        if iter_index<self.n_estimators-1:
+            if self.vote_compensate:
+                self.train_weights[:, iter_index + 1] = self.train_weighting(
+                    self, X, y, n_estimators=iter_index+1)
+            else:
+                self.train_weights[:, iter_index + 1] *= self.train_weighting(
+                    next_estimator, X, y)
         self.feature_importances_ += next_estimator.feature_importances_
-        self.neig_weights[:, iter_index + 1] = self.relevance(X, y,
-                                                              next_estimator) / \
-                                               X.shape[0]
         if save_data:
+            preds_train = np.sign(self._predict_on_train(X))
             preds = self.minus_binarizer.fit_transform(self.predict(X)).reshape(
-                y.shape)
-            self._save_data(preds, iter_index + 2, y)
+            y.shape)
+            self._save_data(preds, preds_train, iter_index + 1, y)
 
     def _init_greedy(self, X, y, save_data):
         first_estimator = clone(self.base_estimator)
         first_estimator.fit(X, y)
         self.estimators_.append(first_estimator)
-        self.train_weights[:, 0] = self.train_weighting(first_estimator, X, y)
-        self.neig_weights[:, 0] = self.relevance(X, y, first_estimator) / \
-                                  X.shape[0]
+        self.train_weights[:, 1] = self.train_weighting(first_estimator, X, y)
+        self.neig_weights[:, 0] = self.relevance(X, y, first_estimator)
+        self.feature_importances_ = first_estimator.feature_importances_
         if save_data:
             preds = self.minus_binarizer.fit_transform(self.predict(X)).reshape(
                 y.shape)
-            self._save_data(preds, 1, y)
+            self._save_data(preds, preds, 1, y)
 
     def _init_containers(self, X,):
         self.n_classes = 2
         self.train_samples = X
         self.saved_data = pd.DataFrame(
-            columns=["Iteration", "Pred", "Margin", "Class", "X", "Y", "Weight"])
-        self.train_weights = np.ones((X.shape[0], self.n_estimators))
+            columns=["Iteration", "Pred", 'Pred Train"', "Margin", "Class", "X", "Y", "Weight"])
+        self.train_weights = np.ones((X.shape[0], self.n_estimators+1))/X.shape[0]
         self.neig_weights = np.ones((X.shape[0], self.n_estimators))
         self.estim_weights = np.ones(self.n_estimators) / self.n_estimators
         self.estimators_ = []
         self.feature_importances_ = np.zeros(X.shape[1])
 
 
+
+
+
 if __name__ == "__main__":
+
     from sklearn.model_selection import train_test_split
     from sklearn.metrics import accuracy_score
-
+    import plotly.express as px
+    from SamBA.utils import gen_four_blobs
     rs = np.random.RandomState(7)
     #
-    # n_samples = 2000
-    # n_pos = int(n_samples/2)
-    # n_neg = n_samples-n_pos
-    # unit = 450
-    # n_features = 2
-    # scale = 0.5
-    # X = np.zeros((n_samples, n_features))
-    # centers = [np.array([1,1]),
-    #           np.array([-1,-1]),
-    #           np.array([1,-1]),
-    #           np.array([-1,1]), ]
-    # y = np.ones(n_samples)
-    # y[:n_neg] = 0
-    #
-    # X[:unit, 0] = rs.normal(centers[0][0], scale=scale, size=unit)
-    # X[:unit, 1] = rs.normal(centers[0][1], scale=scale, size=unit)
-    #
-    # X[unit:n_pos, 0] = rs.normal(centers[1][0], scale=scale, size=n_pos-unit)
-    # X[unit:n_pos, 1] = rs.normal(centers[1][1], scale=scale, size=n_pos-unit)
-    #
-    # X[n_pos:n_pos+unit, 0] = rs.normal(centers[2][0], scale=scale, size=unit)
-    # X[n_pos:n_pos+unit, 1] = rs.normal(centers[2][1], scale=scale, size=unit)
-    #
-    # X[n_pos+unit:, 0] = rs.normal(centers[3][0], scale=scale, size=n_neg-unit)
-    # X[n_pos+unit:, 1] = rs.normal(centers[3][1], scale=scale, size=n_neg-unit)
+    X, y = gen_four_blobs(rs, n_samples=1000, unit=200)
+
     #
     # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.10, random_state=rs)
     #
@@ -270,25 +303,39 @@ if __name__ == "__main__":
     # print(accuracy_score(classifier.predict(X_test), y_test))
     #
     from sklearn.datasets import make_moons
-    ratios = [0.01, 0.015, 0.02, 0.05, 0.07, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.5, 0.6]
-    # ratios = [0.10]
-    for ratio in ratios:
-        X, y = make_moons(n_samples=1000, shuffle=True, noise=0.1,
-                          random_state=rs)
-        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.1, shuffle=True, random_state=rs)
+    # #
+    # X, y = make_moons(n_samples=1000, shuffle=True, noise=0.1,
+    #                   random_state=rs)
+    # X = np.load("/home/baptiste/Documents/Datasets/cardiac_montreal/Cardiac_risk_LCMS/neg.npy")
+    # y = np.load(
+    #     "/home/baptiste/Documents/Datasets/cardiac_montreal/Cardiac_risk_LCMS/labels_neg.npy")
+    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.9, shuffle=True, random_state=rs)
 
-        classifier = NeighborHoodClassifier(
-            base_estimator=DecisionTreeClassifier(max_depth=2,
-                                                  splitter='best'),
-            n_estimators=10,
-            estimator_params=tuple(),
-            keep_selected_features=True)
+    classifier = NeighborHoodClassifier(
+        base_estimator=DecisionTreeClassifier(max_depth=1,
+                                              splitter='best'),
+        train_weighting=ExpTrainWeighting(pred_train=True),
+        n_estimators=20,
+        estimator_params=tuple(),
+        keep_selected_features=True,
+        normalizer=None)
 
-        classifier.fit(X_train, y_train, save_data=True)
-        preds = classifier.predict(X_test)
-        #
-        #
-        print(ratio, accuracy_score(y_test, preds), classifier.support_ratio)
-        # classifier.plot_projection(X_train, y_train, save=False, rs=rs, contour=True)
-        # print(classifier.get_feature_importance(X[0,:], sample_name="Test sample", feature_names=["Abs", "Ord"]))
-        # # fig = plot_2d(X_train, y_train)
+    classifier.fit(X_train, y_train)
+    preds_train = classifier._step_predict_on_train(X_train)
+    preds = classifier.predict(X_train)
+    np.set_printoptions(edgeitems=30, linewidth=100000,
+                        formatter=dict(float=lambda x: "%.3g" % x))
+    # print(preds[:10, :])
+    # print(y_train[:10])
+    # print(preds_train[:10, :])
+    fig = go.Figure(data=plotly.graph_objs.Scatter(x=X_train[:10, 0], y=X_train[:10, 1], mode="markers", hovertext=[str(_) for _ in range(10)]))
+    fig.show()
+
+    # fig=px.scatter(classifier.saved_data, x="X", y="Y", animation_frame="Iteration",
+    #            color="Pred", size="Weight", symbol="Class", color_continuous_scale='Bluered')
+    # fig.show()
+    # #
+    # print([accuracy_score(y_train, pred) for pred in np.transpose(classifier.step_predict(X_train))])
+    # print([accuracy_score(y_test, pred) for pred in np.transpose(classifier.step_predict(X_test))])
+    # print(len(classifier.support_feats), X.shape[1],
+    #       classifier.feature_importances_[classifier.support_feats])
