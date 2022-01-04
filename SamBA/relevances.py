@@ -11,7 +11,16 @@ class ExpRelevance():
     def __init__(self, use_confid=False):
         self.use_confid = use_confid
 
-    def __call__(self, X, y, estim, *args, **kwargs):
+    def __call__(self, X, y, estim, imbalanced=False, *args, **kwargs):
+        if imbalanced:
+            if type(imbalanced) == bool:
+                self.class_ratio = np.bincount(y)/y.shape[0]
+            else:
+                self.class_ratio = imbalanced
+            for class_label in np.unique(y):
+                balanced_class = y.copy()
+                indices = np.where(y==class_label)[0]
+                balanced_class[indices] = y[indices]*class_ratio
         if self.use_confid:
             if isinstance(estim, DecisionTreeClassifier) and estim.max_depth == 1:
                 feat_used = estim.tree_.feature[0]

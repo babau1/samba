@@ -170,7 +170,9 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin, VizSamba):
                       save_data=None):
         # TODO : Predict only on the required features : nécessite une refaction
         #  de X, peut-être en sparse matrix, avec uniquement les valeurs des
-        #  features utilisés non nuls, ou une réécriture du DT.
+        #  features utilisés non nuls, ou une réécriture du DT, ou un
+        #  réapprentissage sur le dataset croppé à la fin du train en supposant
+        #  que le processus est déterministe.
         if n_estimators is None:
             n_estimators = self.n_estimators
         if self.normalizer is not None:
