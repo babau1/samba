@@ -1,0 +1,46 @@
+Classification on tnbc_mazid for mirna with scm.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : mirna	 View shape : (902, 250)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 3, p : 0.49743926710572495, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9319526627218935
+		- Score on test : 0.9070796460176991
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9319526627218935
+		- Score on test : 0.9070796460176991
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9372036956134815
+		- Score on test : 0.8901043901043901
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        173 │     16 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          5 │     32 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_221, feature importance : 0.3333333333333333
+- Feature : ID_169, feature importance : 0.3333333333333333
+- Feature : ID_171, feature importance : 0.3333333333333333
+Model used : X[221] > 16.123 or X[171] > 157.991 or X[169] > 360.419

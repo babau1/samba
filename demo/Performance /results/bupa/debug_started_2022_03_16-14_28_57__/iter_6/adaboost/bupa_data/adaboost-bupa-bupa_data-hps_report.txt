@@ -1,0 +1,481 @@
+
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 83}
+
+		0.6977697897340754
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 81}
+
+		0.6930078849721707
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 84}
+
+		0.6930078849721707
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 53}
+
+		0.6917903525046383
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 71}
+
+		0.689308905380334
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 64}
+
+		0.689308905380334
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 49}
+
+		0.6860505565862709
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 68}
+
+		0.6851422387136673
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 45}
+
+		0.6701762523191094
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 47}
+
+		0.6685180890538033
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 2, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 80}
+
+		0.668421459492888
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 4, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 96}
+
+		0.6642431972789115
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 4, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 75}
+
+		0.6625850340136054
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 4, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 72}
+
+		0.661665120593692
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 4, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 74}
+
+		0.6615221088435373
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 3, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 5}
+
+		0.6579622758194186
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 2, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 92}
+
+		0.6528447742733459
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 2, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 92}
+
+		0.6528447742733459
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 36}
+
+		0.6517238713667285
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 80}
+
+		0.6500618429189858
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 2, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 66}
+
+		0.6497564935064936
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 2, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 29}
+
+		0.6495284477427334
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 21}
+
+		0.6491573902288188
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 2, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 93}
+
+		0.6476886209029067
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 2, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 93}
+
+		0.6476886209029067
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 57}
+
+		0.6456091527520098
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 4, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 32}
+
+		0.6428996598639456
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 2, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 39}
+
+		0.6409941249226963
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 94}
+
+		0.6402404143475572
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 3, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 13}
+
+		0.6382111935683364
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 2, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 50}
+
+		0.6372835497835496
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 77}
+
+		0.636228354978355
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 3, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 25}
+
+		0.6344967532467533
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 30}
+
+		0.6333526592455163
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 17}
+
+		0.6321003401360544
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 4, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 43}
+
+		0.6283395176252319
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 3, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 44}
+
+		0.6280650896722325
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 63}
+
+		0.627612863327149
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 1, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 8}
+
+		0.6271606369820655
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 60}
+
+		0.6268475572047001
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 3, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 52}
+
+		0.626789579468151
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 62}
+
+		0.6267045454545455
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 27}
+
+		0.6261093073593074
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 8}
+
+		0.6257382498453927
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 4, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 42}
+
+		0.6247680890538033
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 3, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 64}
+
+		0.6242115027829315
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 19}
+
+		0.6230171614100186
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 39}
+
+		0.6230055658627087
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 3, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 95}
+
+		0.6226345083487941
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 3, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 71}
+
+		0.6211077612863328
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 24}
+
+		0.6203811069882498
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 4, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 34}
+
+		0.6202187693259121
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 15}
+
+		0.6198554421768707
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 33}
+
+		0.6177179962894248
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 2, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 1}
+
+		0.6171420841063698
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 42}
+
+		0.6170261286332714
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 3, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 86}
+
+		0.6157351576994434
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 5, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 6}
+
+		0.6150780766852195
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 4, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 21}
+
+		0.6036100803957947
+{base_estimator: DecisionTreeClassifier, base_estimator__ccp_alpha: 0.0, base_estimator__class_weight: null,
+  base_estimator__criterion: gini, base_estimator__max_depth: 3, base_estimator__max_features: null,
+  base_estimator__max_leaf_nodes: null, base_estimator__min_impurity_decrease: 0.0,
+  base_estimator__min_impurity_split: null, base_estimator__min_samples_leaf: 1, base_estimator__min_samples_split: 2,
+  base_estimator__min_weight_fraction_leaf: 0.0, base_estimator__random_state: null,
+  base_estimator__splitter: best, n_estimators: 83}
+
+		0.5975340136054422

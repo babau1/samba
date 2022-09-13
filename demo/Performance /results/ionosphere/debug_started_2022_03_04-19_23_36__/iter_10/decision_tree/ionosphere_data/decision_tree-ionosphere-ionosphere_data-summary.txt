@@ -1,0 +1,56 @@
+Classification on ionosphere for ionosphere_data with decision_tree.
+
+Database configuration : 
+	- Database name : ionosphere
+	- View name : ionosphere_data	 View shape : (351, 34)
+	- Learning Rate : 0.7492877492877493
+	- Labels used : bad, good
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 50, criterion : entropy, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7613636363636364
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7613636363636364
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7455357142857143
+
+Test set confusion matrix : 
+
+╒══════╤═══════╤════════╕
+│      │   bad │   good │
+╞══════╪═══════╪════════╡
+│ bad  │    22 │     10 │
+├──────┼───────┼────────┤
+│ good │    11 │     45 │
+╘══════╧═══════╧════════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+First featrue : 
+	4 <= 0.041439998894929886
+Feature importances : 
+- Feature index : 4, feature importance : 0.40485584231334615
+- Feature index : 26, feature importance : 0.257770457009932
+- Feature index : 2, feature importance : 0.10168765892555544
+- Feature index : 21, feature importance : 0.06470990200575649
+- Feature index : 13, feature importance : 0.03731813344325054
+- Feature index : 10, feature importance : 0.029839261793109483
+- Feature index : 9, feature importance : 0.027675328023566308
+- Feature index : 3, feature importance : 0.019626605050454014
+- Feature index : 29, feature importance : 0.018727986258590984
+- Feature index : 25, feature importance : 0.018565952334650773
+- Feature index : 23, feature importance : 0.011137351225118086
+- Feature index : 16, feature importance : 0.00808552161666979

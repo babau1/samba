@@ -1,0 +1,1141 @@
+
+a: 0.001
+b: 3.9224302533712394
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 30
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.7241547128502236
+a: 0.001
+b: 1.1982416498363981
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 58
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.7128103283531297
+a: 1.0e-05
+b: 4.231699591351328
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 67
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.7116949830608164
+a: 0.01
+b: 0.6504651519764525
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 55
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.7106242048615875
+a: 0.001
+b: 0.2166640931136569
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 33
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.7082675584511257
+a: 1.0e-07
+b: 0.1891717416029465
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 60
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.7071587291751805
+a: 0.0001
+b: 5.834876755163993
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 12
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.7059879977437371
+a: 0.0001
+b: 0.847822546262274
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 37
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.7052256238286538
+a: 1.0e-05
+b: 5.591982428232274
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 30
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.7038333478406906
+a: 0.1
+b: 6.081171452660033
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 68
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.7034262812332336
+a: 1.0e-08
+b: 0.21010656888395465
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 23
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6992940203624282
+a: 0.01
+b: 1.677453666851068
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 49
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.698951806559391
+a: 0.01
+b: 2.7771416966418694
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 60
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6980984543025625
+a: 0.0001
+b: 5.823650448063527
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 52
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.697949385060176
+a: 1.0e-08
+b: 3.6236156594338214
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 34
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6972881323425055
+a: 0.1
+b: 0.6882399548986254
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 69
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6961911671340987
+a: 1.0e-07
+b: 5.282236117673449
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 49
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.69613848575648
+a: 1.0e-05
+b: 3.7284370185345383
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 11
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6958593420741391
+a: 1.0e-09
+b: 1.9180862088174877
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 59
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6957417464202481
+a: 1.0e-09
+b: 5.182783380625225
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 28
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6951357568980024
+a: 1.0e-05
+b: 3.599947552237563
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 45
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6932319121532803
+a: 1.0e-08
+b: 1.5942326652072079
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 14
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6914382864401454
+a: 1.0e-08
+b: 2.822052532651806
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 34
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6913661184852744
+a: 1.0e-05
+b: 1.362699254751813
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 27
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6912650587597142
+a: 1.0e-09
+b: 3.9152330344512625
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 34
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6905602224985997
+a: 1.0e-05
+b: 2.4946051964079863
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 43
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6902507731929611
+a: 0.1
+b: 5.167484962133989
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 62
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6897002927535505
+a: 0.1
+b: 3.734589736140006
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 6
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6857570578292764
+a: 1.0e-06
+b: 1.2982240132266978
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 9
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6846243160026969
+a: 1.0e-08
+b: 6.005720160810502
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 7
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6834015793840127
+a: 1
+b: 5.517844299995481
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 27
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6825884297187393
+a: 1.0e-06
+b: 1.1841276196322665
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 62
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6774641975636493
+a: 1.0e-08
+b: 0.8578320037296489
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 39
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6770416400493545
+a: 0.1
+b: 5.018690246544242
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 63
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 0.001
+b: 4.271016681361035
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 34
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 1
+b: 2.1433337134197714
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 67
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 1.0e-09
+b: 0.3866801032850008
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 34
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 0.1
+b: 0.6095145425849254
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 48
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 0.001
+b: 2.8028068868433436
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 26
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 1
+b: 2.2753035623832814
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 66
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 0.001
+b: 3.0459217418457274
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 44
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 0.01
+b: 2.5920731331249898
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 44
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 1.0e-09
+b: 1.4620237746505875
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 52
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 1
+b: 0.8867072395643686
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 30
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 0.1
+b: 2.337725402006654
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 56
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 0.1
+b: 4.666319594412798
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 34
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 1.0e-07
+b: 4.2855643142018325
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 36
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 0.01
+b: 0.7941956998842213
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 39
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 0.1
+b: 2.2021975211487335
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 7
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 1.0e-05
+b: 1.7777742129728822
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 52
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 0.1
+b: 2.2056607856416943
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 46
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.675160109587101
+a: 1.0e-08
+b: 2.384064360545768
+distance: !!python/object:SamBA.distances.PolarDist {keep_selected_features: true}
+n_estimators: 42
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6729044614303467
+a: 1.0e-07
+b: 1.201501705210812
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 16
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6725337861595878
+a: 1.0e-05
+b: 1.6777196627898439
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 61
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6703426834479906
+a: 1.0e-09
+b: 1.4126354792064282
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 44
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6687544966660127
+a: 1.0e-06
+b: 2.7676817157825435
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 56
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6581387380369629
+a: 1.0e-09
+b: 1.8460766003701412
+distance: !!python/object:SamBA.distances.EuclidianDist {keep_selected_features: true}
+n_estimators: 40
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: true
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6552109566446401
+a: 1.0e-06
+b: 0.6718576657706402
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 50
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6400460965127756
+a: 1
+b: 1.249813460519096
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 4
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.6219548073693442
+a: 0.01
+b: 1.3548585676487612
+distance: !!python/object:SamBA.distances.ExpEuclidianDist {keep_selected_features: true}
+n_estimators: 3
+normalize_dists: true
+normalizer: RobustScaler
+normalizer__copy: true
+normalizer__quantile_range: !!python/tuple [25.0, 75.0]
+normalizer__unit_variance: false
+normalizer__with_centering: true
+normalizer__with_scaling: true
+pred_train: false
+relevance: !!python/object:SamBA.relevances.ExpRelevance {use_confid: false}
+train_weighting: !!python/object:SamBA.samba.ExpTrainWeighting
+  factor: 2
+  minus_binarizer: !!python/object:sklearn.preprocessing._label.LabelBinarizer {_sklearn_version: 0.24.1,
+    neg_label: -1, pos_label: 1, sparse_output: false}
+
+		0.5539909739649492

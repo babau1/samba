@@ -1,0 +1,60 @@
+Classification on tnbc_mazid for clinic with random_forest.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : clinic	 View shape : (902, 18)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 82, max_depth : 7, criterion : gini, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8609467455621301
+		- Score on test : 0.8362831858407079
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8609467455621301
+		- Score on test : 0.8362831858407079
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.5688073394495413
+		- Score on test : 0.5
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        189 │      0 │
+├──────────┼────────────┼────────┤
+│ TNBC     │         37 │      0 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:08
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_10, feature importance : 0.1980967816453637
+- Feature : ID_4, feature importance : 0.09571900855781316
+- Feature : ID_14, feature importance : 0.08135225341044144
+- Feature : ID_17, feature importance : 0.07292879019807495
+- Feature : ID_0, feature importance : 0.06740058851625602
+- Feature : ID_16, feature importance : 0.06221433569136706
+- Feature : ID_3, feature importance : 0.058139126901905876
+- Feature : ID_13, feature importance : 0.057045488512196776
+- Feature : ID_1, feature importance : 0.05313242808695843
+- Feature : ID_12, feature importance : 0.05043304929501764
+- Feature : ID_8, feature importance : 0.04262049276170735
+- Feature : ID_7, feature importance : 0.04073725260029722
+- Feature : ID_15, feature importance : 0.03781114493733285
+- Feature : ID_11, feature importance : 0.03234913297740752
+- Feature : ID_5, feature importance : 0.02562304201611535
+- Feature : ID_6, feature importance : 0.013463530149590628
+- Feature : ID_9, feature importance : 0.008545814586467656
+- Feature : ID_2, feature importance : 0.0023877391556863504

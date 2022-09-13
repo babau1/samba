@@ -1,0 +1,50 @@
+Classification on zoo for zoo_data with random_scm.
+
+Database configuration : 
+	- Database name : zoo
+	- View name : zoo_data	 View shape : (101, 16)
+	- Learning Rate : 0.7425742574257426
+	- Labels used : Mamal, non-Mamal
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 286, max_rules : 12, max_samples : 0.4719965093012093, max_features : 0.8459842806349259, model_type : disjunction, p_options : [0.7013406413190061], random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 1.0
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 1.0
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 1.0
+
+Test set confusion matrix : 
+
+╒═══════════╤═════════╤═════════════╕
+│           │   Mamal │   non-Mamal │
+╞═══════════╪═════════╪═════════════╡
+│ Mamal     │      11 │           0 │
+├───────────┼─────────┼─────────────┤
+│ non-Mamal │       0 │          15 │
+╘═══════════╧═════════╧═════════════╛
+
+
+
+ Classification took 0:00:14
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 3, feature importance : 0.6358939495263825
+- Feature index : 2, feature importance : 0.20257572607411287
+- Feature index : 0, feature importance : 0.05442001413175181
+- Feature index : 7, feature importance : 0.03475563927742132
+- Feature index : 10, feature importance : 0.031190958325890934
+- Feature index : 9, feature importance : 0.018555976902352063
+- Feature index : 8, feature importance : 0.013210288232142042
+- Feature index : 12, feature importance : 0.009397447529946538

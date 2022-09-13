@@ -1,0 +1,57 @@
+Classification on tnbc_mazid for rna with samba.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : rna	 View shape : (902, 2000)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 54, relevance : <SamBA.relevances.ExpRelevance object at 0x7f131f882b70>, distance : <SamBA.distances.ExpEuclidianDist object at 0x7f1324092940>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f1324092400>, b : 3.846492893982304, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 1e-07
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9866863905325444
+		- Score on test : 0.9911504424778761
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9866863905325444
+		- Score on test : 0.9911504424778761
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9809475268190865
+		- Score on test : 0.972972972972973
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        189 │      0 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          2 │     35 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:06:15
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_202, feature importance : 0.25925925925925924
+- Feature : ID_279, feature importance : 0.14814814814814814
+- Feature : ID_94, feature importance : 0.14814814814814814
+- Feature : ID_9, feature importance : 0.09259259259259259
+- Feature : ID_88, feature importance : 0.07407407407407407
+- Feature : ID_73, feature importance : 0.05555555555555555
+- Feature : ID_55, feature importance : 0.05555555555555555
+- Feature : ID_499, feature importance : 0.037037037037037035
+- Feature : ID_1217, feature importance : 0.018518518518518517
+- Feature : ID_813, feature importance : 0.018518518518518517
+- Feature : ID_1635, feature importance : 0.018518518518518517
+- Feature : ID_1609, feature importance : 0.018518518518518517
+- Feature : ID_488, feature importance : 0.018518518518518517
+- Feature : ID_1591, feature importance : 0.018518518518518517
+- Feature : ID_148, feature importance : 0.018518518518518517

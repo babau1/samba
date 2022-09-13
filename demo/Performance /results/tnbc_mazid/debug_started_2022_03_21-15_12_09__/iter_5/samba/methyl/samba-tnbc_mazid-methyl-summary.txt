@@ -1,0 +1,54 @@
+Classification on tnbc_mazid for methyl with samba.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : methyl	 View shape : (902, 2000)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 15, relevance : <SamBA.relevances.ExpRelevance object at 0x7f1324263940>, distance : <SamBA.distances.PolarDist object at 0x7f131f3be2b0>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f131f3be630>, b : 3.869097445124391, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 0.001
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9837278106508875
+		- Score on test : 0.9646017699115044
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9837278106508875
+		- Score on test : 0.9646017699115044
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9791838583887513
+		- Score on test : 0.9570999570999571
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        183 │      6 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          2 │     35 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:03:36
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_33, feature importance : 0.2
+- Feature : ID_207, feature importance : 0.13333333333333333
+- Feature : ID_690, feature importance : 0.06666666666666667
+- Feature : ID_431, feature importance : 0.06666666666666667
+- Feature : ID_676, feature importance : 0.06666666666666667
+- Feature : ID_1057, feature importance : 0.06666666666666667
+- Feature : ID_1179, feature importance : 0.06666666666666667
+- Feature : ID_1462, feature importance : 0.06666666666666667
+- Feature : ID_1594, feature importance : 0.06666666666666667
+- Feature : ID_116, feature importance : 0.06666666666666667
+- Feature : ID_126, feature importance : 0.06666666666666667
+- Feature : ID_387, feature importance : 0.06666666666666667

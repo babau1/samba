@@ -1,0 +1,44 @@
+Classification on ionosphere for ionosphere_data with samba.
+
+Database configuration : 
+	- Database name : ionosphere
+	- View name : ionosphere_data	 View shape : (351, 34)
+	- Learning Rate : 0.7492877492877493
+	- Labels used : bad, good
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 2, relevance : <SamBA.relevances.ExpRelevance object at 0x7f9575dae160>, distance : <SamBA.distances.PolarDist object at 0x7f9576151e48>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f95761519b0>, b : 3.616044078959483, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 0.0001
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9125475285171103
+		- Score on test : 0.9090909090909091
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9125475285171103
+		- Score on test : 0.9090909090909091
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.905986403122246
+		- Score on test : 0.8950892857142857
+
+Test set confusion matrix : 
+
+╒══════╤═══════╤════════╕
+│      │   bad │   good │
+╞══════╪═══════╪════════╡
+│ bad  │    27 │      5 │
+├──────┼───────┼────────┤
+│ good │     3 │     53 │
+╘══════╧═══════╧════════╛
+
+
+
+ Classification took 0:00:31
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 4, feature importance : 0.5
+- Feature index : 26, feature importance : 0.5

@@ -1,0 +1,48 @@
+Classification on tnbc_mazid for methyl with scm.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : methyl	 View shape : (902, 2000)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 10, p : 0.9770443385978965, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9689349112426036
+		- Score on test : 0.9469026548672567
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9689349112426036
+		- Score on test : 0.9469026548672567
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9814814814814814
+		- Score on test : 0.9465179465179465
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        179 │     10 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          2 │     35 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:04
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_33, feature importance : 0.2
+- Feature : ID_1153, feature importance : 0.2
+- Feature : ID_724, feature importance : 0.2
+- Feature : ID_387, feature importance : 0.2
+- Feature : ID_1953, feature importance : 0.2
+Model used : X[33] > 0.889 or X[724] > 0.823 or X[1953] <= 0.022 or X[1153] > 0.932 or X[387] > 0.941

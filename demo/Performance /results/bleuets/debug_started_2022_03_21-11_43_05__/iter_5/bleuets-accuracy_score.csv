@@ -1,0 +1,3 @@
+,scm-metabolomics_bleuets,random_forest-metabolomics_bleuets,samba-metabolomics_bleuets,adaboost-metabolomics_bleuets,decision_tree-metabolomics_bleuets,random_scm-metabolomics_bleuets
+Train,0.9722222222222222,0.9583333333333334,1.0,1.0,1.0,0.9861111111111112
+Test,0.7916666666666666,0.8333333333333334,0.875,0.9166666666666666,0.9583333333333334,1.0

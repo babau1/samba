@@ -1,0 +1,55 @@
+Classification on tnbc_mazid for methyl with decision_tree.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : methyl	 View shape : (902, 2000)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 227, criterion : gini, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9380530973451328
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9380530973451328
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8651508651508651
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        184 │      5 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          9 │     28 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:12
+
+ Classifier Interpretation : 
+First feature : 
+	ID_33 <= 0.9026910662651062
+Feature importances : 
+- Feature : ID_33, feature importance : 0.7238512973141218
+- Feature : ID_676, feature importance : 0.07693009983780633
+- Feature : ID_243, feature importance : 0.06974961807963526
+- Feature : ID_149, feature importance : 0.02524149313140139
+- Feature : ID_933, feature importance : 0.02164059608245999
+- Feature : ID_1911, feature importance : 0.021485743874356554
+- Feature : ID_723, feature importance : 0.01789851331135735
+- Feature : ID_1008, feature importance : 0.01450514151839345
+- Feature : ID_669, feature importance : 0.014113523041213652
+- Feature : ID_1945, feature importance : 0.007291986904627068
+- Feature : ID_462, feature importance : 0.007291986904627068

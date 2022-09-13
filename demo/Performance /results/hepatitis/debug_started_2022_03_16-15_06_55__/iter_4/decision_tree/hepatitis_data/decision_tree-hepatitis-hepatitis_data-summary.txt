@@ -1,0 +1,56 @@
+Classification on hepatitis for hepatitis_data with decision_tree.
+
+Database configuration : 
+	- Database name : hepatitis
+	- View name : hepatitis_data	 View shape : (155, 19)
+	- Learning Rate : 0.7483870967741936
+	- Labels used : LIVE, DIE
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 5, criterion : entropy, splitter : random, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8879310344827587
+		- Score on test : 0.6410256410256411
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8879310344827587
+		- Score on test : 0.6410256410256411
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8822115384615384
+		- Score on test : 0.6388888888888888
+
+Test set confusion matrix : 
+
+╒══════╤════════╤═══════╕
+│      │   LIVE │   DIE │
+╞══════╪════════╪═══════╡
+│ LIVE │     14 │     7 │
+├──────┼────────┼───────┤
+│ DIE  │      7 │    11 │
+╘══════╧════════╧═══════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+First featrue : 
+	11 <= 1.357585481534519
+Feature importances : 
+- Feature index : 11, feature importance : 0.26001568520228807
+- Feature index : 8, feature importance : 0.12874239727739392
+- Feature index : 0, feature importance : 0.09024568348465861
+- Feature index : 6, feature importance : 0.08791409575308029
+- Feature index : 17, feature importance : 0.07003863233491785
+- Feature index : 13, feature importance : 0.06631332202548343
+- Feature index : 7, feature importance : 0.06369459182618341
+- Feature index : 15, feature importance : 0.05917609008627445
+- Feature index : 18, feature importance : 0.056250846776186726
+- Feature index : 1, feature importance : 0.050638615638648785
+- Feature index : 9, feature importance : 0.03874118869245726
+- Feature index : 10, feature importance : 0.028228850902427265

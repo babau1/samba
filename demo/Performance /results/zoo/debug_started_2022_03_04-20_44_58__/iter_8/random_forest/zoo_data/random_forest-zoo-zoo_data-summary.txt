@@ -1,0 +1,55 @@
+Classification on zoo for zoo_data with random_forest.
+
+Database configuration : 
+	- Database name : zoo
+	- View name : zoo_data	 View shape : (101, 16)
+	- Learning Rate : 0.7425742574257426
+	- Labels used : Mamal, non-Mamal
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 248, max_depth : 1, criterion : entropy, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 1.0
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 1.0
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 1.0
+
+Test set confusion matrix : 
+
+╒═══════════╤═════════╤═════════════╕
+│           │   Mamal │   non-Mamal │
+╞═══════════╪═════════╪═════════════╡
+│ Mamal     │      11 │           0 │
+├───────────┼─────────┼─────────────┤
+│ non-Mamal │       0 │          15 │
+╘═══════════╧═════════╧═════════════╛
+
+
+
+ Classification took 0:00:30
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 3, feature importance : 0.29435483870967744
+- Feature index : 0, feature importance : 0.1814516129032258
+- Feature index : 2, feature importance : 0.16129032258064516
+- Feature index : 7, feature importance : 0.12096774193548387
+- Feature index : 15, feature importance : 0.08870967741935484
+- Feature index : 1, feature importance : 0.04032258064516129
+- Feature index : 12, feature importance : 0.028225806451612902
+- Feature index : 5, feature importance : 0.020161290322580645
+- Feature index : 9, feature importance : 0.020161290322580645
+- Feature index : 4, feature importance : 0.016129032258064516
+- Feature index : 8, feature importance : 0.016129032258064516
+- Feature index : 10, feature importance : 0.008064516129032258
+- Feature index : 14, feature importance : 0.004032258064516129

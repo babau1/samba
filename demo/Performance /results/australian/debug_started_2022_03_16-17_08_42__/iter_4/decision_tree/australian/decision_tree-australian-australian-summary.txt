@@ -1,0 +1,58 @@
+Classification on australian for australian with decision_tree.
+
+Database configuration : 
+	- Database name : australian
+	- View name : australian	 View shape : (690, 14)
+	- Learning Rate : 0.7492753623188406
+	- Labels used : -, +
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 5, criterion : entropy, splitter : random, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8955512572533849
+		- Score on test : 0.838150289017341
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8955512572533849
+		- Score on test : 0.8381502890173411
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8946977730646872
+		- Score on test : 0.8426001082251082
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   - │   + │
+╞════╪═════╪═════╡
+│ -  │  77 │  19 │
+├────┼─────┼─────┤
+│ +  │   9 │  68 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+First featrue : 
+	7 <= 0.5098475159657408
+Feature importances : 
+- Feature index : 7, feature importance : 0.7216931040809439
+- Feature index : 8, feature importance : 0.08633662981397665
+- Feature index : 12, feature importance : 0.04496087260480514
+- Feature index : 4, feature importance : 0.0331660798791866
+- Feature index : 11, feature importance : 0.031960815341323334
+- Feature index : 3, feature importance : 0.021463927151081762
+- Feature index : 1, feature importance : 0.01761710821843653
+- Feature index : 9, feature importance : 0.013525271262556721
+- Feature index : 10, feature importance : 0.007379917178578661
+- Feature index : 2, feature importance : 0.005391135421796136
+- Feature index : 5, feature importance : 0.005203271150255487
+- Feature index : 6, feature importance : 0.004590284251721718
+- Feature index : 13, feature importance : 0.004053480099126082
+- Feature index : 0, feature importance : 0.002658103546211412

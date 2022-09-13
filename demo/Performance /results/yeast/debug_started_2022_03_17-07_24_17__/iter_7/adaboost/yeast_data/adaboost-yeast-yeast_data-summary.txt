@@ -1,0 +1,71 @@
+Classification on yeast for yeast_data with adaboost.
+
+Database configuration : 
+	- Database name : yeast
+	- View name : yeast_data	 View shape : (1484, 8)
+	- Learning Rate : 0.75
+	- Labels used : CYT, non-CYT
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 19, base_estimator : DecisionTreeClassifier
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8571428571428571
+		- Score on test : 0.7412398921832885
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8571428571428571
+		- Score on test : 0.7412398921832885
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8158196702808858
+		- Score on test : 0.6825388776200135
+
+Test set confusion matrix : 
+
+╒═════════╤═══════╤═══════════╕
+│         │   CYT │   non-CYT │
+╞═════════╪═══════╪═══════════╡
+│ CYT     │    61 │        55 │
+├─────────┼───────┼───────────┤
+│ non-CYT │    41 │       214 │
+╘═════════╧═══════╧═══════════╛
+
+
+
+ Classification took 0:00:32
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 2, feature importance : 0.33084820570815604
+- Feature index : 1, feature importance : 0.17000993812173265
+- Feature index : 3, feature importance : 0.1528298344346087
+- Feature index : 0, feature importance : 0.11338487065724567
+- Feature index : 6, feature importance : 0.11185622304659079
+- Feature index : 7, feature importance : 0.09717790895583334
+- Feature index : 5, feature importance : 0.02389301907583262
+
+
+ Estimator error | Estimator weight
+0.24707996406109617 | 0.12457300580068421
+0.29572792362768496 | 0.09701179235344996
+0.27698288884245625 | 0.10726971059315482
+0.38122542969141016 | 0.054150429024801994
+0.38987309694000694 | 0.05006922370402815
+0.36044131296468745 | 0.06411172293237974
+0.3705164469087934 | 0.059254302247929394
+0.31609646065882396 | 0.08628395796208997
+0.36731771000186986 | 0.06079036112424746
+0.3921063928851181 | 0.04902064825898924
+0.39542356032278203 | 0.04746706784193757
+0.44549272422666625 | 0.024472947148410355
+0.4473887030842081 | 0.023615221147137537
+0.42940896516699134 | 0.03178064798915535
+0.44804118617035243 | 0.023320204237394015
+0.4467747339455309 | 0.023892898977508795
+0.43688399939084954 | 0.02837688859704373
+0.4550151317084928 | 0.02017180917353472
+0.44572647714150204 | 0.02436716088612272

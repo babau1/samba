@@ -1,0 +1,49 @@
+Classification on tnbc_mazid for clinic with samba.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : clinic	 View shape : (902, 18)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 58, relevance : <SamBA.relevances.ExpRelevance object at 0x7f132475bd30>, distance : <SamBA.distances.EuclidianDist object at 0x7f132475ba90>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f132475bb38>, b : 5.5982781411449025, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 1e-05
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9437869822485208
+		- Score on test : 0.7654867256637168
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9437869822485208
+		- Score on test : 0.7654867256637168
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8330987168907658
+		- Score on test : 0.5011440011440011
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        169 │     20 │
+├──────────┼────────────┼────────┤
+│ TNBC     │         33 │      4 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:01:19
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_4, feature importance : 0.41379310344827586
+- Feature : ID_10, feature importance : 0.3793103448275862
+- Feature : ID_14, feature importance : 0.10344827586206896
+- Feature : ID_16, feature importance : 0.05172413793103448
+- Feature : ID_8, feature importance : 0.017241379310344827
+- Feature : ID_15, feature importance : 0.017241379310344827
+- Feature : ID_17, feature importance : 0.017241379310344827

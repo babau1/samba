@@ -1,0 +1,48 @@
+Classification on bupa for bupa_data with random_scm.
+
+Database configuration : 
+	- Database name : bupa
+	- View name : bupa_data	 View shape : (345, 6)
+	- Learning Rate : 0.7478260869565218
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 114, max_rules : 17, max_samples : 0.9916237243966164, max_features : 0.10334509351237087, model_type : conjunction, p_options : [0.6902541694448551], random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.5697674418604651
+		- Score on test : 0.5287356321839081
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.5697674418604651
+		- Score on test : 0.5287356321839081
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.6248148148148148
+		- Score on test : 0.582972972972973
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  35 │   2 │
+├────┼─────┼─────┤
+│  2 │  39 │  11 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:39
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 0, feature importance : 0.16666666666666666
+- Feature index : 1, feature importance : 0.16666666666666666
+- Feature index : 2, feature importance : 0.16666666666666666
+- Feature index : 3, feature importance : 0.16666666666666666
+- Feature index : 4, feature importance : 0.16666666666666666
+- Feature index : 5, feature importance : 0.16666666666666666

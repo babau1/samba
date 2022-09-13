@@ -1,0 +1,50 @@
+Classification on pima for pima with random_forest.
+
+Database configuration : 
+	- Database name : pima
+	- View name : pima	 View shape : (768, 8)
+	- Learning Rate : 0.75
+	- Labels used : No, Yes
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 46, max_depth : 8, criterion : gini, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9618055555555556
+		- Score on test : 0.7864583333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9618055555555556
+		- Score on test : 0.7864583333333334
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9533532338308457
+		- Score on test : 0.7425074626865671
+
+Test set confusion matrix : 
+
+╒═════╤══════╤═══════╕
+│     │   No │   Yes │
+╞═════╪══════╪═══════╡
+│ No  │  111 │    14 │
+├─────┼──────┼───────┤
+│ Yes │   27 │    40 │
+╘═════╧══════╧═══════╛
+
+
+
+ Classification took 0:00:47
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 1, feature importance : 0.2696541040493157
+- Feature index : 5, feature importance : 0.1822217573569176
+- Feature index : 7, feature importance : 0.1464750876945496
+- Feature index : 6, feature importance : 0.11017134625214153
+- Feature index : 0, feature importance : 0.07834371970956823
+- Feature index : 4, feature importance : 0.07531475638275283
+- Feature index : 3, feature importance : 0.0707678534996645
+- Feature index : 2, feature importance : 0.06705137505509

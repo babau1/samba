@@ -1,0 +1,54 @@
+Classification on tnbc_mazid for rna_iso with decision_tree.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : rna_iso	 View shape : (902, 2000)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 81, criterion : gini, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9690265486725663
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9690265486725663
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9597454597454598
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        184 │      5 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          2 │     35 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:12
+
+ Classifier Interpretation : 
+First feature : 
+	ID_1482 <= 144.80464935302734
+Feature importances : 
+- Feature : ID_1482, feature importance : 0.8326492368034348
+- Feature : ID_354, feature importance : 0.060681126128412415
+- Feature : ID_635, feature importance : 0.03800538240910586
+- Feature : ID_1001, feature importance : 0.01562568622420086
+- Feature : ID_186, feature importance : 0.014427822146874693
+- Feature : ID_1948, feature importance : 0.01082968352172336
+- Feature : ID_649, feature importance : 0.009570732812323027
+- Feature : ID_1776, feature importance : 0.007291986904627068
+- Feature : ID_1198, feature importance : 0.007291986904627068
+- Feature : ID_826, feature importance : 0.0036263561446708867

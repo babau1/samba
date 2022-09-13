@@ -1,0 +1,48 @@
+Classification on hepatitis for hepatitis_data with scm.
+
+Database configuration : 
+	- Database name : hepatitis
+	- View name : hepatitis_data	 View shape : (155, 19)
+	- Learning Rate : 0.7483870967741936
+	- Labels used : LIVE, DIE
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 5, p : 0.7315317047817201, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7844827586206896
+		- Score on test : 0.6153846153846154
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.7844827586206896
+		- Score on test : 0.6153846153846154
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7920673076923077
+		- Score on test : 0.6309523809523809
+
+Test set confusion matrix : 
+
+╒══════╤════════╤═══════╕
+│      │   LIVE │   DIE │
+╞══════╪════════╪═══════╡
+│ LIVE │      9 │    12 │
+├──────┼────────┼───────┤
+│ DIE  │      3 │    15 │
+╘══════╧════════╧═══════╛
+
+
+
+ Classification took 0:00:02
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 1, feature importance : 0.2
+- Feature index : 15, feature importance : 0.2
+- Feature index : 14, feature importance : 0.2
+- Feature index : 12, feature importance : 0.2
+- Feature index : 11, feature importance : 0.2
+Model used : X[11] <= 1.000 or X[15] > 105.325 or X[14] > 1.428 or X[1] <= 22.000 or X[12] <= 1.000

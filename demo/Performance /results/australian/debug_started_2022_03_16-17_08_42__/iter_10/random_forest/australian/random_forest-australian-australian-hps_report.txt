@@ -1,0 +1,181 @@
+
+{criterion: gini, max_depth: 8, n_estimators: 109}
+
+		0.8765111920599724
+{criterion: gini, max_depth: 8, n_estimators: 164}
+
+		0.8734492133882377
+{criterion: gini, max_depth: 7, n_estimators: 203}
+
+		0.8699648928307465
+{criterion: gini, max_depth: 8, n_estimators: 225}
+
+		0.8695425509449899
+{criterion: gini, max_depth: 8, n_estimators: 220}
+
+		0.8695425509449899
+{criterion: gini, max_depth: 7, n_estimators: 283}
+
+		0.8678003906662443
+{criterion: entropy, max_depth: 8, n_estimators: 154}
+
+		0.8673780487804879
+{criterion: entropy, max_depth: 8, n_estimators: 126}
+
+		0.8669557068947312
+{criterion: gini, max_depth: 7, n_estimators: 112}
+
+		0.8660582303874987
+{criterion: entropy, max_depth: 8, n_estimators: 222}
+
+		0.865635888501742
+{criterion: entropy, max_depth: 7, n_estimators: 153}
+
+		0.8652135466159857
+{criterion: entropy, max_depth: 7, n_estimators: 154}
+
+		0.8652135466159857
+{criterion: entropy, max_depth: 6, n_estimators: 252}
+
+		0.8652135466159857
+{criterion: entropy, max_depth: 6, n_estimators: 255}
+
+		0.8652135466159857
+{criterion: gini, max_depth: 6, n_estimators: 51}
+
+		0.8643688628444725
+{criterion: gini, max_depth: 7, n_estimators: 96}
+
+		0.8634713863372401
+{criterion: entropy, max_depth: 7, n_estimators: 121}
+
+		0.8630490444514834
+{criterion: gini, max_depth: 6, n_estimators: 293}
+
+		0.8626267025657269
+{criterion: entropy, max_depth: 6, n_estimators: 65}
+
+		0.8622043606799704
+{criterion: entropy, max_depth: 9, n_estimators: 165}
+
+		0.8617292260584942
+{criterion: entropy, max_depth: 7, n_estimators: 139}
+
+		0.8613068841727378
+{criterion: entropy, max_depth: 5, n_estimators: 230}
+
+		0.8612392434800972
+{criterion: entropy, max_depth: 8, n_estimators: 54}
+
+		0.8608845422869813
+{criterion: gini, max_depth: 5, n_estimators: 295}
+
+		0.8587200401224793
+{criterion: entropy, max_depth: 5, n_estimators: 172}
+
+		0.8585171180445571
+{criterion: gini, max_depth: 6, n_estimators: 193}
+
+		0.858230057544082
+{criterion: entropy, max_depth: 9, n_estimators: 230}
+
+		0.85740022172949
+{criterion: entropy, max_depth: 9, n_estimators: 233}
+
+		0.85740022172949
+{criterion: entropy, max_depth: 6, n_estimators: 126}
+
+		0.8564878972653363
+{criterion: gini, max_depth: 3, n_estimators: 229}
+
+		0.8564730493084153
+{criterion: entropy, max_depth: 4, n_estimators: 47}
+
+		0.8560655553795797
+{criterion: gini, max_depth: 5, n_estimators: 167}
+
+		0.8560655553795797
+{criterion: gini, max_depth: 3, n_estimators: 219}
+
+		0.8556283655369022
+{criterion: gini, max_depth: 3, n_estimators: 105}
+
+		0.8529738807940027
+{criterion: gini, max_depth: 4, n_estimators: 256}
+
+		0.8516689103579347
+{criterion: gini, max_depth: 5, n_estimators: 28}
+
+		0.8499943907718298
+{criterion: gini, max_depth: 4, n_estimators: 282}
+
+		0.849926750079189
+{criterion: gini, max_depth: 5, n_estimators: 120}
+
+		0.849926750079189
+{criterion: entropy, max_depth: 4, n_estimators: 285}
+
+		0.849082066307676
+{criterion: entropy, max_depth: 3, n_estimators: 18}
+
+		0.8490523703938339
+{criterion: gini, max_depth: 7, n_estimators: 20}
+
+		0.8490292735719566
+{criterion: gini, max_depth: 3, n_estimators: 281}
+
+		0.848237382536163
+{criterion: gini, max_depth: 2, n_estimators: 230}
+
+		0.8482225345792419
+{criterion: entropy, max_depth: 3, n_estimators: 161}
+
+		0.8473250580720093
+{criterion: entropy, max_depth: 8, n_estimators: 22}
+
+		0.8465100702143386
+{criterion: entropy, max_depth: 2, n_estimators: 119}
+
+		0.8456356905289832
+{criterion: entropy, max_depth: 4, n_estimators: 111}
+
+		0.8451077631717876
+{criterion: entropy, max_depth: 2, n_estimators: 165}
+
+		0.8438935302502377
+{criterion: entropy, max_depth: 2, n_estimators: 143}
+
+		0.8438935302502377
+{criterion: entropy, max_depth: 2, n_estimators: 152}
+
+		0.8438935302502377
+{criterion: entropy, max_depth: 2, n_estimators: 88}
+
+		0.8387198421497202
+{criterion: entropy, max_depth: 5, n_estimators: 3}
+
+		0.8334851124485271
+{criterion: gini, max_depth: 2, n_estimators: 27}
+
+		0.8330561714708056
+{criterion: entropy, max_depth: 1, n_estimators: 280}
+
+		0.8322791283919333
+{criterion: entropy, max_depth: 2, n_estimators: 35}
+
+		0.828794807834442
+{criterion: entropy, max_depth: 1, n_estimators: 232}
+
+		0.827950124062929
+{criterion: entropy, max_depth: 1, n_estimators: 40}
+
+		0.8110564486326682
+{criterion: gini, max_depth: 1, n_estimators: 145}
+
+		0.8008756995037484
+{criterion: entropy, max_depth: 1, n_estimators: 27}
+
+		0.7861465262379895
+{criterion: entropy, max_depth: 1, n_estimators: 19}
+
+		0.7784684827367754

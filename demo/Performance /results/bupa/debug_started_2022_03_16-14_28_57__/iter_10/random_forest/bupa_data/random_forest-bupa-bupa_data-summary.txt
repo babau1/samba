@@ -1,0 +1,48 @@
+Classification on bupa for bupa_data with random_forest.
+
+Database configuration : 
+	- Database name : bupa
+	- View name : bupa_data	 View shape : (345, 6)
+	- Learning Rate : 0.7478260869565218
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 298, max_depth : 8, criterion : entropy, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9844961240310077
+		- Score on test : 0.7816091954022989
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9844961240310077
+		- Score on test : 0.781609195402299
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9827777777777778
+		- Score on test : 0.7643243243243243
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  24 │  13 │
+├────┼─────┼─────┤
+│  2 │   6 │  44 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:32
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 2, feature importance : 0.2089700021337413
+- Feature index : 4, feature importance : 0.200525087398676
+- Feature index : 3, feature importance : 0.1737698313136473
+- Feature index : 1, feature importance : 0.17235084650956542
+- Feature index : 0, feature importance : 0.13062959622311493
+- Feature index : 5, feature importance : 0.11375463642125505

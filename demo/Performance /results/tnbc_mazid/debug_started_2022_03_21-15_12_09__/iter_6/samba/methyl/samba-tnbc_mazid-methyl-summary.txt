@@ -1,0 +1,65 @@
+Classification on tnbc_mazid for methyl with samba.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : methyl	 View shape : (902, 2000)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 23, relevance : <SamBA.relevances.ExpRelevance object at 0x7f138845fda0>, distance : <SamBA.distances.ExpEuclidianDist object at 0x7f138845f6a0>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f138845fc50>, b : 0.5129585211367683, pred_train : True, normalizer : RobustScaler(), normalize_dists : True, a : 1e-07
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9690265486725663
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9690265486725663
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9271414271414271
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        187 │      2 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          5 │     32 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:05:26
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_878, feature importance : 0.043478260869565216
+- Feature : ID_1719, feature importance : 0.043478260869565216
+- Feature : ID_1449, feature importance : 0.043478260869565216
+- Feature : ID_485, feature importance : 0.043478260869565216
+- Feature : ID_1179, feature importance : 0.043478260869565216
+- Feature : ID_44, feature importance : 0.043478260869565216
+- Feature : ID_618, feature importance : 0.043478260869565216
+- Feature : ID_1668, feature importance : 0.043478260869565216
+- Feature : ID_973, feature importance : 0.043478260869565216
+- Feature : ID_987, feature importance : 0.043478260869565216
+- Feature : ID_152, feature importance : 0.043478260869565216
+- Feature : ID_1760, feature importance : 0.043478260869565216
+- Feature : ID_33, feature importance : 0.043478260869565216
+- Feature : ID_231, feature importance : 0.043478260869565216
+- Feature : ID_176, feature importance : 0.043478260869565216
+- Feature : ID_228, feature importance : 0.043478260869565216
+- Feature : ID_447, feature importance : 0.043478260869565216
+- Feature : ID_1873, feature importance : 0.043478260869565216
+- Feature : ID_69, feature importance : 0.043478260869565216
+- Feature : ID_1436, feature importance : 0.043478260869565216
+- Feature : ID_869, feature importance : 0.043478260869565216
+- Feature : ID_1054, feature importance : 0.043478260869565216
+- Feature : ID_1057, feature importance : 0.043478260869565216

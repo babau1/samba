@@ -1,0 +1,55 @@
+Classification on cylinder for cylinder_data with scm.
+
+Database configuration : 
+	- Database name : cylinder
+	- View name : cylinder_data	 View shape : (540, 35)
+	- Learning Rate : 0.75
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : conjunction, max_rules : 13, p : 0.9139092724647119, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7703703703703704
+		- Score on test : 0.7481481481481481
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.7703703703703704
+		- Score on test : 0.7481481481481481
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7516869095816464
+		- Score on test : 0.7371794871794872
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  38 │  19 │
+├────┼─────┼─────┤
+│  2 │  15 │  63 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 19, feature importance : 0.15384615384615385
+- Feature index : 0, feature importance : 0.07692307692307693
+- Feature index : 30, feature importance : 0.07692307692307693
+- Feature index : 26, feature importance : 0.07692307692307693
+- Feature index : 25, feature importance : 0.07692307692307693
+- Feature index : 24, feature importance : 0.07692307692307693
+- Feature index : 20, feature importance : 0.07692307692307693
+- Feature index : 18, feature importance : 0.07692307692307693
+- Feature index : 33, feature importance : 0.07692307692307693
+- Feature index : 17, feature importance : 0.07692307692307693
+- Feature index : 8, feature importance : 0.07692307692307693
+- Feature index : 6, feature importance : 0.07692307692307693
+Model used : X[8] <= 3.000 and X[17] <= 62.000 and X[25] <= 63.900 and X[24] > 1300.000 and X[30] > 0.300 and X[6] <= 2.000 and X[20] <= 92.000 and X[0] <= 2.000 and X[33] <= 114.290 and X[19] <= 18.100 and X[26] > 31.300 and X[18] > 0.167 and X[19] > 11.200

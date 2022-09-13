@@ -1,0 +1,45 @@
+Classification on tnbc_mazid for clinic with scm.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : clinic	 View shape : (902, 18)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 14, p : 0.4205079707255689, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8210059171597633
+		- Score on test : 0.7920353982300885
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8210059171597632
+		- Score on test : 0.7920353982300885
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.5487031373881527
+		- Score on test : 0.517017017017017
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        175 │     14 │
+├──────────┼────────────┼────────┤
+│ TNBC     │         33 │      4 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:00
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_0, feature importance : 0.9285714285714286
+- Feature : ID_8, feature importance : 0.07142857142857142
+Model used : X[8] <= 0.000 or X[0] > 441.000 or X[0] > 441.000 or X[0] > 441.000 or X[0] > 441.000 or X[0] > 441.000 or X[0] > 441.000 or X[0] > 441.000 or X[0] > 441.000 or X[0] > 441.000 or X[0] > 441.000 or X[0] > 441.000 or X[0] > 441.000 or X[0] > 441.000

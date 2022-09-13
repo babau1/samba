@@ -1,0 +1,181 @@
+
+{criterion: gini, max_depth: 5, splitter: random}
+
+		0.5773242630385488
+{criterion: entropy, max_depth: 233, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 138, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 103, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 222, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 294, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 249, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 267, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 136, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 115, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 77, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 214, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 123, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 154, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 196, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 66, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 51, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 123, splitter: random}
+
+		0.571938775510204
+{criterion: entropy, max_depth: 163, splitter: random}
+
+		0.571938775510204
+{criterion: gini, max_depth: 188, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 159, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 210, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 73, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 178, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 46, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 144, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 136, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 264, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 180, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 282, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 251, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 104, splitter: random}
+
+		0.5621882086167801
+{criterion: gini, max_depth: 124, splitter: best}
+
+		0.5447278911564625
+{criterion: gini, max_depth: 284, splitter: best}
+
+		0.5447278911564625
+{criterion: gini, max_depth: 128, splitter: best}
+
+		0.5447278911564625
+{criterion: gini, max_depth: 218, splitter: best}
+
+		0.5447278911564625
+{criterion: gini, max_depth: 102, splitter: best}
+
+		0.5447278911564625
+{criterion: gini, max_depth: 141, splitter: best}
+
+		0.5447278911564625
+{criterion: gini, max_depth: 22, splitter: best}
+
+		0.5447278911564625
+{criterion: gini, max_depth: 149, splitter: best}
+
+		0.5447278911564625
+{criterion: gini, max_depth: 197, splitter: best}
+
+		0.5447278911564625
+{criterion: gini, max_depth: 269, splitter: best}
+
+		0.5447278911564625
+{criterion: entropy, max_depth: 113, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 76, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 56, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 103, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 203, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 220, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 98, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 137, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 212, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 35, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 50, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 242, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 269, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 36, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 184, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 137, splitter: best}
+
+		0.5386337868480726
+{criterion: entropy, max_depth: 245, splitter: best}
+
+		0.5386337868480726
+{criterion: gini, max_depth: 11, splitter: best}
+
+		0.5304421768707482

@@ -1,0 +1,67 @@
+Classification on bleuets for metabolomics_bleuets with adaboost.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 12, base_estimator : DecisionTreeClassifier
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.75
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       3 │         3 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:01:43
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.2607607089647883
+- Feature : ID_12161, feature importance : 0.09075454421194414
+- Feature : ID_10763, feature importance : 0.08824911988026729
+- Feature : ID_3433, feature importance : 0.08520358594611542
+- Feature : ID_2551, feature importance : 0.08444393410341285
+- Feature : ID_3613, feature importance : 0.08329689229685393
+- Feature : ID_116, feature importance : 0.08157961832430724
+- Feature : ID_11633, feature importance : 0.07767507448304978
+- Feature : ID_2877, feature importance : 0.0764917522930743
+- Feature : ID_2060, feature importance : 0.07154476949618675
+
+
+ Estimator error | Estimator weight
+0.05555555555555554 | 0.1010535247148082
+0.08823529411764706 | 0.08329689229685393
+0.10483870967741937 | 0.0764917522930743
+0.10256410256410255 | 0.07736463693349337
+0.08568211068211068 | 0.08444393410341285
+0.07768537952515053 | 0.08824911988026729
+0.09218626091437673 | 0.08157961832430724
+0.1185865772005571 | 0.07154476949618675
+0.10176574314774858 | 0.07767507448304978
+0.08402825347351214 | 0.08520358594611542
+0.09041171812480006 | 0.08234254731648677
+0.07279932700418222 | 0.09075454421194414

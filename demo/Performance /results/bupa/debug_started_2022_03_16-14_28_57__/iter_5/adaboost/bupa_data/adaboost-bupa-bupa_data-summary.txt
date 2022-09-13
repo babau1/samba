@@ -1,0 +1,72 @@
+Classification on bupa for bupa_data with adaboost.
+
+Database configuration : 
+	- Database name : bupa
+	- View name : bupa_data	 View shape : (345, 6)
+	- Learning Rate : 0.7478260869565218
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 21, base_estimator : DecisionTreeClassifier
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8217054263565892
+		- Score on test : 0.6896551724137931
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8217054263565892
+		- Score on test : 0.6896551724137931
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8064814814814815
+		- Score on test : 0.6667567567567567
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  19 │  18 │
+├────┼─────┼─────┤
+│  2 │   9 │  41 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:22
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 2, feature importance : 0.24665557401049037
+- Feature index : 4, feature importance : 0.2254839583954763
+- Feature index : 3, feature importance : 0.16892564043558742
+- Feature index : 1, feature importance : 0.13297791900923522
+- Feature index : 5, feature importance : 0.12511548004269352
+- Feature index : 0, feature importance : 0.1008414281065174
+
+
+ Estimator error | Estimator weight
+0.35658914728682173 | 0.08553502795295277
+0.37788108957569405 | 0.07225294631066592
+0.3748678991573833 | 0.07411344627063764
+0.3998308292342425 | 0.058864472738597566
+0.40120368528555683 | 0.05803581957821453
+0.4003821106622177 | 0.05853160704311499
+0.39622534457837 | 0.06104530059217954
+0.39882288321805776 | 0.05947347105866904
+0.3976539657918695 | 0.06018037733521129
+0.3944169271392194 | 0.06214170260975545
+0.40842691198502057 | 0.053690947825311745
+0.4502297093622437 | 0.0289478370067126
+0.43608054660669804 | 0.037258143044625734
+0.41937430442599327 | 0.04715048028120565
+0.459619403349482 | 0.023459836931469167
+0.43697035728716016 | 0.03673386793379076
+0.4235242675910318 | 0.04468384080603452
+0.4446291815393523 | 0.03223080639002896
+0.4529835776141051 | 0.027336311516723184
+0.4849051907526332 | 0.00875316247958913
+0.48347928034441956 | 0.009580594294509939

@@ -1,0 +1,44 @@
+Classification on bleuets for metabolomics_bleuets with scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : conjunction, max_rules : 2, p : 0.2657909476510478, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9444444444444444
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9444444444444444
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8888888888888888
+		- Score on test : 0.75
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       3 │         3 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:06
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_2060, feature importance : 1.0
+Model used : X[2060] > 1413.745

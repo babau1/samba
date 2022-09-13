@@ -1,0 +1,3 @@
+,decision_tree-ionosphere_data,samba-ionosphere_data,random_forest-ionosphere_data,adaboost-ionosphere_data,scm-ionosphere_data,random_scm-ionosphere_data
+Train,1.0,0.9763313609467456,0.9491690796928113,1.0,0.9195832808762432,0.953890217801838
+Test,0.8080357142857143,0.8370535714285714,0.84375,0.859375,0.8683035714285714,0.8727678571428572

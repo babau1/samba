@@ -1,0 +1,56 @@
+Classification on australian for australian with random_scm.
+
+Database configuration : 
+	- Database name : australian
+	- View name : australian	 View shape : (690, 14)
+	- Learning Rate : 0.7492753623188406
+	- Labels used : -, +
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 250, max_rules : 12, max_samples : 0.014775950666979565, max_features : 0.7503358808685543, model_type : disjunction, p_options : [0.5070649860836841], random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8781431334622823
+		- Score on test : 0.8497109826589595
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8781431334622823
+		- Score on test : 0.8497109826589595
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8803135888501743
+		- Score on test : 0.8517316017316017
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   - │   + │
+╞════╪═════╪═════╡
+│ -  │  80 │  16 │
+├────┼─────┼─────┤
+│ +  │  10 │  67 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:36
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 7, feature importance : 0.22407888170798057
+- Feature index : 6, feature importance : 0.13418560166969368
+- Feature index : 4, feature importance : 0.11853061480822939
+- Feature index : 1, feature importance : 0.09776168743347367
+- Feature index : 13, feature importance : 0.07985131419980522
+- Feature index : 9, feature importance : 0.07184946874231558
+- Feature index : 2, feature importance : 0.07119747719292978
+- Feature index : 12, feature importance : 0.06769596192114635
+- Feature index : 8, feature importance : 0.056678775961430373
+- Feature index : 5, feature importance : 0.02533407163920201
+- Feature index : 10, feature importance : 0.02373249239764326
+- Feature index : 3, feature importance : 0.012745227398734344
+- Feature index : 0, feature importance : 0.012513495991484628
+- Feature index : 11, feature importance : 0.003844928935931031

@@ -1,0 +1,61 @@
+Classification on hepatitis for hepatitis_data with random_forest.
+
+Database configuration : 
+	- Database name : hepatitis
+	- View name : hepatitis_data	 View shape : (155, 19)
+	- Learning Rate : 0.7483870967741936
+	- Labels used : LIVE, DIE
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 77, max_depth : 3, criterion : gini, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8189655172413793
+		- Score on test : 0.6410256410256411
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8189655172413793
+		- Score on test : 0.6410256410256411
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8070913461538461
+		- Score on test : 0.6349206349206349
+
+Test set confusion matrix : 
+
+╒══════╤════════╤═══════╕
+│      │   LIVE │   DIE │
+╞══════╪════════╪═══════╡
+│ LIVE │     15 │     6 │
+├──────┼────────┼───────┤
+│ DIE  │      8 │    10 │
+╘══════╧════════╧═══════╛
+
+
+
+ Classification took 0:00:36
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 15, feature importance : 0.1824302106629355
+- Feature index : 17, feature importance : 0.14862946627610743
+- Feature index : 11, feature importance : 0.09787738398112632
+- Feature index : 0, feature importance : 0.08882919918724913
+- Feature index : 16, feature importance : 0.07603582364692987
+- Feature index : 13, feature importance : 0.07141206075722113
+- Feature index : 18, feature importance : 0.06391375415224318
+- Feature index : 14, feature importance : 0.05402991432899114
+- Feature index : 1, feature importance : 0.05303429597400536
+- Feature index : 12, feature importance : 0.04697839443999579
+- Feature index : 9, feature importance : 0.022685305080181586
+- Feature index : 10, feature importance : 0.020838809192546222
+- Feature index : 4, feature importance : 0.01908398147633638
+- Feature index : 8, feature importance : 0.015883312108045163
+- Feature index : 2, feature importance : 0.014898554058218704
+- Feature index : 5, feature importance : 0.009146774906411862
+- Feature index : 6, feature importance : 0.006502308587156008
+- Feature index : 7, feature importance : 0.0050733288584517595
+- Feature index : 3, feature importance : 0.0027171223258474525

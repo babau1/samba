@@ -1,0 +1,46 @@
+Classification on ionosphere for ionosphere_data with decision_tree.
+
+Database configuration : 
+	- Database name : ionosphere
+	- View name : ionosphere_data	 View shape : (351, 34)
+	- Learning Rate : 0.7492877492877493
+	- Labels used : bad, good
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 2, criterion : entropy, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9049429657794676
+		- Score on test : 0.8977272727272727
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9049429657794676
+		- Score on test : 0.8977272727272727
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8906269671408789
+		- Score on test : 0.8861607142857143
+
+Test set confusion matrix : 
+
+╒══════╤═══════╤════════╕
+│      │   bad │   good │
+╞══════╪═══════╪════════╡
+│ bad  │    27 │      5 │
+├──────┼───────┼────────┤
+│ good │     4 │     52 │
+╘══════╧═══════╧════════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+First featrue : 
+	4 <= 0.023129999171942472
+Feature importances : 
+- Feature index : 4, feature importance : 0.6132247176132323
+- Feature index : 26, feature importance : 0.38677528238676784

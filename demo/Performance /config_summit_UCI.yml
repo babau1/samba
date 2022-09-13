@@ -1,0 +1,36 @@
+# The base configuration of the benchmark
+log: True
+name: ["abalone", "australian", "balance", "bupa", "cylinder", "hepatitis", "ionosphere", "pima", "yeast",]
+label: "_"
+file_type: ".hdf5"
+views:
+pathf: "/home/baptiste/Documents/Datasets/UCI/both/"
+nice: 0
+random_state: 42
+nb_cores: 6
+full: True
+debug: True
+add_noise: False
+noise_std: 0.0
+res_dir: "../results/"
+track_tracebacks: True
+
+# All the classification-realted configuration options
+multiclass_method: "oneVersusOne"
+split: 0.25
+nb_folds: 7
+nb_class: 2
+classes:
+type: ["monoview"]
+algos_monoview: ["decision_tree", "adaboost", "samba", "random_forest", "random_scm", "scm"]
+algos_multiview: ["early_fusion_adaboost"]
+stats_iter: 10
+metrics:
+  accuracy_score: {}
+  f1_score: {}
+  balanced_accuracy: {}
+metric_princ: "balanced_accuracy"
+hps_type: "Random"
+hps_args:
+  n_iter: 60
+  equivalent_draws: False

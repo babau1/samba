@@ -1,0 +1,48 @@
+Classification on abalone for Abalone_data with samba.
+
+Database configuration : 
+	- Database name : abalone
+	- View name : Abalone_data	 View shape : (4177, 8)
+	- Learning Rate : 0.7498204452956667
+	- Labels used : <10, >=10
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 43, relevance : <SamBA.relevances.ExpRelevance object at 0x7f04f173df60>, distance : <SamBA.distances.EuclidianDist object at 0x7f04f173d6d8>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f04f1973e10>, b : 4.021506462009975, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 0.0001
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7848020434227331
+		- Score on test : 0.7626794258373206
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.7848020434227331
+		- Score on test : 0.7626794258373206
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7849285574476415
+		- Score on test : 0.7627708751520124
+
+Test set confusion matrix : 
+
+╒══════╤═══════╤════════╕
+│      │   <10 │   >=10 │
+╞══════╪═══════╪════════╡
+│ <10  │   383 │    141 │
+├──────┼───────┼────────┤
+│ >=10 │   107 │    414 │
+╘══════╧═══════╧════════╛
+
+
+
+ Classification took 0:51:02
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 2, feature importance : 0.6046511627906976
+- Feature index : 7, feature importance : 0.18604651162790697
+- Feature index : 3, feature importance : 0.09302325581395349
+- Feature index : 0, feature importance : 0.046511627906976744
+- Feature index : 5, feature importance : 0.046511627906976744
+- Feature index : 4, feature importance : 0.023255813953488372

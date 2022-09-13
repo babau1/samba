@@ -1,0 +1,58 @@
+Classification on zoo for zoo_data with random_scm.
+
+Database configuration : 
+	- Database name : zoo
+	- View name : zoo_data	 View shape : (101, 16)
+	- Learning Rate : 0.7425742574257426
+	- Labels used : Mamal, non-Mamal
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 278, max_rules : 4, max_samples : 0.5594289504692234, max_features : 0.5015426764214833, model_type : disjunction, p_options : [0.21414572777284635], random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 1.0
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 1.0
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 1.0
+
+Test set confusion matrix : 
+
+╒═══════════╤═════════╤═════════════╕
+│           │   Mamal │   non-Mamal │
+╞═══════════╪═════════╪═════════════╡
+│ Mamal     │      11 │           0 │
+├───────────┼─────────┼─────────────┤
+│ non-Mamal │       0 │          15 │
+╘═══════════╧═════════╧═════════════╛
+
+
+
+ Classification took 0:00:24
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 3, feature importance : 0.3718807176600017
+- Feature index : 0, feature importance : 0.17152168663254483
+- Feature index : 2, feature importance : 0.16173859783942932
+- Feature index : 10, feature importance : 0.06696942310245048
+- Feature index : 8, feature importance : 0.05312581680857167
+- Feature index : 12, feature importance : 0.0437788685881162
+- Feature index : 7, feature importance : 0.030983206629457243
+- Feature index : 9, feature importance : 0.027167737599008285
+- Feature index : 15, feature importance : 0.016535184178964754
+- Feature index : 14, feature importance : 0.015120990795237503
+- Feature index : 13, feature importance : 0.013118667813219752
+- Feature index : 6, feature importance : 0.01094471714702905
+- Feature index : 1, feature importance : 0.005804016668879042
+- Feature index : 4, feature importance : 0.005804016668879042
+- Feature index : 5, feature importance : 0.002969496900356719
+- Feature index : 11, feature importance : 0.002536854967854416

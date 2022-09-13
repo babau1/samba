@@ -1,0 +1,66 @@
+Classification on yeast for yeast_data with adaboost.
+
+Database configuration : 
+	- Database name : yeast
+	- View name : yeast_data	 View shape : (1484, 8)
+	- Learning Rate : 0.75
+	- Labels used : CYT, non-CYT
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 14, base_estimator : DecisionTreeClassifier
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8265947888589398
+		- Score on test : 0.7412398921832885
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8265947888589399
+		- Score on test : 0.7412398921832885
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.785744652034221
+		- Score on test : 0.6731406355645706
+
+Test set confusion matrix : 
+
+╒═════════╤═══════╤═══════════╕
+│         │   CYT │   non-CYT │
+╞═════════╪═══════╪═══════════╡
+│ CYT     │    57 │        59 │
+├─────────┼───────┼───────────┤
+│ non-CYT │    37 │       218 │
+╘═════════╧═══════╧═══════════╛
+
+
+
+ Classification took 0:00:30
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 2, feature importance : 0.29725620783862494
+- Feature index : 1, feature importance : 0.17455190097888082
+- Feature index : 3, feature importance : 0.16016589706352288
+- Feature index : 7, feature importance : 0.1281221079096387
+- Feature index : 6, feature importance : 0.11786367178410713
+- Feature index : 0, feature importance : 0.10047683240173896
+- Feature index : 5, feature importance : 0.02156338202348645
+
+
+ Estimator error | Estimator weight
+0.24707996406109614 | 0.15538647155502575
+0.2763614666955956 | 0.1342361900092529
+0.3242959875108123 | 0.10237314849342984
+0.3383344482930869 | 0.09353549147428118
+0.41201812085176037 | 0.04959394466462711
+0.3704469015899633 | 0.07395259602763135
+0.3525655672858975 | 0.08475762697934815
+0.4182219566348916 | 0.04603059860443886
+0.42281395176854564 | 0.0434026789773761
+0.3916174804348018 | 0.06143214297403204
+0.4283701461163647 | 0.040233110093844726
+0.44370769780083735 | 0.03153449108082077
+0.4117080156458899 | 0.04977247396439865
+0.43977391586793935 | 0.03375903510149251

@@ -1,0 +1,58 @@
+Classification on cylinder for cylinder_data with samba.
+
+Database configuration : 
+	- Database name : cylinder
+	- View name : cylinder_data	 View shape : (540, 35)
+	- Learning Rate : 0.75
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 36, relevance : <SamBA.relevances.ExpRelevance object at 0x7f04f0bd54e0>, distance : <SamBA.distances.EuclidianDist object at 0x7f04f0bd5eb8>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f04f0bd5b38>, b : 4.939189188437259, pred_train : True, normalizer : RobustScaler(), normalize_dists : True, a : 1e-06
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.674074074074074
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.674074074074074
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.6541835357624831
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  30 │  27 │
+├────┼─────┼─────┤
+│  2 │  17 │  61 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:03:58
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 24, feature importance : 0.5277777777777778
+- Feature index : 16, feature importance : 0.05555555555555555
+- Feature index : 21, feature importance : 0.05555555555555555
+- Feature index : 17, feature importance : 0.027777777777777776
+- Feature index : 20, feature importance : 0.027777777777777776
+- Feature index : 23, feature importance : 0.027777777777777776
+- Feature index : 25, feature importance : 0.027777777777777776
+- Feature index : 33, feature importance : 0.027777777777777776
+- Feature index : 18, feature importance : 0.027777777777777776
+- Feature index : 28, feature importance : 0.027777777777777776
+- Feature index : 29, feature importance : 0.027777777777777776
+- Feature index : 30, feature importance : 0.027777777777777776
+- Feature index : 3, feature importance : 0.027777777777777776
+- Feature index : 31, feature importance : 0.027777777777777776
+- Feature index : 32, feature importance : 0.027777777777777776
+- Feature index : 8, feature importance : 0.027777777777777776

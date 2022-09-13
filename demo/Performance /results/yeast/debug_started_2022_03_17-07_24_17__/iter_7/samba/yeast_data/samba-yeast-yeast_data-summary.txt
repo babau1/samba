@@ -1,0 +1,49 @@
+Classification on yeast for yeast_data with samba.
+
+Database configuration : 
+	- Database name : yeast
+	- View name : yeast_data	 View shape : (1484, 8)
+	- Learning Rate : 0.75
+	- Labels used : CYT, non-CYT
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 66, relevance : <SamBA.relevances.ExpRelevance object at 0x7f04eb3c7470>, distance : <SamBA.distances.EuclidianDist object at 0x7f04eb3c7898>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f04eb3c74e0>, b : 5.581070943735568, pred_train : True, normalizer : RobustScaler(), normalize_dists : True, a : 1e-07
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7520215633423181
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7520215633423181
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7021298174442191
+
+Test set confusion matrix : 
+
+╒═════════╤═══════╤═══════════╕
+│         │   CYT │   non-CYT │
+╞═════════╪═══════╪═══════════╡
+│ CYT     │    66 │        50 │
+├─────────┼───────┼───────────┤
+│ non-CYT │    42 │       213 │
+╘═════════╧═══════╧═══════════╛
+
+
+
+ Classification took 0:21:34
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 3, feature importance : 0.48484848484848486
+- Feature index : 1, feature importance : 0.3939393939393939
+- Feature index : 2, feature importance : 0.06060606060606061
+- Feature index : 0, feature importance : 0.015151515151515152
+- Feature index : 5, feature importance : 0.015151515151515152
+- Feature index : 6, feature importance : 0.015151515151515152
+- Feature index : 7, feature importance : 0.015151515151515152

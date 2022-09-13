@@ -1,0 +1,56 @@
+Classification on australian for australian with random_forest.
+
+Database configuration : 
+	- Database name : australian
+	- View name : australian	 View shape : (690, 14)
+	- Learning Rate : 0.7492753623188406
+	- Labels used : -, +
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 42, max_depth : 5, criterion : gini, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9168278529980658
+		- Score on test : 0.8497109826589595
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9168278529980658
+		- Score on test : 0.8497109826589595
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.916452052719285
+		- Score on test : 0.8517316017316017
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   - │   + │
+╞════╪═════╪═════╡
+│ -  │  80 │  16 │
+├────┼─────┼─────┤
+│ +  │  10 │  67 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:31
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 7, feature importance : 0.4183672892630052
+- Feature index : 6, feature importance : 0.09594955836950071
+- Feature index : 9, feature importance : 0.09157369433344877
+- Feature index : 8, feature importance : 0.08557332278709077
+- Feature index : 13, feature importance : 0.07329358131595326
+- Feature index : 4, feature importance : 0.06269456149820209
+- Feature index : 2, feature importance : 0.05493236083242115
+- Feature index : 12, feature importance : 0.036174671466045465
+- Feature index : 1, feature importance : 0.034357112229500754
+- Feature index : 3, feature importance : 0.017893933341564545
+- Feature index : 5, feature importance : 0.015170997956619576
+- Feature index : 11, feature importance : 0.007241431870635772
+- Feature index : 0, feature importance : 0.004439440650190246
+- Feature index : 10, feature importance : 0.002338044085821825

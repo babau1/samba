@@ -20,7 +20,7 @@ class ExpRelevance():
             for class_label in np.unique(y):
                 balanced_class = y.copy()
                 indices = np.where(y==class_label)[0]
-                balanced_class[indices] = y[indices]*class_ratio
+                balanced_class[indices] = y[indices]*self.class_ratio
         if self.use_confid:
             if isinstance(estim, DecisionTreeClassifier) and estim.max_depth == 1:
                 feat_used = estim.tree_.feature[0]

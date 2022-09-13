@@ -1,0 +1,45 @@
+Classification on tnbc_mazid for clinic with scm.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : clinic	 View shape : (902, 18)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 2, p : 0.16834940988688984, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.5458579881656804
+		- Score on test : 0.4557522123893805
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.5458579881656804
+		- Score on test : 0.4557522123893805
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.6032959565069657
+		- Score on test : 0.5333190333190333
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │         79 │    110 │
+├──────────┼────────────┼────────┤
+│ TNBC     │         13 │     24 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:00
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_17, feature importance : 0.5
+- Feature : ID_10, feature importance : 0.5
+Model used : X[10] <= 59.000 or X[17] > 0.000

@@ -10,30 +10,39 @@ from sklearn.tree import DecisionTreeClassifier
 class VizSamba():
 
     def plot_projection(self, X, y, save=True, path=".", rs=42, contour=False,
-                        template="plotly"):
+                        template="plotly", feature_ids=None, force_2d=False,):
         if self.normalizer is not None:
             new_X = self.normalizer.fit_transform(X)
         else:
             new_X = X.copy()
         if self.support_feats.shape[0] == 1:
             sec_dim = np.random.RandomState(rs).uniform(0,1, size=new_X.shape[0])
-            fig = self._plot_2d(X, y, sec_dim=sec_dim, contour=contour)
-        elif self.support_feats.shape[0]==2:
-            fig = self._plot_2d(X, y, contour=contour)
+            fig = self._plot_2d(X, y, sec_dim=sec_dim, contour=contour, feature_ids=feature_ids)
+        elif self.support_feats.shape[0]==2 or force_2d:
+            if force_2d:
+                best_feats = np.argsort(-self.feature_importances_)[:2]
+                supp = self.support_feats
+                self.support_feats = best_feats
+            fig = self._plot_2d(X, y, contour=contour, feature_ids=feature_ids)
+            self.support_feats = supp
         else:
             best_feats = np.argsort(-self.feature_importances_)[:3]
             fig = go.Figure()
             labels = np.unique(y)
+            data = new_X[:, best_feats]
             for label in labels:
-                data = new_X[np.where(y == label)[0], best_feats]
-                fig.add_trace(go.Scatter3d(x=data[:, 0],
-                                           y=data[:, 1],
-                                           z=data[:, 2],
+                fig.add_trace(go.Scatter3d(x=data[np.where(y == label)[0], 0],
+                                           y=data[np.where(y == label)[0], 1],
+                                           z=data[np.where(y == label)[0], 2],
                                            name="Class {}".format(label + 1),
                                            mode="markers",
                                            marker=dict(
                                                size=1, )))
             fig.update_layout(template=template)
+            if feature_ids is not None:
+                fig.update_layout(scene = dict(xaxis_title=feature_ids[best_feats[0]].decode(),
+                                  yaxis_title=feature_ids[best_feats[1]].decode(),
+                                  zaxis_title=feature_ids[best_feats[2]].decode(),))
         if save:
             plotly.offline.plot(fig, filename=os.path.join(path, "projection_fig.html"), auto_open=False)
         else:
@@ -65,32 +74,39 @@ class VizSamba():
 
     def _plot_2d(self, X, y, sec_dim=None, contour=False,
                  random_state=np.random.RandomState(42),
-                 n_estimators=None, title="", template="plotly"):
+                 n_estimators=None, title="", template="plotly",
+                 feature_ids=None):
         if sec_dim is None:
-            if X.shape[1] < 2:
+            if X.shape[1] < 2 :
                 sec_dim = np.random.uniform(low=X.min(), high=X.max(),
                                             size=X.shape[0],
                                             random_state=random_state)
-            elif X.shape[1] == 2:
+            elif X.shape[1] == 2 or len(self.support_feats)<2:
                 feat_1 = self.support_feats[0]
-                sec_dim = X[:,[_ for _ in [0,1] if _ !=feat_1][0]]
+                sec_dim = X[:, [_ for _ in [0, 1] if _ != feat_1][0]]
+            elif len(self.support_feats)<2:
+                feat = np.random.choice(X.shape[1], size=1, random_state=random_state)
+                sec_dim = X[:, feat]
             else:
                 sec_dim = X[:, self.support_feats[1]]
         fig = go.Figure()
         labels = np.unique(y)
+        preds = self._predict_vote(X, n_estimators=n_estimators)
+        preds = self.zero_binarizer.fit_transform(np.sign(preds))
+        symbols = np.array(["x" if label == y[0] else "circle" for label in preds])
         for label in labels:
             if contour:
-                opacity=0.9
+                opacity = 0.9
             else:
-                opacity=0.7
-            indices = np.where(y == label)[0]
+                opacity = 0.7
+            indices = np.where(np.sign(y) == label)[0]
             fig.add_trace(go.Scatter(x=X[indices, self.support_feats[0]],
                                      y=sec_dim[indices],
                                      opacity=opacity,
                                      name="Class {}".format(label + 1),
                                      mode="markers",
                                      marker=dict(
-                                         size=5, )))
+                                         size=5, symbol=symbols[indices])))
         if contour:
             fig.add_trace(go.Contour(
                 z=-self._predict_vote(X, n_estimators=n_estimators),
@@ -105,12 +121,15 @@ class VizSamba():
                               plot_bgcolor='rgba(0,0,0,0)',
                               showlegend=False, margin=dict(l=0, r=0, t=0, b=0))
             # fig.update_traces(marker_coloraxis=None)
-            fig.update_xaxes(visible=False)
-            fig.update_yaxes(visible=False)
+            # fig.update_xaxes(visible=False)
+            # fig.update_yaxes(visible=False)
             if n_estimators is not None and isinstance(self.base_estimator, DecisionTreeClassifier) and self.base_estimator.max_depth == 1:
                 fig.update_layout(title=title+"<br> Feat: {}, threshold: {}".format(self.estimators_[n_estimators-1].tree_.feature[0],
                                                                          self.estimators_[n_estimators-1].tree_.threshold[0] ),
                                   template=template)
+        if feature_ids is not None:
+            fig.update_layout(xaxis_title=feature_ids[self.support_feats[0]].decode(),
+                              yaxis_title=feature_ids[self.support_feats[1]].decode())
         return fig
 
     def plot_contour_gif(self, X, y, sec_dim=None,
@@ -149,16 +168,16 @@ class VizSamba():
 
     def _save_data(self, preds, preds_train, iter, y):
         for sample_index, (sample_class, sample, prediction, pred_train, vote, weight) in enumerate(zip(y, self.train_samples, preds, preds_train, self.votes, self.train_weights[:, iter])):
-            self.saved_data = self.saved_data.append({"Iteration":int(iter),
+            self.saved_data.loc[self.saved_ind] = {"Iteration":int(iter),
                                                       "Index": sample_index,
                                                       "Pred": prediction,
                                                       "Pred Train":pred_train,
                                                       "Margin": vote*sample_class,
                                                       "Class": sample_class,
-                                                      "X": sample[0],
-                                                      "Y": sample[1],
-                                                      "Weight":weight},
-                                                     ignore_index=True)
+                                                      "X": sample[4],
+                                                      "Y": sample[5],
+                                                      "Weight":weight}
+            self.saved_ind+=1
 
     def plot_saved_data(self, template="plotly"):
         fig = px.scatter(self.saved_data, x="X", y="Y", animation_frame="Iteration",

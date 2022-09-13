@@ -1,0 +1,55 @@
+Classification on australian for australian with random_forest.
+
+Database configuration : 
+	- Database name : australian
+	- View name : australian	 View shape : (690, 14)
+	- Learning Rate : 0.7492753623188406
+	- Labels used : -, +
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 5, max_depth : 4, criterion : gini, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8936170212765957
+		- Score on test : 0.8439306358381503
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8936170212765957
+		- Score on test : 0.8439306358381503
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8890698379033479
+		- Score on test : 0.8413825757575758
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   - │   + │
+╞════╪═════╪═════╡
+│ -  │  83 │  13 │
+├────┼─────┼─────┤
+│ +  │  14 │  63 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:34
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 7, feature importance : 0.3595954500849862
+- Feature index : 8, feature importance : 0.20441463416692346
+- Feature index : 13, feature importance : 0.09230018882937978
+- Feature index : 9, feature importance : 0.08563707371369228
+- Feature index : 4, feature importance : 0.08044762098893729
+- Feature index : 6, feature importance : 0.07441658797254873
+- Feature index : 1, feature importance : 0.03884868173856978
+- Feature index : 12, feature importance : 0.026535113543868935
+- Feature index : 2, feature importance : 0.016844876443623355
+- Feature index : 5, feature importance : 0.008816275068576898
+- Feature index : 11, feature importance : 0.00832664586802524
+- Feature index : 0, feature importance : 0.003495268548230696
+- Feature index : 10, feature importance : 0.0003215830326375621

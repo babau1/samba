@@ -1,0 +1,52 @@
+Classification on pima for pima with decision_tree.
+
+Database configuration : 
+	- Database name : pima
+	- View name : pima	 View shape : (768, 8)
+	- Learning Rate : 0.75
+	- Labels used : No, Yes
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 130, criterion : entropy, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.6770833333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.6770833333333334
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.637731343283582
+
+Test set confusion matrix : 
+
+╒═════╤══════╤═══════╕
+│     │   No │   Yes │
+╞═════╪══════╪═══════╡
+│ No  │   96 │    29 │
+├─────┼──────┼───────┤
+│ Yes │   33 │    34 │
+╘═════╧══════╧═══════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+First featrue : 
+	1 <= 127.5
+Feature importances : 
+- Feature index : 1, feature importance : 0.2679679006982774
+- Feature index : 5, feature importance : 0.20196059682850245
+- Feature index : 7, feature importance : 0.16022834583085513
+- Feature index : 6, feature importance : 0.1388308209721029
+- Feature index : 0, feature importance : 0.08572617867081865
+- Feature index : 4, feature importance : 0.06676703970650495
+- Feature index : 2, feature importance : 0.05835857478088891
+- Feature index : 3, feature importance : 0.020160542512049566

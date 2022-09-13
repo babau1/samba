@@ -1,0 +1,57 @@
+Classification on tnbc_mazid for methyl with decision_tree.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : methyl	 View shape : (902, 2000)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 63, criterion : entropy, splitter : random, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9469026548672567
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9469026548672567
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8921778921778922
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        184 │      5 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          7 │     30 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:10
+
+ Classifier Interpretation : 
+First feature : 
+	ID_126 <= 0.7185605438722581
+Feature importances : 
+- Feature : ID_126, feature importance : 0.5552061300853017
+- Feature : ID_447, feature importance : 0.16709765354834047
+- Feature : ID_44, feature importance : 0.06709721425112881
+- Feature : ID_373, feature importance : 0.04542849765975044
+- Feature : ID_1663, feature importance : 0.02575441006411951
+- Feature : ID_1203, feature importance : 0.025136934604378207
+- Feature : ID_1464, feature importance : 0.024096729862180657
+- Feature : ID_87, feature importance : 0.01903669678059829
+- Feature : ID_1283, feature importance : 0.018570222183175666
+- Feature : ID_130, feature importance : 0.017642960198991833
+- Feature : ID_1044, feature importance : 0.014466090177263262
+- Feature : ID_1741, feature importance : 0.012933653072993176
+- Feature : ID_1859, feature importance : 0.007532807511778069

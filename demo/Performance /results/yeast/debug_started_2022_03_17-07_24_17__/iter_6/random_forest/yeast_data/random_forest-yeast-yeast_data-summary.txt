@@ -1,0 +1,50 @@
+Classification on yeast for yeast_data with random_forest.
+
+Database configuration : 
+	- Database name : yeast
+	- View name : yeast_data	 View shape : (1484, 8)
+	- Learning Rate : 0.75
+	- Labels used : CYT, non-CYT
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 43, max_depth : 9, criterion : gini, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8769092542677448
+		- Score on test : 0.7520215633423181
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8769092542677448
+		- Score on test : 0.7520215633423181
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8301799835968127
+		- Score on test : 0.6457403651115619
+
+Test set confusion matrix : 
+
+╒═════════╤═══════╤═══════════╕
+│         │   CYT │   non-CYT │
+╞═════════╪═══════╪═══════════╡
+│ CYT     │    42 │        74 │
+├─────────┼───────┼───────────┤
+│ non-CYT │    18 │       237 │
+╘═════════╧═══════╧═══════════╛
+
+
+
+ Classification took 0:00:52
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 2, feature importance : 0.2713809034034714
+- Feature index : 1, feature importance : 0.16198422620477812
+- Feature index : 3, feature importance : 0.15527636266368994
+- Feature index : 7, feature importance : 0.14782984993330298
+- Feature index : 0, feature importance : 0.13929497495144091
+- Feature index : 6, feature importance : 0.11511679142112725
+- Feature index : 5, feature importance : 0.005979259051636651
+- Feature index : 4, feature importance : 0.003137632370552772

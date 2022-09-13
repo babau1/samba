@@ -1,0 +1,56 @@
+Classification on tnbc_mazid for rna_iso with samba.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : rna_iso	 View shape : (902, 2000)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 16, relevance : <SamBA.relevances.ExpRelevance object at 0x7f132408cba8>, distance : <SamBA.distances.ExpEuclidianDist object at 0x7f132408ca20>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f132408c9e8>, b : 1.427597281814158, pred_train : True, normalizer : RobustScaler(), normalize_dists : True, a : 0.001
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9778761061946902
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9778761061946902
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9433004433004433
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        188 │      1 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          4 │     33 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:04:46
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_1613, feature importance : 0.125
+- Feature : ID_1482, feature importance : 0.125
+- Feature : ID_588, feature importance : 0.0625
+- Feature : ID_85, feature importance : 0.0625
+- Feature : ID_1785, feature importance : 0.0625
+- Feature : ID_73, feature importance : 0.0625
+- Feature : ID_1652, feature importance : 0.0625
+- Feature : ID_499, feature importance : 0.0625
+- Feature : ID_75, feature importance : 0.0625
+- Feature : ID_1689, feature importance : 0.0625
+- Feature : ID_1571, feature importance : 0.0625
+- Feature : ID_494, feature importance : 0.0625
+- Feature : ID_1972, feature importance : 0.0625
+- Feature : ID_726, feature importance : 0.0625

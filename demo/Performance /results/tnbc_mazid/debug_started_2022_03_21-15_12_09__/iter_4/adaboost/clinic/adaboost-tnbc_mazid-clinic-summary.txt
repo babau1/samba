@@ -1,0 +1,64 @@
+Classification on tnbc_mazid for clinic with adaboost.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : clinic	 View shape : (902, 18)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 3, base_estimator : DecisionTreeClassifier
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8653846153846154
+		- Score on test : 0.7964601769911505
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8653846153846154
+		- Score on test : 0.7964601769911505
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.6381486335614776
+		- Score on test : 0.5413985413985414
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        174 │     15 │
+├──────────┼────────────┼────────┤
+│ TNBC     │         31 │      6 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:05
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_4, feature importance : 0.2794426921063352
+- Feature : ID_10, feature importance : 0.208100437771679
+- Feature : ID_14, feature importance : 0.07983346895553711
+- Feature : ID_8, feature importance : 0.06286686671040888
+- Feature : ID_11, feature importance : 0.051710031700634936
+- Feature : ID_12, feature importance : 0.04644448338935432
+- Feature : ID_1, feature importance : 0.043124826086787214
+- Feature : ID_7, feature importance : 0.041054011374954735
+- Feature : ID_13, feature importance : 0.036495987695492026
+- Feature : ID_3, feature importance : 0.03358596141156045
+- Feature : ID_16, feature importance : 0.03148695090268083
+- Feature : ID_17, feature importance : 0.0288663112556432
+- Feature : ID_9, feature importance : 0.02360402120791735
+- Feature : ID_0, feature importance : 0.017298645867822867
+- Feature : ID_15, feature importance : 0.008433517546429608
+- Feature : ID_5, feature importance : 0.007651786016762283
+
+
+ Estimator error | Estimator weight
+0.1346153846153846 | 0.5272595266238193
+0.3366300366300366 | 0.19221559712721867
+0.2709119320190341 | 0.28052487624896205

@@ -1,0 +1,45 @@
+Classification on pima for pima with samba.
+
+Database configuration : 
+	- Database name : pima
+	- View name : pima	 View shape : (768, 8)
+	- Learning Rate : 0.75
+	- Labels used : No, Yes
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 11, relevance : <SamBA.relevances.ExpRelevance object at 0x7f04f1ee2588>, distance : <SamBA.distances.PolarDist object at 0x7f04e940d128>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f04e9fc59e8>, b : 5.031450357357601, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 0.001
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.765625
+		- Score on test : 0.7239583333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.765625
+		- Score on test : 0.7239583333333333
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.749592039800995
+		- Score on test : 0.6737313432835821
+
+Test set confusion matrix : 
+
+╒═════╤══════╤═══════╕
+│     │   No │   Yes │
+╞═════╪══════╪═══════╡
+│ No  │  105 │    20 │
+├─────┼──────┼───────┤
+│ Yes │   33 │    34 │
+╘═════╧══════╧═══════╛
+
+
+
+ Classification took 0:06:30
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 1, feature importance : 0.45454545454545453
+- Feature index : 5, feature importance : 0.45454545454545453
+- Feature index : 7, feature importance : 0.09090909090909091

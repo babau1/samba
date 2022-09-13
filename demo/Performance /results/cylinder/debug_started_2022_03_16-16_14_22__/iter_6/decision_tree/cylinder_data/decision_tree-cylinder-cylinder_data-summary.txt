@@ -1,0 +1,68 @@
+Classification on cylinder for cylinder_data with decision_tree.
+
+Database configuration : 
+	- Database name : cylinder
+	- View name : cylinder_data	 View shape : (540, 35)
+	- Learning Rate : 0.75
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 29, criterion : gini, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7185185185185186
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7185185185185186
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7162618083670715
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  40 │  17 │
+├────┼─────┼─────┤
+│  2 │  21 │  57 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+First featrue : 
+	8 <= 3.5
+Feature importances : 
+- Feature index : 8, feature importance : 0.18274686170880944
+- Feature index : 17, feature importance : 0.13469606310736965
+- Feature index : 24, feature importance : 0.12747061764149362
+- Feature index : 19, feature importance : 0.07900346543724945
+- Feature index : 23, feature importance : 0.057946339903769566
+- Feature index : 26, feature importance : 0.04196971963516673
+- Feature index : 27, feature importance : 0.03877204768821796
+- Feature index : 29, feature importance : 0.03395612690230814
+- Feature index : 31, feature importance : 0.033836141221540196
+- Feature index : 6, feature importance : 0.031070058840767936
+- Feature index : 10, feature importance : 0.02908189220241744
+- Feature index : 22, feature importance : 0.026416782413242332
+- Feature index : 16, feature importance : 0.025279545016387128
+- Feature index : 20, feature importance : 0.02253527591873457
+- Feature index : 32, feature importance : 0.020559484375273857
+- Feature index : 18, feature importance : 0.020181572813151766
+- Feature index : 30, feature importance : 0.01782933665524759
+- Feature index : 25, feature importance : 0.016286126270400804
+- Feature index : 11, feature importance : 0.016242529400424126
+- Feature index : 33, feature importance : 0.012410834779255833
+- Feature index : 14, feature importance : 0.009278002699055331
+- Feature index : 2, feature importance : 0.009011269132726617
+- Feature index : 12, feature importance : 0.007591093117408907
+- Feature index : 9, feature importance : 0.005828813119581027

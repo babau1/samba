@@ -1,0 +1,104 @@
+Classification on tnbc_mazid for methyl with adaboost.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : methyl	 View shape : (902, 2000)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 16, base_estimator : DecisionTreeClassifier
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.995575221238938
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.995575221238938
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9864864864864865
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        189 │      0 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          1 │     36 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:06:13
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_33, feature importance : 0.10733854940689143
+- Feature : ID_973, feature importance : 0.04767509866368149
+- Feature : ID_1569, feature importance : 0.044413593411364895
+- Feature : ID_1152, feature importance : 0.04404057462650096
+- Feature : ID_231, feature importance : 0.04370753154752657
+- Feature : ID_545, feature importance : 0.040271840850089044
+- Feature : ID_44, feature importance : 0.038707153735029566
+- Feature : ID_1604, feature importance : 0.03821375385079275
+- Feature : ID_1760, feature importance : 0.03781192507268933
+- Feature : ID_1179, feature importance : 0.03727508788305229
+- Feature : ID_987, feature importance : 0.03425269510740983
+- Feature : ID_144, feature importance : 0.030246171288054204
+- Feature : ID_1953, feature importance : 0.029588929422092184
+- Feature : ID_670, feature importance : 0.028459683609973092
+- Feature : ID_1641, feature importance : 0.02763492242838571
+- Feature : ID_1250, feature importance : 0.02612146621701256
+- Feature : ID_1719, feature importance : 0.02252570004373599
+- Feature : ID_159, feature importance : 0.022353438299592795
+- Feature : ID_1687, feature importance : 0.020562391349903515
+- Feature : ID_1672, feature importance : 0.018723181400388013
+- Feature : ID_688, feature importance : 0.018299194010255555
+- Feature : ID_1386, feature importance : 0.018153313224159313
+- Feature : ID_571, feature importance : 0.017900041437508164
+- Feature : ID_1919, feature importance : 0.017614759875063453
+- Feature : ID_1489, feature importance : 0.016778439689247793
+- Feature : ID_1264, feature importance : 0.015366267795113875
+- Feature : ID_1305, feature importance : 0.015339113891241835
+- Feature : ID_1620, feature importance : 0.01366305708062425
+- Feature : ID_522, feature importance : 0.013556284082076335
+- Feature : ID_1576, feature importance : 0.013290725624796097
+- Feature : ID_1866, feature importance : 0.012459352264702416
+- Feature : ID_48, feature importance : 0.012413320298575774
+- Feature : ID_1936, feature importance : 0.012118826168349325
+- Feature : ID_97, feature importance : 0.011235866765290113
+- Feature : ID_1033, feature importance : 0.010775880074767234
+- Feature : ID_724, feature importance : 0.010210701222023473
+- Feature : ID_128, feature importance : 0.007923212796807555
+- Feature : ID_916, feature importance : 0.0070656498257581435
+- Feature : ID_1590, feature importance : 0.006346351384123465
+- Feature : ID_30, feature importance : 0.004964675033955285
+- Feature : ID_878, feature importance : 0.002268482206797611
+- Feature : ID_1633, feature importance : 0.0016988546638927568
+- Feature : ID_387, feature importance : 0.0006339423707041026
+
+
+ Estimator error | Estimator weight
+0.02218934911242603 | 0.09282184851352167
+0.049924357034795766 | 0.0722339142922702
+0.048615132213858325 | 0.07291925180744117
+0.056490787936367755 | 0.06903407910348569
+0.06826921903795354 | 0.06408261359165783
+0.061686962314794945 | 0.06674111837161585
+0.1348038547918792 | 0.04558423084294717
+0.10686156565517525 | 0.052059023080623594
+0.08782200784575747 | 0.057387395578036425
+0.12547929110891548 | 0.04760459540264828
+0.09356628763020466 | 0.055679024772673676
+0.09501540688725703 | 0.055262963604047366
+0.09904209974091986 | 0.05413593718927087
+0.0488470149870648 | 0.07279660293053143
+0.08259668176006366 | 0.05903151253278826
+0.07214664337361673 | 0.06262588838644047

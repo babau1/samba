@@ -1,0 +1,52 @@
+Classification on cylinder for cylinder_data with scm.
+
+Database configuration : 
+	- Database name : cylinder
+	- View name : cylinder_data	 View shape : (540, 35)
+	- Learning Rate : 0.75
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : conjunction, max_rules : 9, p : 0.8959167291315309, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7901234567901234
+		- Score on test : 0.6592592592592592
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.7901234567901234
+		- Score on test : 0.6592592592592592
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7624831309041835
+		- Score on test : 0.6319163292847503
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  26 │  31 │
+├────┼─────┼─────┤
+│  2 │  15 │  63 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:02
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 17, feature importance : 0.1111111111111111
+- Feature index : 30, feature importance : 0.1111111111111111
+- Feature index : 25, feature importance : 0.1111111111111111
+- Feature index : 24, feature importance : 0.1111111111111111
+- Feature index : 22, feature importance : 0.1111111111111111
+- Feature index : 19, feature importance : 0.1111111111111111
+- Feature index : 8, feature importance : 0.1111111111111111
+- Feature index : 34, feature importance : 0.1111111111111111
+- Feature index : 6, feature importance : 0.1111111111111111
+Model used : X[8] <= 3.000 and X[17] <= 62.000 and X[6] <= 2.000 and X[25] <= 63.900 and X[30] > 0.300 and X[19] <= 18.000 and X[22] > 18.000 and X[34] > 99.590 and X[24] > 1000.000

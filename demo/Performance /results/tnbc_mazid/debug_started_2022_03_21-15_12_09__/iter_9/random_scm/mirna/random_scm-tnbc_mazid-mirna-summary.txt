@@ -1,0 +1,90 @@
+Classification on tnbc_mazid for mirna with random_scm.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : mirna	 View shape : (902, 250)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 85, max_rules : 2, max_samples : 0.2538071746332634, max_features : 0.6817532394106772, model_type : disjunction, p_options : [0.1255813098492733], random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9334319526627219
+		- Score on test : 0.915929203539823
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9334319526627219
+		- Score on test : 0.915929203539823
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9417908515767843
+		- Score on test : 0.938867438867439
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        171 │     18 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          1 │     36 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:14
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_161, feature importance : 0.310586627448003
+- Feature : ID_221, feature importance : 0.12312375991232312
+- Feature : ID_236, feature importance : 0.09695843258239546
+- Feature : ID_41, feature importance : 0.027261522158445406
+- Feature : ID_64, feature importance : 0.02470575445609115
+- Feature : ID_171, feature importance : 0.021176360962363843
+- Feature : ID_52, feature importance : 0.020446141618834054
+- Feature : ID_162, feature importance : 0.02009959684563348
+- Feature : ID_207, feature importance : 0.02009959684563348
+- Feature : ID_8, feature importance : 0.019440593670366806
+- Feature : ID_27, feature importance : 0.01824424944449808
+- Feature : ID_33, feature importance : 0.015811682851898337
+- Feature : ID_91, feature importance : 0.015811682851898337
+- Feature : ID_169, feature importance : 0.014374257138089395
+- Feature : ID_30, feature importance : 0.014374257138089395
+- Feature : ID_152, feature importance : 0.013630761079222703
+- Feature : ID_185, feature importance : 0.013630761079222703
+- Feature : ID_36, feature importance : 0.0076017706018742005
+- Feature : ID_122, feature importance : 0.0076017706018742005
+- Feature : ID_179, feature importance : 0.007458340967876573
+- Feature : ID_231, feature importance : 0.007458340967876573
+- Feature : ID_227, feature importance : 0.007320223542545526
+- Feature : ID_245, feature importance : 0.007187128569044698
+- Feature : ID_66, feature importance : 0.007058786987454614
+- Feature : ID_70, feature importance : 0.007058786987454614
+- Feature : ID_237, feature importance : 0.007058786987454614
+- Feature : ID_87, feature importance : 0.007058786987454614
+- Feature : ID_150, feature importance : 0.007058786987454614
+- Feature : ID_235, feature importance : 0.006934948619253656
+- Feature : ID_59, feature importance : 0.006934948619253656
+- Feature : ID_132, feature importance : 0.006934948619253656
+- Feature : ID_79, feature importance : 0.006934948619253656
+- Feature : ID_229, feature importance : 0.0068153805396113515
+- Feature : ID_50, feature importance : 0.0068153805396113515
+- Feature : ID_35, feature importance : 0.0068153805396113515
+- Feature : ID_157, feature importance : 0.006699865615211159
+- Feature : ID_135, feature importance : 0.006699865615211159
+- Feature : ID_100, feature importance : 0.006588201188290973
+- Feature : ID_51, feature importance : 0.006480197890122269
+- Feature : ID_180, feature importance : 0.006480197890122269
+- Feature : ID_190, feature importance : 0.006480197890122269
+- Feature : ID_65, feature importance : 0.006274477322181879
+- Feature : ID_219, feature importance : 0.006274477322181879
+- Feature : ID_96, feature importance : 0.006176438614022788
+- Feature : ID_175, feature importance : 0.00608141648149936
+- Feature : ID_233, feature importance : 0.00608141648149936
+- Feature : ID_88, feature importance : 0.005899881661156095
+- Feature : ID_210, feature importance : 0.005899881661156095

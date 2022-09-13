@@ -1,0 +1,49 @@
+Classification on tnbc_mazid for mirna with samba.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : mirna	 View shape : (902, 250)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 11, relevance : <SamBA.relevances.ExpRelevance object at 0x7f132c5ef5f8>, distance : <SamBA.distances.ExpEuclidianDist object at 0x7f132c694fd0>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f132c694978>, b : 5.924627600271424, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 1e-07
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.977810650887574
+		- Score on test : 0.9778761061946902
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.977810650887574
+		- Score on test : 0.9778761061946902
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9460139475429996
+		- Score on test : 0.9541684541684542
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        187 │      2 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          3 │     34 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:01:43
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_221, feature importance : 0.2727272727272727
+- Feature : ID_161, feature importance : 0.2727272727272727
+- Feature : ID_8, feature importance : 0.09090909090909091
+- Feature : ID_30, feature importance : 0.09090909090909091
+- Feature : ID_91, feature importance : 0.09090909090909091
+- Feature : ID_236, feature importance : 0.09090909090909091
+- Feature : ID_171, feature importance : 0.09090909090909091

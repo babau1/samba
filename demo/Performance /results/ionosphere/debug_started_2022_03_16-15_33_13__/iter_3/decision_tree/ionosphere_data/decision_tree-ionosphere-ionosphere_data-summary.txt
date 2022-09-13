@@ -1,0 +1,57 @@
+Classification on ionosphere for ionosphere_data with decision_tree.
+
+Database configuration : 
+	- Database name : ionosphere
+	- View name : ionosphere_data	 View shape : (351, 34)
+	- Learning Rate : 0.7492877492877493
+	- Labels used : bad, good
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 108, criterion : entropy, splitter : random, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8977272727272727
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8977272727272727
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8861607142857143
+
+Test set confusion matrix : 
+
+╒══════╤═══════╤════════╕
+│      │   bad │   good │
+╞══════╪═══════╪════════╡
+│ bad  │    27 │      5 │
+├──────┼───────┼────────┤
+│ good │     4 │     52 │
+╘══════╧═══════╧════════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+First featrue : 
+	2 <= 0.22069879119316993
+Feature importances : 
+- Feature index : 2, feature importance : 0.33759451230240656
+- Feature index : 7, feature importance : 0.16270745241474108
+- Feature index : 4, feature importance : 0.12274905116847717
+- Feature index : 0, feature importance : 0.09071346151615514
+- Feature index : 3, feature importance : 0.06336843441836851
+- Feature index : 20, feature importance : 0.050420214069144535
+- Feature index : 33, feature importance : 0.04176215374206116
+- Feature index : 26, feature importance : 0.03560416205526245
+- Feature index : 15, feature importance : 0.024301932465810992
+- Feature index : 24, feature importance : 0.024299192635676405
+- Feature index : 31, feature importance : 0.02424514416390878
+- Feature index : 9, feature importance : 0.014148767431317376
+- Feature index : 21, feature importance : 0.008085521616669788

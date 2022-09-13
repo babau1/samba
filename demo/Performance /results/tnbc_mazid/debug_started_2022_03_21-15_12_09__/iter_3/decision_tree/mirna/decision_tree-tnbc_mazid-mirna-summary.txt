@@ -1,0 +1,57 @@
+Classification on tnbc_mazid for mirna with decision_tree.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : mirna	 View shape : (902, 250)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 259, criterion : entropy, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9247787610619469
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9247787610619469
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.868082368082368
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        180 │      9 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          8 │     29 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:02
+
+ Classifier Interpretation : 
+First feature : 
+	ID_221 <= 17.512009620666504
+Feature importances : 
+- Feature : ID_221, feature importance : 0.5270736525816825
+- Feature : ID_161, feature importance : 0.26836628236088955
+- Feature : ID_167, feature importance : 0.037606823194377345
+- Feature : ID_114, feature importance : 0.028956300405951065
+- Feature : ID_175, feature importance : 0.02412853375554407
+- Feature : ID_30, feature importance : 0.022696661099389188
+- Feature : ID_85, feature importance : 0.02139395105705943
+- Feature : ID_47, feature importance : 0.02099866944019321
+- Feature : ID_64, feature importance : 0.0160494217883104
+- Feature : ID_34, feature importance : 0.011269230167443557
+- Feature : ID_212, feature importance : 0.00753280751177807
+- Feature : ID_202, feature importance : 0.00753280751177807
+- Feature : ID_197, feature importance : 0.006394859125603682

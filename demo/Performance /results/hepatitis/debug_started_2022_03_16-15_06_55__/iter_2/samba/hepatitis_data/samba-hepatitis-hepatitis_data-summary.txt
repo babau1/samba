@@ -1,0 +1,50 @@
+Classification on hepatitis for hepatitis_data with samba.
+
+Database configuration : 
+	- Database name : hepatitis
+	- View name : hepatitis_data	 View shape : (155, 19)
+	- Learning Rate : 0.7483870967741936
+	- Labels used : LIVE, DIE
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 21, relevance : <SamBA.relevances.ExpRelevance object at 0x7f04f05eea90>, distance : <SamBA.distances.PolarDist object at 0x7f04f05ee400>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f04f05eeb00>, b : 0.5232049953842056, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 1e-05
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.853448275862069
+		- Score on test : 0.5641025641025641
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.853448275862069
+		- Score on test : 0.5641025641025641
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8527644230769231
+		- Score on test : 0.5714285714285714
+
+Test set confusion matrix : 
+
+╒══════╤════════╤═══════╕
+│      │   LIVE │   DIE │
+╞══════╪════════╪═══════╡
+│ LIVE │     10 │    11 │
+├──────┼────────┼───────┤
+│ DIE  │      6 │    12 │
+╘══════╧════════╧═══════╛
+
+
+
+ Classification took 0:00:48
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 17, feature importance : 0.2857142857142857
+- Feature index : 2, feature importance : 0.19047619047619047
+- Feature index : 15, feature importance : 0.19047619047619047
+- Feature index : 1, feature importance : 0.09523809523809523
+- Feature index : 12, feature importance : 0.09523809523809523
+- Feature index : 18, feature importance : 0.047619047619047616
+- Feature index : 14, feature importance : 0.047619047619047616
+- Feature index : 11, feature importance : 0.047619047619047616

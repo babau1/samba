@@ -1,0 +1,62 @@
+Classification on ionosphere for ionosphere_data with decision_tree.
+
+Database configuration : 
+	- Database name : ionosphere
+	- View name : ionosphere_data	 View shape : (351, 34)
+	- Learning Rate : 0.7492877492877493
+	- Labels used : bad, good
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 159, criterion : gini, splitter : random, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9204545454545454
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9204545454545455
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9107142857142857
+
+Test set confusion matrix : 
+
+╒══════╤═══════╤════════╕
+│      │   bad │   good │
+╞══════╪═══════╪════════╡
+│ bad  │    28 │      4 │
+├──────┼───────┼────────┤
+│ good │     3 │     53 │
+╘══════╧═══════╧════════╛
+
+
+
+ Classification took 0:00:00
+
+ Classifier Interpretation : 
+First featrue : 
+	0 <= 0.8123701605072106
+Feature importances : 
+- Feature index : 4, feature importance : 0.32024038969414625
+- Feature index : 0, feature importance : 0.21421457673155278
+- Feature index : 7, feature importance : 0.10260179173436121
+- Feature index : 27, feature importance : 0.0850762937577141
+- Feature index : 2, feature importance : 0.05408289698272097
+- Feature index : 24, feature importance : 0.04304701260762558
+- Feature index : 23, feature importance : 0.040904919248195726
+- Feature index : 5, feature importance : 0.03090771940275315
+- Feature index : 31, feature importance : 0.022349867808132938
+- Feature index : 17, feature importance : 0.01986654916278484
+- Feature index : 32, feature importance : 0.017383230517436735
+- Feature index : 21, feature importance : 0.014899911872088634
+- Feature index : 6, feature importance : 0.012416593226740526
+- Feature index : 10, feature importance : 0.011036971757102687
+- Feature index : 13, feature importance : 0.004937577484974997
+- Feature index : 9, feature importance : 0.0033636485354979796
+- Feature index : 8, feature importance : 0.0021795700528732124
+- Feature index : 11, feature importance : 0.000490479423297579

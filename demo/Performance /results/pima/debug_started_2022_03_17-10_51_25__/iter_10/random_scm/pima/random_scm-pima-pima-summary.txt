@@ -1,0 +1,50 @@
+Classification on pima for pima with random_scm.
+
+Database configuration : 
+	- Database name : pima
+	- View name : pima	 View shape : (768, 8)
+	- Learning Rate : 0.75
+	- Labels used : No, Yes
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 159, max_rules : 12, max_samples : 0.14231057030954875, max_features : 0.5695392542364595, model_type : disjunction, p_options : [0.9338086356264523], random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7777777777777778
+		- Score on test : 0.71875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.7777777777777778
+		- Score on test : 0.71875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7623880597014925
+		- Score on test : 0.6974328358208955
+
+Test set confusion matrix : 
+
+╒═════╤══════╤═══════╕
+│     │   No │   Yes │
+╞═════╪══════╪═══════╡
+│ No  │   96 │    29 │
+├─────┼──────┼───────┤
+│ Yes │   25 │    42 │
+╘═════╧══════╧═══════╛
+
+
+
+ Classification took 0:00:38
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 6, feature importance : 0.16992795990466653
+- Feature index : 1, feature importance : 0.14229869574723486
+- Feature index : 0, feature importance : 0.13148066624598306
+- Feature index : 4, feature importance : 0.12704250029675157
+- Feature index : 5, feature importance : 0.11680173224497754
+- Feature index : 7, feature importance : 0.11639246475308515
+- Feature index : 2, feature importance : 0.1022442480554206
+- Feature index : 3, feature importance : 0.09381173275188076

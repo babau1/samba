@@ -1,0 +1,64 @@
+Classification on hepatitis for hepatitis_data with adaboost.
+
+Database configuration : 
+	- Database name : hepatitis
+	- View name : hepatitis_data	 View shape : (155, 19)
+	- Learning Rate : 0.7483870967741936
+	- Labels used : LIVE, DIE
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 12, base_estimator : DecisionTreeClassifier
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7413793103448276
+		- Score on test : 0.6923076923076923
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.7413793103448276
+		- Score on test : 0.6923076923076923
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7259615384615384
+		- Score on test : 0.6825396825396826
+
+Test set confusion matrix : 
+
+╒══════╤════════╤═══════╕
+│      │   LIVE │   DIE │
+╞══════╪════════╪═══════╡
+│ LIVE │     17 │     4 │
+├──────┼────────┼───────┤
+│ DIE  │      8 │    10 │
+╘══════╧════════╧═══════╛
+
+
+
+ Classification took 0:00:21
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 1, feature importance : 0.2637233182464383
+- Feature index : 16, feature importance : 0.21932564416637756
+- Feature index : 11, feature importance : 0.1808792685194459
+- Feature index : 15, feature importance : 0.11638447962769145
+- Feature index : 12, feature importance : 0.10632653455653276
+- Feature index : 13, feature importance : 0.06022196513631166
+- Feature index : 17, feature importance : 0.05313878974720247
+
+
+ Estimator error | Estimator weight
+0.31034482758620685 | 0.1808792685194459
+0.3743055555555555 | 0.11638447962769145
+0.3847611085600622 | 0.10632653455653276
+0.44803454349117117 | 0.047255840250361315
+0.39641354702914083 | 0.09523678661368858
+0.3866842741361051 | 0.10448793398111016
+0.43392490738799344 | 0.06022196513631166
+0.44162098981868286 | 0.05313878974720247
+0.4092860480548396 | 0.08311477398366288
+0.4030675169218278 | 0.08895502993235335
+0.4693587871598455 | 0.02779842470906321
+0.4601325866701308 | 0.03620017294257634

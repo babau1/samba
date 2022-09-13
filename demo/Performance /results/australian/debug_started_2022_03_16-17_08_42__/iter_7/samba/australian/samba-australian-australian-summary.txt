@@ -1,0 +1,48 @@
+Classification on australian for australian with samba.
+
+Database configuration : 
+	- Database name : australian
+	- View name : australian	 View shape : (690, 14)
+	- Learning Rate : 0.7492753623188406
+	- Labels used : -, +
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 30, relevance : <SamBA.relevances.ExpRelevance object at 0x7f04f06cafd0>, distance : <SamBA.distances.EuclidianDist object at 0x7f04f1f82f60>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f04f0cfcef0>, b : 6.01372845121549, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 0.1
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8820116054158608
+		- Score on test : 0.8554913294797688
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8820116054158608
+		- Score on test : 0.8554913294797687
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8816391455840025
+		- Score on test : 0.8620806277056277
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   - │   + │
+╞════╪═════╪═════╡
+│ -  │  77 │  19 │
+├────┼─────┼─────┤
+│ +  │   6 │  71 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:02:22
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 9, feature importance : 0.3
+- Feature index : 7, feature importance : 0.23333333333333334
+- Feature index : 13, feature importance : 0.16666666666666666
+- Feature index : 2, feature importance : 0.13333333333333333
+- Feature index : 4, feature importance : 0.1
+- Feature index : 6, feature importance : 0.06666666666666667

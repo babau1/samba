@@ -1,0 +1,56 @@
+Classification on australian for australian with random_forest.
+
+Database configuration : 
+	- Database name : australian
+	- View name : australian	 View shape : (690, 14)
+	- Learning Rate : 0.7492753623188406
+	- Labels used : -, +
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 207, max_depth : 7, criterion : gini, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9709864603481625
+		- Score on test : 0.8901734104046243
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9709864603481625
+		- Score on test : 0.8901734104046243
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9691183154067566
+		- Score on test : 0.8933306277056277
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   - │   + │
+╞════╪═════╪═════╡
+│ -  │  83 │  13 │
+├────┼─────┼─────┤
+│ +  │   6 │  71 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:36
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 7, feature importance : 0.3455152372252141
+- Feature index : 6, feature importance : 0.10757604611704132
+- Feature index : 9, feature importance : 0.10726892393655446
+- Feature index : 13, feature importance : 0.07130582745421478
+- Feature index : 2, feature importance : 0.06963064584588546
+- Feature index : 4, feature importance : 0.06266873582377396
+- Feature index : 12, feature importance : 0.05930714136357689
+- Feature index : 8, feature importance : 0.057071118018784575
+- Feature index : 1, feature importance : 0.05311402819749428
+- Feature index : 5, feature importance : 0.02328410742055734
+- Feature index : 3, feature importance : 0.01503660480392384
+- Feature index : 11, feature importance : 0.014577217835802557
+- Feature index : 10, feature importance : 0.007206498885796834
+- Feature index : 0, feature importance : 0.006437867071379661

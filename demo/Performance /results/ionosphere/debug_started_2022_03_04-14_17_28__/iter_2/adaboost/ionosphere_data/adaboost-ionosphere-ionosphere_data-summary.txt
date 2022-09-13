@@ -1,0 +1,113 @@
+Classification on ionosphere for ionosphere_data with adaboost.
+
+Database configuration : 
+	- Database name : ionosphere
+	- View name : ionosphere_data	 View shape : (351, 34)
+	- Learning Rate : 0.7492877492877493
+	- Labels used : bad, good
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 35, base_estimator : DecisionTreeClassifier
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9204545454545454
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9204545454545455
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8973214285714286
+
+Test set confusion matrix : 
+
+╒══════╤═══════╤════════╕
+│      │   bad │   good │
+╞══════╪═══════╪════════╡
+│ bad  │    26 │      6 │
+├──────┼───────┼────────┤
+│ good │     1 │     55 │
+╘══════╧═══════╧════════╛
+
+
+
+ Classification took 0:00:14
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 23, feature importance : 0.10524593312732448
+- Feature index : 19, feature importance : 0.06881415330046248
+- Feature index : 4, feature importance : 0.06409475964406373
+- Feature index : 5, feature importance : 0.05761624414281354
+- Feature index : 21, feature importance : 0.04808615593934727
+- Feature index : 27, feature importance : 0.046656962542944574
+- Feature index : 13, feature importance : 0.04661727950448077
+- Feature index : 3, feature importance : 0.04283807609604162
+- Feature index : 6, feature importance : 0.039711738278268856
+- Feature index : 26, feature importance : 0.039661014381902976
+- Feature index : 17, feature importance : 0.035410908132234346
+- Feature index : 2, feature importance : 0.035153601690068106
+- Feature index : 30, feature importance : 0.033949078805281405
+- Feature index : 7, feature importance : 0.032500038018281
+- Feature index : 25, feature importance : 0.03193972756774088
+- Feature index : 29, feature importance : 0.03183887641689547
+- Feature index : 15, feature importance : 0.03165989429122545
+- Feature index : 31, feature importance : 0.027758570698447938
+- Feature index : 20, feature importance : 0.024880334147091912
+- Feature index : 9, feature importance : 0.02306655572407512
+- Feature index : 10, feature importance : 0.01571313343701682
+- Feature index : 32, feature importance : 0.01423762544973174
+- Feature index : 16, feature importance : 0.013739079304355658
+- Feature index : 11, feature importance : 0.012745102640386327
+- Feature index : 24, feature importance : 0.012723670844233285
+- Feature index : 12, feature importance : 0.01218476192669559
+- Feature index : 8, feature importance : 0.011161211802403932
+- Feature index : 14, feature importance : 0.01111839381140145
+- Feature index : 33, feature importance : 0.008230993543061692
+- Feature index : 22, feature importance : 0.007063899533974835
+- Feature index : 28, feature importance : 0.006788742832078472
+- Feature index : 18, feature importance : 0.006314666436841608
+- Feature index : 0, feature importance : 0.00047881598882660784
+
+
+ Estimator error | Estimator weight
+0.03422053231939164 | 0.023944461169395408
+0.03346456692913386 | 0.024110210857355558
+0.03258655804480653 | 0.024307318185504044
+0.037076023391812866 | 0.02334869582608428
+0.017482827629517438 | 0.028882227670280102
+0.04648361865407065 | 0.02165724487098669
+0.024706590763845234 | 0.026350002090176843
+0.01070253084334776 | 0.03244952067037576
+0.033206488817581474 | 0.024167624422330707
+0.024959665727271336 | 0.0262750839794505
+0.024173733789817037 | 0.026510221002619894
+0.01803831314581428 | 0.028653942561317272
+0.003983420778851264 | 0.03958321697891907
+0.018606662686008295 | 0.02842740472179608
+0.02028945877102856 | 0.027794417647150405
+0.0018181381667012498 | 0.04522144723935112
+0.005606576998308933 | 0.03712124512236329
+0.03613938952000135 | 0.023539093368090486
+0.008398123310984891 | 0.034204424315139405
+0.01367169276093941 | 0.030672720573602468
+0.022265467496580434 | 0.027113711699332733
+0.0186928249146557 | 0.028393655395284247
+0.011808301625999804 | 0.03173665202479943
+0.01487035424738402 | 0.030061525117018824
+0.027167600788000117 | 0.02565117928862466
+0.02627605318726753 | 0.025896947075430166
+0.014755359729450732 | 0.030118014399628863
+0.00884836841479572 | 0.033826781105381065
+0.027199876205288336 | 0.025642429929369544
+0.03275807300702014 | 0.024268414227830677
+0.054851848510469765 | 0.0204073646878635
+0.0070931161378433765 | 0.03542453881519062
+0.023868861894442074 | 0.02660344562029925
+0.01759727583998303 | 0.028834616469511916
+0.017680462193632427 | 0.028800200872145035

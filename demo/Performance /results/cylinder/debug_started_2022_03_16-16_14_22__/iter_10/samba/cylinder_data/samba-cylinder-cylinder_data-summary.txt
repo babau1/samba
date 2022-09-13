@@ -1,0 +1,51 @@
+Classification on cylinder for cylinder_data with samba.
+
+Database configuration : 
+	- Database name : cylinder
+	- View name : cylinder_data	 View shape : (540, 35)
+	- Learning Rate : 0.75
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 13, relevance : <SamBA.relevances.ExpRelevance object at 0x7f04f044dc88>, distance : <SamBA.distances.ExpEuclidianDist object at 0x7f04f044d780>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f04f044dd68>, b : 2.2001674281881436, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 0.001
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.745679012345679
+		- Score on test : 0.6444444444444445
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.745679012345679
+		- Score on test : 0.6444444444444445
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7051282051282051
+		- Score on test : 0.6025641025641025
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  19 │  38 │
+├────┼─────┼─────┤
+│  2 │  10 │  68 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:03:38
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 8, feature importance : 0.23076923076923078
+- Feature index : 11, feature importance : 0.23076923076923078
+- Feature index : 9, feature importance : 0.07692307692307693
+- Feature index : 16, feature importance : 0.07692307692307693
+- Feature index : 30, feature importance : 0.07692307692307693
+- Feature index : 28, feature importance : 0.07692307692307693
+- Feature index : 27, feature importance : 0.07692307692307693
+- Feature index : 13, feature importance : 0.07692307692307693
+- Feature index : 24, feature importance : 0.07692307692307693

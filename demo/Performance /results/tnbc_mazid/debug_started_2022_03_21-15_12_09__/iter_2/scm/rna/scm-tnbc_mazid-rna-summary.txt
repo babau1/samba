@@ -1,0 +1,48 @@
+Classification on tnbc_mazid for rna with scm.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : rna	 View shape : (902, 2000)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 8, p : 0.9665442228131716, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9896449704142012
+		- Score on test : 0.9690265486725663
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9896449704142012
+		- Score on test : 0.9690265486725663
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9938271604938271
+		- Score on test : 0.9706134706134706
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        183 │      6 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          1 │     36 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:05
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_813, feature importance : 0.2
+- Feature : ID_74, feature importance : 0.2
+- Feature : ID_1209, feature importance : 0.2
+- Feature : ID_202, feature importance : 0.2
+- Feature : ID_535, feature importance : 0.2
+Model used : X[202] <= 1369.083 or X[535] <= 2431.159 or X[813] > 9311.050 or X[1209] <= 465.402 or X[74] <= 561.598

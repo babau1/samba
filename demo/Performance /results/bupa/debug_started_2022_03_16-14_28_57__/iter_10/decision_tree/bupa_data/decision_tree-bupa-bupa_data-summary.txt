@@ -1,0 +1,50 @@
+Classification on bupa for bupa_data with decision_tree.
+
+Database configuration : 
+	- Database name : bupa
+	- View name : bupa_data	 View shape : (345, 6)
+	- Learning Rate : 0.7478260869565218
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 118, criterion : entropy, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.6551724137931034
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.6551724137931034
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.6508108108108108
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  23 │  14 │
+├────┼─────┼─────┤
+│  2 │  16 │  34 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+First featrue : 
+	4 <= 20.5
+Feature importances : 
+- Feature index : 2, feature importance : 0.23893863258762688
+- Feature index : 3, feature importance : 0.20967028341620395
+- Feature index : 1, feature importance : 0.17211435742184902
+- Feature index : 4, feature importance : 0.1550838867668335
+- Feature index : 0, feature importance : 0.12436000410512851
+- Feature index : 5, feature importance : 0.09983283570235818

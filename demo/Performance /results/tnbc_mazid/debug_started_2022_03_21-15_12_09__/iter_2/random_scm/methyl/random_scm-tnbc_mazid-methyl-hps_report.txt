@@ -1,0 +1,81 @@
+
+{max_features: 0.21465389476078334, max_rules: 5, max_samples: 0.5001662367858692,
+  model_type: disjunction, n_estimators: 16, p_options: 0.08754330363925278}
+
+		0.9618219926324258
+{max_features: 0.017472581005941623, max_rules: 15, max_samples: 0.35325038857123614,
+  model_type: disjunction, n_estimators: 286, p_options: 0.40460578755936294}
+
+		0.959275300076418
+{max_features: 0.6982806717985172, max_rules: 3, max_samples: 0.4390770110817205,
+  model_type: disjunction, n_estimators: 237, p_options: 0.9162727258437272}
+
+		0.9501196676324761
+{max_features: 0.5986918746391164, max_rules: 2, max_samples: 0.10693122940911348,
+  model_type: disjunction, n_estimators: 155, p_options: 0.11912240725320344}
+
+		0.9498317394451534
+{max_features: 0.3256492753468948, max_rules: 1, max_samples: 0.3416389031544934,
+  model_type: disjunction, n_estimators: 83, p_options: 0.44461140558883494}
+
+		0.9490829850168463
+{max_features: 0.7992498248318867, max_rules: 12, max_samples: 0.09117010424066452,
+  model_type: disjunction, n_estimators: 157, p_options: 0.5990217867168087}
+
+		0.9479411521563362
+{max_features: 0.8185566020432485, max_rules: 16, max_samples: 0.8951253460763821,
+  model_type: disjunction, n_estimators: 169, p_options: 0.7166837024631362}
+
+		0.9448254586587144
+{max_features: 0.7078131100489512, max_rules: 7, max_samples: 0.19397779567201034,
+  model_type: disjunction, n_estimators: 20, p_options: 0.4191215884233431}
+
+		0.943644811949423
+{max_features: 0.6931662064507377, max_rules: 8, max_samples: 0.264734152689021, model_type: conjunction,
+  n_estimators: 209, p_options: 0.6310447272222989}
+
+		0.9065913980445884
+{max_features: 0.690335851624455, max_rules: 13, max_samples: 0.09924114173482546,
+  model_type: conjunction, n_estimators: 49, p_options: 0.43501370889630675}
+
+		0.8979525442729915
+{max_features: 0.9628594832489012, max_rules: 18, max_samples: 0.8505290388608794,
+  model_type: conjunction, n_estimators: 37, p_options: 0.9467330026726144}
+
+		0.8975082517234357
+{max_features: 0.3093383190875054, max_rules: 10, max_samples: 0.4282083728887377,
+  model_type: conjunction, n_estimators: 163, p_options: 0.8251618414307691}
+
+		0.8962706444308679
+{max_features: 0.24496772770775743, max_rules: 4, max_samples: 0.07182461658438244,
+  model_type: conjunction, n_estimators: 56, p_options: 0.6326199832496023}
+
+		0.8962706444308679
+{max_features: 0.8380737019001969, max_rules: 17, max_samples: 0.787516263374315,
+  model_type: conjunction, n_estimators: 222, p_options: 0.7437500781254432}
+
+		0.8892867728452266
+{max_features: 0.5727522562700387, max_rules: 5, max_samples: 0.8480587944109245,
+  model_type: conjunction, n_estimators: 128, p_options: 0.5308866174108086}
+
+		0.8663430499015036
+{max_features: 0.1447611977731067, max_rules: 12, max_samples: 0.6126152835693975,
+  model_type: conjunction, n_estimators: 229, p_options: 0.8645536141646057}
+
+		0.8640195621797856
+{max_features: 0.12137648567067627, max_rules: 18, max_samples: 0.11426282859886971,
+  model_type: conjunction, n_estimators: 111, p_options: 0.869709689640221}
+
+		0.852509390935101
+{max_features: 0.37252231471307284, max_rules: 10, max_samples: 0.2922147965987163,
+  model_type: conjunction, n_estimators: 126, p_options: 0.4489080500606524}
+
+		0.8386451849656321
+{max_features: 0.21939403930842782, max_rules: 4, max_samples: 0.9225789595610071,
+  model_type: conjunction, n_estimators: 171, p_options: 0.6313995448672968}
+
+		0.8367468349070585
+{max_features: 0.2158482847291583, max_rules: 17, max_samples: 0.7280752072838411,
+  model_type: conjunction, n_estimators: 90, p_options: 0.38525232528341014}
+
+		0.7674827656429892

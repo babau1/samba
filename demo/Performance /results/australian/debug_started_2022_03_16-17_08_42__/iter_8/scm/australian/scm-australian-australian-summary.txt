@@ -1,0 +1,45 @@
+Classification on australian for australian with scm.
+
+Database configuration : 
+	- Database name : australian
+	- View name : australian	 View shape : (690, 14)
+	- Learning Rate : 0.7492753623188406
+	- Labels used : -, +
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 2, p : 0.8207254118267062, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8665377176015474
+		- Score on test : 0.8323699421965318
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8665377176015474
+		- Score on test : 0.8323699421965318
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8737464020602939
+		- Score on test : 0.8438176406926408
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   - │   + │
+╞════╪═════╪═════╡
+│ -  │  71 │  25 │
+├────┼─────┼─────┤
+│ +  │   4 │  73 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 7, feature importance : 0.5
+- Feature index : 11, feature importance : 0.5
+Model used : X[7] > 0.000 or X[11] > 2.000

@@ -1,0 +1,53 @@
+Classification on tnbc_mazid for clinic with random_scm.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : clinic	 View shape : (902, 18)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 6, max_rules : 18, max_samples : 0.8832927874591021, max_features : 0.6782925443001986, model_type : disjunction, p_options : [0.17153324675909165], random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.47337278106508873
+		- Score on test : 0.45132743362831856
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.47337278106508873
+		- Score on test : 0.45132743362831856
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.6304871931783247
+		- Score on test : 0.595881595881596
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │         72 │    117 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          7 │     30 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:00:11
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_3, feature importance : 0.2634660421545667
+- Feature : ID_4, feature importance : 0.14929742388758782
+- Feature : ID_14, feature importance : 0.1334894613583138
+- Feature : ID_15, feature importance : 0.12295081967213115
+- Feature : ID_2, feature importance : 0.10538641686182669
+- Feature : ID_6, feature importance : 0.10538641686182669
+- Feature : ID_8, feature importance : 0.0351288056206089
+- Feature : ID_10, feature importance : 0.0351288056206089
+- Feature : ID_0, feature importance : 0.023419203747072598
+- Feature : ID_1, feature importance : 0.01756440281030445
+- Feature : ID_17, feature importance : 0.008782201405152224

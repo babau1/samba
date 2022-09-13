@@ -1,0 +1,54 @@
+Classification on yeast for yeast_data with adaboost.
+
+Database configuration : 
+	- Database name : yeast
+	- View name : yeast_data	 View shape : (1484, 8)
+	- Learning Rate : 0.75
+	- Labels used : CYT, non-CYT
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 3, base_estimator : DecisionTreeClassifier
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7448337825696316
+		- Score on test : 0.6792452830188679
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.7448337825696316
+		- Score on test : 0.6792452830188679
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.721616090172384
+		- Score on test : 0.6609364435429343
+
+Test set confusion matrix : 
+
+╒═════════╤═══════╤═══════════╕
+│         │   CYT │   non-CYT │
+╞═════════╪═══════╪═══════════╡
+│ CYT     │    71 │        45 │
+├─────────┼───────┼───────────┤
+│ non-CYT │    74 │       181 │
+╘═════════╧═══════╧═══════════╛
+
+
+
+ Classification took 0:00:22
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 2, feature importance : 0.5036432650797288
+- Feature index : 7, feature importance : 0.16760262063406092
+- Feature index : 6, feature importance : 0.10207528459812937
+- Feature index : 3, feature importance : 0.10051866217448721
+- Feature index : 1, feature importance : 0.0823684902529965
+- Feature index : 0, feature importance : 0.04379167726059731
+
+
+ Estimator error | Estimator weight
+0.27044025157232704 | 0.4535691705530784
+0.3216433726658266 | 0.3410622692583233
+0.3895182489895999 | 0.20536856018859845

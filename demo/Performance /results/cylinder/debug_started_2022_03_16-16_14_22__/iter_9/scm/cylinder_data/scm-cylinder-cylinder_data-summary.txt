@@ -1,0 +1,52 @@
+Classification on cylinder for cylinder_data with scm.
+
+Database configuration : 
+	- Database name : cylinder
+	- View name : cylinder_data	 View shape : (540, 35)
+	- Learning Rate : 0.75
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : conjunction, max_rules : 10, p : 0.8794036980965553, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7728395061728395
+		- Score on test : 0.7185185185185186
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.7728395061728395
+		- Score on test : 0.7185185185185186
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7577597840755735
+		- Score on test : 0.6879217273954116
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  28 │  29 │
+├────┼─────┼─────┤
+│  2 │   9 │  69 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:02
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 19, feature importance : 0.2
+- Feature index : 0, feature importance : 0.1
+- Feature index : 30, feature importance : 0.1
+- Feature index : 26, feature importance : 0.1
+- Feature index : 25, feature importance : 0.1
+- Feature index : 20, feature importance : 0.1
+- Feature index : 8, feature importance : 0.1
+- Feature index : 17, feature importance : 0.1
+- Feature index : 6, feature importance : 0.1
+Model used : X[8] <= 3.000 and X[17] <= 62.000 and X[6] <= 2.000 and X[30] > 0.300 and X[25] <= 63.900 and X[19] <= 16.800 and X[0] <= 2.000 and X[19] > 12.500 and X[26] > 31.300 and X[20] <= 100.000

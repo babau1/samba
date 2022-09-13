@@ -1,0 +1,45 @@
+Classification on ionosphere for ionosphere_data with scm.
+
+Database configuration : 
+	- Database name : ionosphere
+	- View name : ionosphere_data	 View shape : (351, 34)
+	- Learning Rate : 0.7492877492877493
+	- Labels used : bad, good
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : conjunction, max_rules : 2, p : 0.6262923957940837, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.908745247148289
+		- Score on test : 0.8977272727272727
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.908745247148289
+		- Score on test : 0.8977272727272727
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9053883922951026
+		- Score on test : 0.8861607142857143
+
+Test set confusion matrix : 
+
+╒══════╤═══════╤════════╕
+│      │   bad │   good │
+╞══════╪═══════╪════════╡
+│ bad  │    27 │      5 │
+├──────┼───────┼────────┤
+│ good │     4 │     52 │
+╘══════╧═══════╧════════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 4, feature importance : 0.5
+- Feature index : 26, feature importance : 0.5
+Model used : X[4] > 0.222 and X[26] <= 0.998

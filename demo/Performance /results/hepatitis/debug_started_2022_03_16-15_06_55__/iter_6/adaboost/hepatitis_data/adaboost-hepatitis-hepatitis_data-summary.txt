@@ -1,0 +1,59 @@
+Classification on hepatitis for hepatitis_data with adaboost.
+
+Database configuration : 
+	- Database name : hepatitis
+	- View name : hepatitis_data	 View shape : (155, 19)
+	- Learning Rate : 0.7483870967741936
+	- Labels used : LIVE, DIE
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 9, base_estimator : DecisionTreeClassifier
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7586206896551724
+		- Score on test : 0.6153846153846154
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.7586206896551724
+		- Score on test : 0.6153846153846154
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7451923076923077
+		- Score on test : 0.6031746031746031
+
+Test set confusion matrix : 
+
+╒══════╤════════╤═══════╕
+│      │   LIVE │   DIE │
+╞══════╪════════╪═══════╡
+│ LIVE │     16 │     5 │
+├──────┼────────┼───────┤
+│ DIE  │     10 │     8 │
+╘══════╧════════╧═══════╛
+
+
+
+ Classification took 0:00:17
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 13, feature importance : 0.3330380468959337
+- Feature index : 11, feature importance : 0.2345139109596139
+- Feature index : 1, feature importance : 0.1542785879070003
+- Feature index : 18, feature importance : 0.14007672032870458
+- Feature index : 15, feature importance : 0.13809273390874752
+
+
+ Estimator error | Estimator weight
+0.2931034482758621 | 0.2345139109596139
+0.4246771879483501 | 0.08087485729114963
+0.35912646592977016 | 0.1542785879070003
+0.4080656031303835 | 0.09908646914431071
+0.43234261423022224 | 0.07253641194789477
+0.4404064956557994 | 0.06380241050110484
+0.428902177278497 | 0.07627430982759971
+0.37322730969022777 | 0.13809273390874752
+0.4249840633416542 | 0.08054030851257854

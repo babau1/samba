@@ -1,0 +1,48 @@
+Classification on bleuets for metabolomics_bleuets with samba.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 6, relevance : <SamBA.relevances.ExpRelevance object at 0x7f8f71871438>, distance : <SamBA.distances.PolarDist object at 0x7f8f71871048>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f8f71871780>, b : 3.196999114812812, pred_train : True, normalizer : RobustScaler(), normalize_dists : True, a : 1e-08
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8333333333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8333333333333334
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7222222222222222
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       3 │         3 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:08:12
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_3072, feature importance : 0.16666666666666666
+- Feature : ID_8734, feature importance : 0.16666666666666666
+- Feature : ID_2060, feature importance : 0.16666666666666666
+- Feature : ID_2551, feature importance : 0.16666666666666666
+- Feature : ID_2068, feature importance : 0.16666666666666666
+- Feature : ID_3844, feature importance : 0.16666666666666666

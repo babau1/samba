@@ -1,0 +1,36 @@
+# The base configuration of the benchmark
+log: True
+name: ["tnbc_mazid",]
+label: "_"
+file_type: ".hdf5"
+views:
+pathf: "/home/baptiste/Documents/Datasets/Mazid/"
+nice: 0
+random_state: 42
+nb_cores: 4
+full: True
+debug: True
+add_noise: False
+noise_std: 0.0
+res_dir: "../results/"
+track_tracebacks: False
+
+# All the classification-realted configuration options
+multiclass_method: "oneVersusOne"
+split: 0.25
+nb_folds: 5
+nb_class: 2
+classes:
+type: ["monoview"]
+algos_monoview: ["decision_tree", "adaboost", "samba", "random_forest", "random_scm", "scm"]
+algos_multiview: ["early_fusion_adaboost", "early_fusion_samba", "early_fusion_random_forest", "early_fusion_decision_tree"]
+stats_iter: 10
+metrics:
+  accuracy_score: {}
+  f1_score: {}
+  balanced_accuracy: {}
+metric_princ: "balanced_accuracy"
+hps_type: "Random"
+hps_args:
+  n_iter: 20
+  equivalent_draws: False

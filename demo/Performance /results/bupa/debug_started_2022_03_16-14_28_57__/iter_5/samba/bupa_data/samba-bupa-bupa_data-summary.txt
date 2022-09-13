@@ -1,0 +1,48 @@
+Classification on bupa for bupa_data with samba.
+
+Database configuration : 
+	- Database name : bupa
+	- View name : bupa_data	 View shape : (345, 6)
+	- Learning Rate : 0.7478260869565218
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 51, relevance : <SamBA.relevances.ExpRelevance object at 0x7f04f17b52e8>, distance : <SamBA.distances.EuclidianDist object at 0x7f04f0ecefd0>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f04f1884550>, b : 1.5308489498657158, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 0.01
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.813953488372093
+		- Score on test : 0.7126436781609196
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8139534883720931
+		- Score on test : 0.7126436781609196
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7920370370370371
+		- Score on test : 0.6867567567567567
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  19 │  18 │
+├────┼─────┼─────┤
+│  2 │   7 │  43 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:01:54
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 4, feature importance : 0.3137254901960784
+- Feature index : 2, feature importance : 0.2549019607843137
+- Feature index : 3, feature importance : 0.1568627450980392
+- Feature index : 1, feature importance : 0.11764705882352941
+- Feature index : 5, feature importance : 0.11764705882352941
+- Feature index : 0, feature importance : 0.0392156862745098

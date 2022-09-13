@@ -1,0 +1,45 @@
+Classification on pima for pima with scm.
+
+Database configuration : 
+	- Database name : pima
+	- View name : pima	 View shape : (768, 8)
+	- Learning Rate : 0.75
+	- Labels used : No, Yes
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 2, p : 0.7192040709112075, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7447916666666666
+		- Score on test : 0.7239583333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.7447916666666666
+		- Score on test : 0.7239583333333333
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7301293532338309
+		- Score on test : 0.7118208955223881
+
+Test set confusion matrix : 
+
+╒═════╤══════╤═══════╕
+│     │   No │   Yes │
+╞═════╪══════╪═══════╡
+│ No  │   94 │    31 │
+├─────┼──────┼───────┤
+│ Yes │   22 │    45 │
+╘═════╧══════╧═══════╛
+
+
+
+ Classification took 0:00:02
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 1, feature importance : 0.5
+- Feature index : 5, feature importance : 0.5
+Model used : X[1] > 127.000 or X[5] > 45.300

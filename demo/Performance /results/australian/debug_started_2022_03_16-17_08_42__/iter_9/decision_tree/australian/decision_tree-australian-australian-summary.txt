@@ -1,0 +1,55 @@
+Classification on australian for australian with decision_tree.
+
+Database configuration : 
+	- Database name : australian
+	- View name : australian	 View shape : (690, 14)
+	- Learning Rate : 0.7492753623188406
+	- Labels used : -, +
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 5, criterion : entropy, splitter : random, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8897485493230174
+		- Score on test : 0.838150289017341
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.8897485493230174
+		- Score on test : 0.8381502890173411
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8873125284047871
+		- Score on test : 0.8361742424242424
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   - │   + │
+╞════╪═════╪═════╡
+│ -  │  82 │  14 │
+├────┼─────┼─────┤
+│ +  │  14 │  63 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+First featrue : 
+	7 <= 0.7301356753940395
+Feature importances : 
+- Feature index : 7, feature importance : 0.7214110773218609
+- Feature index : 8, feature importance : 0.10401757338929335
+- Feature index : 4, feature importance : 0.0490681344610887
+- Feature index : 11, feature importance : 0.030520859287900486
+- Feature index : 3, feature importance : 0.02860043563585373
+- Feature index : 0, feature importance : 0.025160556755850237
+- Feature index : 5, feature importance : 0.020834552802182278
+- Feature index : 10, feature importance : 0.009395952781615731
+- Feature index : 6, feature importance : 0.006152162090905709
+- Feature index : 13, feature importance : 0.0032295982586306978
+- Feature index : 2, feature importance : 0.0016090972148181282

@@ -1,0 +1,92 @@
+Classification on bleuets for metabolomics_bleuets with random_scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 160, max_rules : 9, max_samples : 0.7095635338078385, max_features : 0.19532613519693476, model_type : disjunction, p_options : [0.9574465853823346], random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9861111111111112
+		- Score on test : 1.0
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9861111111111112
+		- Score on test : 1.0
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9907407407407407
+		- Score on test : 1.0
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       0 │         6 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:03:44
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.07890030445910819
+- Feature : ID_2060, feature importance : 0.072189990499623
+- Feature : ID_2068, feature importance : 0.05649651430405278
+- Feature : ID_3028, feature importance : 0.029909919337439708
+- Feature : ID_2524, feature importance : 0.01853791875601732
+- Feature : ID_2419, feature importance : 0.017533400990912933
+- Feature : ID_3097, feature importance : 0.012840116887284724
+- Feature : ID_2551, feature importance : 0.012106395922297024
+- Feature : ID_4189, feature importance : 0.010593096432009896
+- Feature : ID_2302, feature importance : 0.010088663268580853
+- Feature : ID_2238, feature importance : 0.00941608571734213
+- Feature : ID_15843, feature importance : 0.008920502258534649
+- Feature : ID_3292, feature importance : 0.008766700495456466
+- Feature : ID_2459, feature importance : 0.008474477145607917
+- Feature : ID_3321, feature importance : 0.007944822324007422
+- Feature : ID_5630, feature importance : 0.007944822324007422
+- Feature : ID_15641, feature importance : 0.007062064288006598
+- Feature : ID_3684, feature importance : 0.006690376693900987
+- Feature : ID_4492, feature importance : 0.006518828573544552
+- Feature : ID_3615, feature importance : 0.006277390478228086
+- Feature : ID_3305, feature importance : 0.006277390478228086
+- Feature : ID_8609, feature importance : 0.006053197961148512
+- Feature : ID_3157, feature importance : 0.0058444669969709775
+- Feature : ID_16541, feature importance : 0.0058444669969709775
+- Feature : ID_2089, feature importance : 0.005649651430405278
+- Feature : ID_4759, feature importance : 0.005296548216004948
+- Feature : ID_1439, feature importance : 0.004984986556239951
+- Feature : ID_16367, feature importance : 0.004984986556239951
+- Feature : ID_4660, feature importance : 0.00484255836891881
+- Feature : ID_3473, feature importance : 0.00484255836891881
+- Feature : ID_2954, feature importance : 0.004708042858671065
+- Feature : ID_12826, feature importance : 0.004708042858671065
+- Feature : ID_15537, feature importance : 0.004460251129267324
+- Feature : ID_4084, feature importance : 0.0043458857156963675
+- Feature : ID_9277, feature importance : 0.004237238572803959
+- Feature : ID_2666, feature importance : 0.004237238572803959
+- Feature : ID_3852, feature importance : 0.004035465307432341
+- Feature : ID_10660, feature importance : 0.003852035066185417
+- Feature : ID_748, feature importance : 0.0036845552806990946
+- Feature : ID_2224, feature importance : 0.0036845552806990946
+- Feature : ID_1252, feature importance : 0.0036845552806990946
+- Feature : ID_9751, feature importance : 0.003531032144003299
+- Feature : ID_13795, feature importance : 0.003531032144003299
+- Feature : ID_2396, feature importance : 0.003531032144003299
+- Feature : ID_7872, feature importance : 0.003531032144003299
+- Feature : ID_1655, feature importance : 0.003531032144003299
+- Feature : ID_13756, feature importance : 0.003531032144003299
+- Feature : ID_2914, feature importance : 0.003531032144003299
+- Feature : ID_6233, feature importance : 0.003389790858243167
+- Feature : ID_9073, feature importance : 0.003389790858243167

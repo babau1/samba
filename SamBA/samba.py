@@ -6,6 +6,10 @@ from sklearn.preprocessing import LabelBinarizer, RobustScaler
 from plotly import graph_objects as go
 import plotly
 from six import iteritems
+from sklearn.utils import safe_mask
+from sklearn.pipeline import Pipeline
+from sklearn.utils.validation import _check_sample_weight
+from sklearn.utils.class_weight import compute_sample_weight
 
 from SamBA.distances import *
 from SamBA.relevances import *
@@ -14,50 +18,51 @@ from SamBA.utils import set_class_from_str
 
 
 class TrainWeighting:
-    def __init__(self, pred_train=True):
+    def __init__(self):
         self.minus_binarizer = LabelBinarizer(neg_label=-1, pos_label=1)
-        self.pred_train=pred_train
 
 
 class ExpTrainWeighting(TrainWeighting):
 
-    def __init__(self, factor=1, pred_train=True):
-        TrainWeighting.__init__(self, pred_train=pred_train)
+    def __init__(self, factor=2):
+        TrainWeighting.__init__(self)
         self.factor = factor
 
-    def __call__(self, estim, X, y, n_estimators=1, *args, **kwargs):
+    def __call__(self, estim, X, y, n_estimators=1, pred_train=False, *args, **kwargs):
 
         if isinstance(estim, NeighborHoodClassifier):
-            if self.pred_train:
+            if pred_train:
                 exps = np.exp(-estim._predict_on_train(X, n_estimators=n_estimators)*y*self.factor)
             else:
-                exps = np.exp(-estim._predict_vote(X, n_estimators=n_estimators)*y*self.factor)
+                exps = np.exp(-estim._predict_vote(X, n_estimators=n_estimators,
+                                                   transform=False)*y*self.factor)
         else:
-            exps = np.exp(-estim.predict(X) * y*self.factor)
+            exps = np.exp(-estim.predict(X) * y)
         return exps/np.sum(exps)
 
 
 class SqExpTrainWeighting(ExpTrainWeighting):
 
-    def __call__(self, estim, X, y, n_estimators=1, *args, **kwargs):
-        exps = ExpTrainWeighting.__call__(self, estim, X, y, n_estimators=n_estimators)
+    def __call__(self, estim, X, y, n_estimators=1, pred_train=False, *args, **kwargs):
+        exps = ExpTrainWeighting.__call__(self, estim, X, y, n_estimators=n_estimators, pred_train=pred_train)
         return exps**2
 
 
 class ZeroOneTrainWeighting(TrainWeighting):
 
-    def __init__(self, pred_train=True):
-        TrainWeighting.__init__(self, pred_train=pred_train)
+    def __init__(self):
+        TrainWeighting.__init__(self)
 
-    def __call__(self, estim, X, y, n_estimators=1, *args, **kwargs):
+    def __call__(self, estim, X, y, n_estimators=1, pred_train=False, *args, **kwargs):
         if isinstance(estim, NeighborHoodClassifier):
-            if self.pred_train:
-                preds = -(np.sign(estim._predict_on_train(X, n_estimators=n_estimators))*y-1)
+            if pred_train:
+                failed_preds = -(np.sign(estim._predict_on_train(X, n_estimators=n_estimators))*y-1)
             else:
-                preds = -(np.sign(estim._predict_vote(X, n_estimators=n_estimators))*y-1)
+                failed_preds = -(np.sign(estim._predict_vote(X, n_estimators=n_estimators,
+                                                      transform=False))*y-1)
         else:
-            preds = -(estim.predict(X)*y-1)
-        return preds/2
+            failed_preds = -(estim.predict(X)*y-1)/2
+        return failed_preds/2
 
 
 class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin, VizSamba):
@@ -74,54 +79,68 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin, VizSamba):
                  keep_selected_features=True,
                  vote_compensate=True,
                  b=1,
+                 a=0.1,
                  normalizer=None,
                  forced_diversity=False,
-                 pred_train=True):
+                 pred_train=False,
+                 normalize_dists=True,
+                 class_weight=None):
         BaseEnsemble.__init__(self, base_estimator=base_estimator,
                               n_estimators=n_estimators,
                               estimator_params=estimator_params)
         self.zero_binarizer = LabelBinarizer(neg_label=0, pos_label=1)
         self.minus_binarizer = LabelBinarizer(neg_label=-1, pos_label=1)
         self.b = b
+        self.a = a
         self.pred_train = pred_train
         self.relevance = set_class_from_str(relevance)
         self.distance = set_class_from_str(distance)
         self.train_weighting = set_class_from_str(train_weighting)
+        self.normalize_dists = normalize_dists
         self.distance.keep_selected_features = keep_selected_features
         self.keep_selected_features = keep_selected_features
         self.feature_importances_ = None
         self.vote_compensate = vote_compensate
         self.normalizer = set_class_from_str(normalizer)
         self.forced_diversity = forced_diversity
+        self.class_weight = class_weight
 
-
-    def fit(self, X, y, save_data=False, **fit_params):
+    def fit(self, X, y, save_data=False, sample_weight=None, **fit_params):
+        # Todo : label binarizer inside not outside
+        expanded_class_weight = None
         self.train_size = X.shape[0]
         if isinstance(y, list):
             y = np.array(y)
+
+        if self.class_weight is not None:
+            expanded_class_weight = compute_sample_weight(self.class_weight, y)
+
+        if sample_weight is not None:
+            sample_weight = _check_sample_weight(sample_weight, X)
+            if expanded_class_weight is not None:
+                sample_weight *= expanded_class_weight
+
         if self.normalizer is not None:
             X = self.normalizer.fit_transform(X)
 
-        self.train_weighting.pred_train = self.pred_train
         sign_y = self.minus_binarizer.fit_transform(y).reshape(y.shape)
         self._init_containers(X)
 
-        self._init_greedy(X, sign_y, save_data)
+        self._init_greedy(X, sign_y, save_data, expanded_class_weight)
         for iter_index in range(self.n_estimators-1):
             self._boost_loop(X, sign_y, iter_index+1, save_data)
-            if self.pred_train:
-                preds = np.sign(self._predict_on_train(X))
-            else:
-                preds = np.sign(self._predict_vote(X))
-            if accuracy_score(preds, sign_y)==1.0:
+            if np.isnan(self.neig_weights[0, iter_index+1]):
                 print("Broken because perfect {}/{}".format(iter_index+2, self.n_estimators))
                 self.n_estimators = iter_index+2
+                self.neig_weights = np.zeros((X.shape[0], self.n_estimators))
+                self.neig_weights[:, iter_index+1] = 1
                 break
+
         if np.sum(self.feature_importances_) != 0:
             self.feature_importances_/=np.sum(self.feature_importances_)
+
         self.support_feats = np.argsort(-self.feature_importances_)[:len(np.where(self.feature_importances_!=0)[0])]
         self.support_ratio = len(self.support_feats)/self.n_estimators
-
         return self
 
     def predict(self, X, save_data=None):
@@ -167,7 +186,7 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin, VizSamba):
         return preds
 
     def _predict_vote(self, X, base_decision=-1, n_estimators=None,
-                      save_data=None):
+                      save_data=None, transform=True):
         # TODO : Predict only on the required features : nécessite une refaction
         #  de X, peut-être en sparse matrix, avec uniquement les valeurs des
         #  features utilisés non nuls, ou une réécriture du DT, ou un
@@ -175,10 +194,11 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin, VizSamba):
         #  que le processus est déterministe.
         if n_estimators is None:
             n_estimators = self.n_estimators
-        if self.normalizer is not None:
-            X = self.normalizer.fit_transform(X)
+        if self.normalizer is not None and transform:
+            X = self.normalizer.transform(X)
         if save_data is not None:
             self.saved_test = pd.DataFrame(columns=['Index', "Distance", "Relevance", "Weight", "Estim Index"])
+            self.saved_ind_test = 0
         preds = np.zeros((X.shape[0], n_estimators))
         self.features_mask = np.zeros(X.shape[1], dtype=np.int64)
         for estim_index, estim in enumerate(self.estimators_[:n_estimators]):
@@ -187,24 +207,29 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin, VizSamba):
         self.votes = np.zeros(X.shape[0])
         for sample_index, sample in enumerate(X):
             dists = self.distance(sample, self.train_samples, self.features_mask)
-            weights = 1 / (dists) ** self.b
+            if self.normalize_dists:
+                if np.sum(dists)==0:
+                    dist_sum = 1
+                else:
+                    dist_sum = np.sum(dists)
+                dists = dists/dist_sum
+            weights = 1 / (self.a**self.b + dists ** self.b)
             if isinstance(self.relevance, MarginRelevance):
                 weights /= np.sum(weights)
                 weights = weights.reshape((self.train_size, 1))*np.sign(self.neig_weights[:, :n_estimators])
             else:
                 weights = weights.reshape((self.train_size, 1))*self.neig_weights[:, :n_estimators]
                 weights /= np.sum(weights)
-            if sample_index==save_data:
+            if sample_index == save_data:
                 for estim_index in range(self.n_estimators):
                     for train_sample_ind, (dist, relevance, weight) in enumerate(zip(dists, self.neig_weights[:, estim_index], weights)):
-                        self.saved_test = self.saved_test.append({"Index": train_sample_ind,
+                        self.saved_test.loc[self.saved_ind_test] = {"Index": train_sample_ind,
                                                                   'Distance': dist,
                                                                   "Relevance": relevance,
                                                                   "Weight": weight,
-                                                                  "Estim Index": estim_index},ignore_index=True)
-            vote = np.sum(
-                self.estim_weights[:n_estimators] * np.sum(weights, axis=0) *
-                preds[sample_index])
+                                                                  "Estim Index": estim_index}
+                        self.saved_ind_test += 1
+            vote = np.sum(np.sum(weights, axis=0) * preds[sample_index])
             if vote == 0:
                 vote = base_decision
             self.votes[sample_index] = vote
@@ -222,27 +247,32 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin, VizSamba):
             preds[:, n_estimators] = self._predict_vote(X, n_estimators=n_estimators + 1)
         return preds
 
-    def _boost_loop(self, X, y, iter_index=1, save_data=False):
+    def _boost_loop(self, X, y, iter_index=1, save_data=False, sample_weight=None):
         next_estimator = clone(self.base_estimator)
-        if self.forced_diversity and iter_index == 1:
-            modded_X = X.copy()
-            chosen_features = np.where(self.estimators_[0].feature_importances_ !=0)
-            modded_X[:, chosen_features] = 0
-            next_estimator.fit(modded_X, y,
-                               sample_weight=self.train_weights[:, iter_index])
-            del modded_X
-        else:
-            next_estimator.fit(X, y,
-                               sample_weight=self.train_weights[:, iter_index])
+        if self.forced_diversity:
+            mask = np.zeros(X.shape, dtype=bool)
+            chosen_features = np.where(self.estimators_[iter_index-1].feature_importances_ != 0)[0]
+            mask[:, chosen_features] = True
+            X = np.ma.array(X, mask=safe_mask(X, mask))
+        next_estimator.fit(X, y,
+                           sample_weight=self.train_weights[:, iter_index])
         self.estimators_.append(next_estimator)
-        self.neig_weights[:, iter_index] = self.relevance(X, y, next_estimator)
-        if iter_index<self.n_estimators-1:
-            if self.vote_compensate:
-                self.train_weights[:, iter_index + 1] = self.train_weighting(
-                    self, X, y, n_estimators=iter_index+1)
-            else:
-                self.train_weights[:, iter_index + 1] *= self.train_weighting(
-                    next_estimator, X, y)
+        if accuracy_score(next_estimator.predict(X), y)==1.0:
+            self.neig_weights[:, iter_index] = np.nan
+        else:
+            self.neig_weights[:, iter_index] = self.relevance(X, y, next_estimator)
+            if iter_index < self.n_estimators-1:
+                if self.vote_compensate:
+                    self.train_weights[:,
+                    iter_index + 1] = self.train_weighting(
+                        self, X, y, n_estimators=iter_index + 1,
+                        pred_train=self.pred_train)
+                    if sample_weight is not None:
+                        self.train_weights[:,
+                        iter_index + 1] *= sample_weight
+                else:
+                    self.train_weights[:, iter_index + 1] *= self.train_weighting(
+                        next_estimator, X, y, pred_train=self.pred_train)
         self.feature_importances_ += next_estimator.feature_importances_
         if save_data:
             preds_train = np.sign(self._predict_on_train(X))
@@ -250,11 +280,14 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin, VizSamba):
             y.shape)
             self._save_data(preds, preds_train, iter_index + 1, y)
 
-    def _init_greedy(self, X, y, save_data):
+    def _init_greedy(self, X, y, save_data, sample_weight=None):
         first_estimator = clone(self.base_estimator)
-        first_estimator.fit(X, y)
+        first_estimator.fit(X, y, sample_weight=sample_weight)
         self.estimators_.append(first_estimator)
-        self.train_weights[:, 1] = self.train_weighting(first_estimator, X, y)
+        self.train_weights[:, 1] = self.train_weighting(first_estimator, X, y,
+                                                        pred_train=self.pred_train)
+        if sample_weight is not None:
+            self.train_weights[:, 1]*=sample_weight
         self.neig_weights[:, 0] = self.relevance(X, y, first_estimator)
         self.feature_importances_ = first_estimator.feature_importances_
         if save_data:
@@ -267,9 +300,10 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin, VizSamba):
         self.train_samples = X
         self.saved_data = pd.DataFrame(
             columns=["Iteration", "Pred", 'Pred Train"', "Margin", "Class", "X", "Y", "Weight"])
+        self.saved_ind = 0
         self.train_weights = np.ones((X.shape[0], self.n_estimators+1))/X.shape[0]
         self.neig_weights = np.ones((X.shape[0], self.n_estimators))
-        self.estim_weights = np.ones(self.n_estimators) / self.n_estimators
+        # self.estim_weights = np.ones(self.n_estimators) / self.n_estimators
         self.estimators_ = []
         self.feature_importances_ = np.zeros(X.shape[1])
 
@@ -316,7 +350,7 @@ if __name__ == "__main__":
     classifier = NeighborHoodClassifier(
         base_estimator=DecisionTreeClassifier(max_depth=1,
                                               splitter='best'),
-        train_weighting=ExpTrainWeighting(pred_train=True),
+        train_weighting=ExpTrainWeighting(),
         n_estimators=20,
         estimator_params=tuple(),
         keep_selected_features=True,

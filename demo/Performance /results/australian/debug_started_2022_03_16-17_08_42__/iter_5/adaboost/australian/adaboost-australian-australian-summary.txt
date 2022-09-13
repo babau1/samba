@@ -1,0 +1,59 @@
+Classification on australian for australian with adaboost.
+
+Database configuration : 
+	- Database name : australian
+	- View name : australian	 View shape : (690, 14)
+	- Learning Rate : 0.7492753623188406
+	- Labels used : -, +
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 8, base_estimator : DecisionTreeClassifier
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.874274661508704
+		- Score on test : 0.8786127167630058
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.874274661508704
+		- Score on test : 0.8786127167630058
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8751022572337525
+		- Score on test : 0.8841991341991342
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   - │   + │
+╞════╪═════╪═════╡
+│ -  │  80 │  16 │
+├────┼─────┼─────┤
+│ +  │   5 │  72 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:16
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 7, feature importance : 0.340520669415711
+- Feature index : 13, feature importance : 0.19258325680839006
+- Feature index : 2, feature importance : 0.1679086884447481
+- Feature index : 4, feature importance : 0.13853910419732682
+- Feature index : 6, feature importance : 0.08775234604276355
+- Feature index : 9, feature importance : 0.0726959350910604
+
+
+ Estimator error | Estimator weight
+0.14893617021276592 | 0.340520669415711
+0.2717532467532467 | 0.19258325680839006
+0.3297937137229272 | 0.13853910419732682
+0.40803436443161845 | 0.0726959350910604
+0.44243694190274585 | 0.0451842851436984
+0.41267830833430524 | 0.06894626050717
+0.3895595371991785 | 0.08775234604276355
+0.431614838841707 | 0.0537781427938797

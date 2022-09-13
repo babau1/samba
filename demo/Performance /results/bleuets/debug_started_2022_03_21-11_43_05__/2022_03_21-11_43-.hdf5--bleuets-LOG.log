@@ -1,0 +1,2793 @@
+2022-03-21 11:43:05,519 INFO: Info:	 Enough copies of the dataset are already available
+2022-03-21 11:43:05,521 INFO: Start:	 Initializing monoview classifiers arguments
+2022-03-21 11:43:05,521 INFO: Done:	 Initializing monoview classifiers arguments
+2022-03-21 11:43:05,521 INFO: Start:	 Initializing monoview classifiers arguments
+2022-03-21 11:43:05,522 INFO: Done:	 Initializing monoview classifiers arguments
+2022-03-21 11:43:05,522 INFO: Start:	 Executing all the needed benchmarks
+2022-03-21 11:43:05,522 INFO: Start:	 Benchmark initialization
+2022-03-21 11:43:05,529 INFO: Done:	 Benchmark initialization
+2022-03-21 11:43:05,529 INFO: Start:	 monoview benchmark
+2022-03-21 11:43:05,536 INFO: Start:	 Loading data
+2022-03-21 11:43:05,537 INFO: Done:	 Loading data
+2022-03-21 11:43:05,537 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : decision_tree
+2022-03-21 11:43:05,537 INFO: Start:	 Determine Train/Test split
+2022-03-21 11:43:05,538 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 11:43:05,538 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 11:43:05,538 INFO: Done:	 Determine Train/Test split
+2022-03-21 11:43:05,538 INFO: Start:	 Generate classifier args
+2022-03-21 11:43:05,538 INFO: Start:	 Random best settings for decision_tree
+2022-03-21 11:43:20,346 INFO: Done:	 Random best settings
+2022-03-21 11:43:20,346 INFO: Done:	 Generate classifier args
+2022-03-21 11:43:20,347 INFO: Start:	 Training
+2022-03-21 11:43:20,430 INFO: Done:	 Training
+2022-03-21 11:43:20,430 INFO: Start:	 Predicting
+2022-03-21 11:43:20,436 INFO: Done:	 Predicting
+2022-03-21 11:43:20,436 INFO: Info:	 Duration for training and predicting: 14.899846412999977[s]
+2022-03-21 11:43:20,437 INFO: Start:	 Getting results
+2022-03-21 11:43:20,482 INFO: Done:	 Getting results
+2022-03-21 11:43:20,482 INFO: Start:	 Saving preds
+2022-03-21 11:43:20,483 INFO: Classification on bleuets for metabolomics_bleuets with decision_tree.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 74, criterion : gini, splitter : random, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8611111111111112
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      16 │         2 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       1 │         5 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:14
+
+ Classifier Interpretation : 
+First feature : 
+	ID_3659 <= 10206.781368037977
+Feature importances : 
+- Feature : ID_2068, feature importance : 0.4569993722536095
+- Feature : ID_3659, feature importance : 0.41764450239026524
+- Feature : ID_3715, feature importance : 0.12535612535612536
+
+2022-03-21 11:43:20,490 INFO: Done:	 Saving results
+2022-03-21 11:43:20,499 INFO: Start:	 Loading data
+2022-03-21 11:43:20,500 INFO: Done:	 Loading data
+2022-03-21 11:43:20,500 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : adaboost
+2022-03-21 11:43:20,500 INFO: Start:	 Determine Train/Test split
+2022-03-21 11:43:20,502 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 11:43:20,502 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 11:43:20,502 INFO: Done:	 Determine Train/Test split
+2022-03-21 11:43:20,502 INFO: Start:	 Generate classifier args
+2022-03-21 11:43:20,502 INFO: Start:	 Random best settings for adaboost
+2022-03-21 11:44:33,923 INFO: Done:	 Random best settings
+2022-03-21 11:44:33,923 INFO: Done:	 Generate classifier args
+2022-03-21 11:44:33,923 INFO: Start:	 Training
+2022-03-21 11:44:45,546 INFO: Done:	 Training
+2022-03-21 11:44:45,546 INFO: Start:	 Predicting
+2022-03-21 11:44:45,951 INFO: Done:	 Predicting
+2022-03-21 11:44:45,952 INFO: Info:	 Duration for training and predicting: 85.45230369099954[s]
+2022-03-21 11:44:45,952 INFO: Start:	 Getting results
+2022-03-21 11:44:46,232 INFO: Done:	 Getting results
+2022-03-21 11:44:46,233 INFO: Start:	 Saving preds
+2022-03-21 11:44:46,233 INFO: Classification on bleuets for metabolomics_bleuets with adaboost.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 66, base_estimator : DecisionTreeClassifier
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8888888888888888
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       1 │         5 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:01:25
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.20813284126202788
+- Feature : ID_2068, feature importance : 0.13401238044664956
+- Feature : ID_2060, feature importance : 0.12141043514066595
+- Feature : ID_3097, feature importance : 0.07503518174303839
+- Feature : ID_3249, feature importance : 0.04667702934015263
+- Feature : ID_3013, feature importance : 0.04507570275704062
+- Feature : ID_5139, feature importance : 0.04470348739552918
+- Feature : ID_2551, feature importance : 0.032521690718654406
+- Feature : ID_2396, feature importance : 0.02889887162362895
+- Feature : ID_4034, feature importance : 0.017736321420208857
+- Feature : ID_2459, feature importance : 0.017709966073080126
+- Feature : ID_3879, feature importance : 0.017154769471791533
+- Feature : ID_2921, feature importance : 0.016820764435999877
+- Feature : ID_266, feature importance : 0.016568322549948094
+- Feature : ID_10966, feature importance : 0.016559289354291788
+- Feature : ID_3300, feature importance : 0.016297461560972688
+- Feature : ID_2946, feature importance : 0.016032023472335306
+- Feature : ID_2960, feature importance : 0.015903997921106524
+- Feature : ID_3358, feature importance : 0.015758441350685007
+- Feature : ID_479, feature importance : 0.015479292250137855
+- Feature : ID_3738, feature importance : 0.015330373352210953
+- Feature : ID_6222, feature importance : 0.014277690478242781
+- Feature : ID_8074, feature importance : 0.01367286245324315
+- Feature : ID_2524, feature importance : 0.013634728375265985
+- Feature : ID_4747, feature importance : 0.013194867233446967
+- Feature : ID_8994, feature importance : 0.01140120781964507
+
+
+ Estimator error | Estimator weight
+0.02777777777777777 | 0.012930512954739556
+0.02857142857142857 | 0.012825087630809792
+0.014705882352941175 | 0.015292126521912567
+0.011194029850746265 | 0.016297461560972688
+0.012264150943396222 | 0.015961473221597564
+0.03342884431709646 | 0.012235816787297278
+0.023797760210803685 | 0.013507802014539909
+0.017207929143821167 | 0.01471143668055134
+0.017251738048236202 | 0.014702027252952032
+0.009708439442879841 | 0.016820764435999877
+0.00886410910540567 | 0.017154769471791533
+0.007893037411571558 | 0.01758032058235978
+0.008509254710514927 | 0.017304661604659825
+0.016467751253065595 | 0.014874076533744566
+0.016454624586863222 | 0.014877025266533127
+0.015334007708901335 | 0.015137691238149438
+0.007618735498966076 | 0.017709966073080126
+0.013978532939856243 | 0.015479292250137855
+0.01676421242686475 | 0.014808088736856363
+0.0167692671026167 | 0.014806973616484352
+0.016774633416150216 | 0.0148057901067033
+0.013948636989981184 | 0.01548718914333371
+0.01346885062923951 | 0.015616258282432939
+0.014554280665551613 | 0.015330373352210953
+0.016860422724380052 | 0.014786920126993272
+0.016861986004256233 | 0.014786577148458028
+0.01686348420501452 | 0.014786248477396758
+0.01632690278563387 | 0.014905837640240484
+0.010663207149948967 | 0.016476099906342117
+0.013395389468355466 | 0.015636419694619236
+0.01683656979666432 | 0.014792157262363386
+0.016836134546796444 | 0.014792252893312104
+0.010424583280506826 | 0.016559289354291788
+0.008506509920647316 | 0.01730584500583368
+0.01974812844984577 | 0.014201262509966893
+0.01203137393538466 | 0.016032023472335306
+0.010344935307755862 | 0.016587476276281637
+0.016615620943906756 | 0.014841018280080507
+0.009439755150621402 | 0.016923823053819606
+0.0075641411334552615 | 0.017736321420208857
+0.02588074731234857 | 0.013194867233446967
+0.021787990248554587 | 0.013836176533691126
+0.020369531090912652 | 0.014086279104290915
+0.017026652889093497 | 0.01475062366189443
+0.012457070942946614 | 0.015903997921106524
+0.01655593628900437 | 0.014854326636680905
+0.01036326352070456 | 0.0165809710605465
+0.010795882605065548 | 0.016430639496046257
+0.01039899227257801 | 0.016568322549948094
+0.014821778872455277 | 0.015263148627853452
+0.008428450260603747 | 0.017339659444979994
+0.019345406362260006 | 0.014277690478242781
+0.02300033047531658 | 0.013634728375265985
+0.02541635858013707 | 0.013262451929009713
+0.02329516844402234 | 0.013587305801389536
+0.02276588737442205 | 0.01367286245324315
+0.04169226349270501 | 0.01140120781964507
+0.026829377985188124 | 0.013060401448787952
+0.016372853790007694 | 0.014895446247825957
+0.026138422097753165 | 0.013157874117660649
+0.014064068527327691 | 0.01545678999919837
+0.021306516030934787 | 0.013919236658162318
+0.012959146281405853 | 0.015758441350685007
+0.007424107495082602 | 0.017804795241595516
+0.01924322515595343 | 0.01429733030157399
+0.013536206099153868 | 0.015597867664834793
+2022-03-21 11:44:46,235 INFO: Done:	 Saving results
+2022-03-21 11:44:46,240 INFO: Start:	 Loading data
+2022-03-21 11:44:46,241 INFO: Done:	 Loading data
+2022-03-21 11:44:46,241 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : samba
+2022-03-21 11:44:46,241 INFO: Start:	 Determine Train/Test split
+2022-03-21 11:44:46,242 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 11:44:46,242 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 11:44:46,242 INFO: Done:	 Determine Train/Test split
+2022-03-21 11:44:46,242 INFO: Start:	 Generate classifier args
+2022-03-21 11:44:46,242 INFO: Start:	 Random best settings for samba
+2022-03-21 11:54:25,503 INFO: Done:	 Random best settings
+2022-03-21 11:54:25,503 INFO: Done:	 Generate classifier args
+2022-03-21 11:54:25,503 INFO: Start:	 Training
+2022-03-21 11:54:32,599 INFO: Done:	 Training
+2022-03-21 11:54:32,599 INFO: Start:	 Predicting
+2022-03-21 11:54:32,704 INFO: Done:	 Predicting
+2022-03-21 11:54:32,704 INFO: Info:	 Duration for training and predicting: 586.463241898[s]
+2022-03-21 11:54:32,704 INFO: Start:	 Getting results
+2022-03-21 11:54:32,741 INFO: Done:	 Getting results
+2022-03-21 11:54:32,741 INFO: Start:	 Saving preds
+2022-03-21 11:54:32,742 INFO: Classification on bleuets for metabolomics_bleuets with samba.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 18, relevance : <SamBA.relevances.ExpRelevance object at 0x7f8f79fcb080>, distance : <SamBA.distances.ExpEuclidianDist object at 0x7f8f79fcb978>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f8f79fcb518>, b : 2.704362075875315, pred_train : True, normalizer : RobustScaler(), normalize_dists : True, a : 1e-07
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8055555555555556
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       2 │         4 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:09:46
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.16666666666666666
+- Feature : ID_2068, feature importance : 0.16666666666666666
+- Feature : ID_2060, feature importance : 0.1111111111111111
+- Feature : ID_2396, feature importance : 0.05555555555555555
+- Feature : ID_4309, feature importance : 0.05555555555555555
+- Feature : ID_4428, feature importance : 0.05555555555555555
+- Feature : ID_3706, feature importance : 0.05555555555555555
+- Feature : ID_2680, feature importance : 0.05555555555555555
+- Feature : ID_2459, feature importance : 0.05555555555555555
+- Feature : ID_2935, feature importance : 0.05555555555555555
+- Feature : ID_2817, feature importance : 0.05555555555555555
+- Feature : ID_3097, feature importance : 0.05555555555555555
+- Feature : ID_2551, feature importance : 0.05555555555555555
+
+2022-03-21 11:54:32,747 INFO: Done:	 Saving results
+2022-03-21 11:54:32,755 INFO: Start:	 Loading data
+2022-03-21 11:54:32,755 INFO: Done:	 Loading data
+2022-03-21 11:54:32,755 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : random_forest
+2022-03-21 11:54:32,755 INFO: Start:	 Determine Train/Test split
+2022-03-21 11:54:32,757 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 11:54:32,757 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 11:54:32,757 INFO: Done:	 Determine Train/Test split
+2022-03-21 11:54:32,757 INFO: Start:	 Generate classifier args
+2022-03-21 11:54:32,757 INFO: Start:	 Random best settings for random_forest
+2022-03-21 11:55:22,038 INFO: Done:	 Random best settings
+2022-03-21 11:55:22,038 INFO: Done:	 Generate classifier args
+2022-03-21 11:55:22,038 INFO: Start:	 Training
+2022-03-21 11:55:23,526 INFO: Done:	 Training
+2022-03-21 11:55:23,526 INFO: Start:	 Predicting
+2022-03-21 11:55:23,602 INFO: Done:	 Predicting
+2022-03-21 11:55:23,603 INFO: Info:	 Duration for training and predicting: 50.84782067500055[s]
+2022-03-21 11:55:23,603 INFO: Start:	 Getting results
+2022-03-21 11:55:23,738 INFO: Done:	 Getting results
+2022-03-21 11:55:23,738 INFO: Start:	 Saving preds
+2022-03-21 11:55:23,738 INFO: Classification on bleuets for metabolomics_bleuets with random_forest.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 248, max_depth : 6, criterion : entropy, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7083333333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7083333333333334
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.5277777777777778
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      16 │         2 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       5 │         1 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:50
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_2068, feature importance : 0.019981097162355375
+- Feature : ID_2060, feature importance : 0.013611106364188927
+- Feature : ID_3650, feature importance : 0.009267772265404393
+- Feature : ID_2524, feature importance : 0.009019117804054105
+- Feature : ID_2680, feature importance : 0.008740350578884741
+- Feature : ID_676, feature importance : 0.007947295499281873
+- Feature : ID_3167, feature importance : 0.007819321425336647
+- Feature : ID_4428, feature importance : 0.007765826777485505
+- Feature : ID_3249, feature importance : 0.007038960687541477
+- Feature : ID_8083, feature importance : 0.006644023785587698
+- Feature : ID_3325, feature importance : 0.005912245269396056
+- Feature : ID_2953, feature importance : 0.005865100555420977
+- Feature : ID_3928, feature importance : 0.005859451825259764
+- Feature : ID_3609, feature importance : 0.005787254850125472
+- Feature : ID_2419, feature importance : 0.005289818825438599
+- Feature : ID_4032, feature importance : 0.005166112034833634
+- Feature : ID_4014, feature importance : 0.004852556492174785
+- Feature : ID_2817, feature importance : 0.004780131668550706
+- Feature : ID_4997, feature importance : 0.004759472036285034
+- Feature : ID_3179, feature importance : 0.004704891062660944
+- Feature : ID_3311, feature importance : 0.004380691470856577
+- Feature : ID_1134, feature importance : 0.004239344604368854
+- Feature : ID_2327, feature importance : 0.004208969680682886
+- Feature : ID_2396, feature importance : 0.004204484916477609
+- Feature : ID_2998, feature importance : 0.004142732488425819
+- Feature : ID_3028, feature importance : 0.0038832248523181716
+- Feature : ID_3706, feature importance : 0.003869537375858032
+- Feature : ID_3092, feature importance : 0.0038665497454132987
+- Feature : ID_4180, feature importance : 0.0038646299110576916
+- Feature : ID_3202, feature importance : 0.0038625777099075757
+- Feature : ID_5349, feature importance : 0.003818779995666474
+- Feature : ID_2746, feature importance : 0.003693050379125419
+- Feature : ID_3940, feature importance : 0.0036495553876535218
+- Feature : ID_3685, feature importance : 0.003612049525931883
+- Feature : ID_2769, feature importance : 0.0035253253869891804
+- Feature : ID_5147, feature importance : 0.003509038380556334
+- Feature : ID_3075, feature importance : 0.003481973571417496
+- Feature : ID_3112, feature importance : 0.0033798194271591215
+- Feature : ID_4956, feature importance : 0.0033678396531148336
+- Feature : ID_4084, feature importance : 0.003309437471381178
+- Feature : ID_4249, feature importance : 0.0031470248651859238
+- Feature : ID_2919, feature importance : 0.003120179334645804
+- Feature : ID_3012, feature importance : 0.0030763765235763767
+- Feature : ID_11247, feature importance : 0.0030288919162754415
+- Feature : ID_4488, feature importance : 0.0029440650525798502
+- Feature : ID_3636, feature importance : 0.002927098460685256
+- Feature : ID_3128, feature importance : 0.002798248510108824
+- Feature : ID_4660, feature importance : 0.002747732491451219
+- Feature : ID_4059, feature importance : 0.002728756650922083
+- Feature : ID_6230, feature importance : 0.0027277870217845604
+
+2022-03-21 11:55:23,742 INFO: Done:	 Saving results
+2022-03-21 11:55:23,749 INFO: Start:	 Loading data
+2022-03-21 11:55:23,750 INFO: Done:	 Loading data
+2022-03-21 11:55:23,750 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : random_scm
+2022-03-21 11:55:23,750 INFO: Start:	 Determine Train/Test split
+2022-03-21 11:55:23,751 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 11:55:23,751 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 11:55:23,752 INFO: Done:	 Determine Train/Test split
+2022-03-21 11:55:23,752 INFO: Start:	 Generate classifier args
+2022-03-21 11:55:23,752 INFO: Start:	 Random best settings for random_scm
+2022-03-21 12:01:37,005 INFO: Done:	 Random best settings
+2022-03-21 12:01:37,005 INFO: Done:	 Generate classifier args
+2022-03-21 12:01:37,005 INFO: Start:	 Training
+2022-03-21 12:01:38,098 INFO: Done:	 Training
+2022-03-21 12:01:38,098 INFO: Start:	 Predicting
+2022-03-21 12:01:38,232 INFO: Done:	 Predicting
+2022-03-21 12:01:38,232 INFO: Info:	 Duration for training and predicting: 374.48268033099885[s]
+2022-03-21 12:01:38,232 INFO: Start:	 Getting results
+2022-03-21 12:01:38,367 INFO: Done:	 Getting results
+2022-03-21 12:01:38,367 INFO: Start:	 Saving preds
+2022-03-21 12:01:38,367 INFO: Classification on bleuets for metabolomics_bleuets with random_scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 16, max_rules : 7, max_samples : 0.785696971803611, max_features : 0.6133509004705384, model_type : disjunction, p_options : [0.006108356064248532], random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8888888888888888
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       1 │         5 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:06:14
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.4976213984382013
+- Feature : ID_2060, feature importance : 0.21326631361637197
+- Feature : ID_4428, feature importance : 0.07108877120545733
+- Feature : ID_2769, feature importance : 0.06220267480477516
+- Feature : ID_2068, feature importance : 0.05529126649313348
+- Feature : ID_3463, feature importance : 0.05529126649313348
+- Feature : ID_3249, feature importance : 0.04523830894892739
+
+2022-03-21 12:01:38,370 INFO: Done:	 Saving results
+2022-03-21 12:01:38,378 INFO: Start:	 Loading data
+2022-03-21 12:01:38,378 INFO: Done:	 Loading data
+2022-03-21 12:01:38,378 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : scm
+2022-03-21 12:01:38,379 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:01:38,380 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:01:38,380 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:01:38,380 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:01:38,380 INFO: Start:	 Generate classifier args
+2022-03-21 12:01:38,380 INFO: Start:	 Random best settings for scm
+2022-03-21 12:01:46,264 INFO: Done:	 Random best settings
+2022-03-21 12:01:46,265 INFO: Done:	 Generate classifier args
+2022-03-21 12:01:46,265 INFO: Start:	 Training
+2022-03-21 12:01:46,398 INFO: Done:	 Training
+2022-03-21 12:01:46,398 INFO: Start:	 Predicting
+2022-03-21 12:01:46,401 INFO: Done:	 Predicting
+2022-03-21 12:01:46,401 INFO: Info:	 Duration for training and predicting: 8.02248731200234[s]
+2022-03-21 12:01:46,401 INFO: Start:	 Getting results
+2022-03-21 12:01:46,433 INFO: Done:	 Getting results
+2022-03-21 12:01:46,433 INFO: Start:	 Saving preds
+2022-03-21 12:01:46,433 INFO: Classification on bleuets for metabolomics_bleuets with scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 3, p : 0.38411003025718515, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9444444444444444
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9444444444444444
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.962962962962963
+		- Score on test : 0.8611111111111112
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      16 │         2 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       1 │         5 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:08
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 1.0
+Model used : X[676] > 50.869
+2022-03-21 12:01:46,436 INFO: Done:	 Saving results
+2022-03-21 12:01:46,437 INFO: Done:	 monoview benchmark
+2022-03-21 12:01:46,437 INFO: Start:	 multiview benchmark
+2022-03-21 12:01:46,437 INFO: Done:	 multiview benchmark
+2022-03-21 12:01:46,438 INFO: Start:	 Analyzing all results
+2022-03-21 12:01:46,666 INFO: Start:	 Score graph generation for accuracy_score
+2022-03-21 12:01:48,339 INFO: Done:	 Score graph generation for accuracy_score
+2022-03-21 12:01:48,339 INFO: Start:	 Score graph generation for f1_score
+2022-03-21 12:01:48,796 INFO: Done:	 Score graph generation for f1_score
+2022-03-21 12:01:48,797 INFO: Start:	 Score graph generation for balanced_accuracy*
+2022-03-21 12:01:49,237 INFO: Done:	 Score graph generation for balanced_accuracy*
+2022-03-21 12:01:49,237 INFO: Start:	 Label analysis figure generation
+2022-03-21 12:01:50,035 INFO: Done:	 Label analysis figures generation
+2022-03-21 12:02:32,202 INFO: Done:	 Analyzing all results
+2022-03-21 12:02:32,202 INFO: Start:	 Benchmark initialization
+2022-03-21 12:02:32,211 INFO: Done:	 Benchmark initialization
+2022-03-21 12:02:32,211 INFO: Start:	 monoview benchmark
+2022-03-21 12:02:32,217 INFO: Start:	 Loading data
+2022-03-21 12:02:32,217 INFO: Done:	 Loading data
+2022-03-21 12:02:32,217 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : decision_tree
+2022-03-21 12:02:32,217 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:02:32,219 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:02:32,219 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:02:32,219 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:02:32,219 INFO: Start:	 Generate classifier args
+2022-03-21 12:02:32,219 INFO: Start:	 Random best settings for decision_tree
+2022-03-21 12:02:41,470 INFO: Done:	 Random best settings
+2022-03-21 12:02:41,470 INFO: Done:	 Generate classifier args
+2022-03-21 12:02:41,470 INFO: Start:	 Training
+2022-03-21 12:02:41,936 INFO: Done:	 Training
+2022-03-21 12:02:41,936 INFO: Start:	 Predicting
+2022-03-21 12:02:41,939 INFO: Done:	 Predicting
+2022-03-21 12:02:41,940 INFO: Info:	 Duration for training and predicting: 9.722666854999261[s]
+2022-03-21 12:02:41,940 INFO: Start:	 Getting results
+2022-03-21 12:02:41,966 INFO: Done:	 Getting results
+2022-03-21 12:02:41,966 INFO: Start:	 Saving preds
+2022-03-21 12:02:41,966 INFO: Classification on bleuets for metabolomics_bleuets with decision_tree.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 58, criterion : entropy, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8333333333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8333333333333334
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7777777777777777
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      16 │         2 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       2 │         4 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:09
+
+ Classifier Interpretation : 
+First feature : 
+	ID_676 <= 52.52389144897461
+Feature importances : 
+- Feature : ID_676, feature importance : 0.7872847524373187
+- Feature : ID_9594, feature importance : 0.2127152475626813
+
+2022-03-21 12:02:41,970 INFO: Done:	 Saving results
+2022-03-21 12:02:41,979 INFO: Start:	 Loading data
+2022-03-21 12:02:41,980 INFO: Done:	 Loading data
+2022-03-21 12:02:41,980 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : adaboost
+2022-03-21 12:02:41,980 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:02:41,982 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:02:41,982 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:02:41,982 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:02:41,982 INFO: Start:	 Generate classifier args
+2022-03-21 12:02:41,982 INFO: Start:	 Random best settings for adaboost
+2022-03-21 12:03:48,462 INFO: Done:	 Random best settings
+2022-03-21 12:03:48,462 INFO: Done:	 Generate classifier args
+2022-03-21 12:03:48,462 INFO: Start:	 Training
+2022-03-21 12:03:55,431 INFO: Done:	 Training
+2022-03-21 12:03:55,431 INFO: Start:	 Predicting
+2022-03-21 12:03:55,682 INFO: Done:	 Predicting
+2022-03-21 12:03:55,682 INFO: Info:	 Duration for training and predicting: 73.70288111300033[s]
+2022-03-21 12:03:55,682 INFO: Start:	 Getting results
+2022-03-21 12:03:55,918 INFO: Done:	 Getting results
+2022-03-21 12:03:55,918 INFO: Start:	 Saving preds
+2022-03-21 12:03:55,918 INFO: Classification on bleuets for metabolomics_bleuets with adaboost.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 39, base_estimator : DecisionTreeClassifier
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8888888888888888
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       1 │         5 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:01:13
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.31047114825728134
+- Feature : ID_2068, feature importance : 0.12480749596124753
+- Feature : ID_2060, feature importance : 0.07637167204328064
+- Feature : ID_2551, feature importance : 0.05160057290994253
+- Feature : ID_1676, feature importance : 0.045409062049289114
+- Feature : ID_3097, feature importance : 0.028767088508110723
+- Feature : ID_3157, feature importance : 0.027708885285047176
+- Feature : ID_10884, feature importance : 0.027679638823977667
+- Feature : ID_2941, feature importance : 0.027507852483030712
+- Feature : ID_15372, feature importance : 0.027235907673598708
+- Feature : ID_5127, feature importance : 0.02705516062490764
+- Feature : ID_3999, feature importance : 0.026718947231623772
+- Feature : ID_3169, feature importance : 0.026412885000977354
+- Feature : ID_11196, feature importance : 0.026217447961635363
+- Feature : ID_4034, feature importance : 0.02613588178904254
+- Feature : ID_7108, feature importance : 0.025684690215414873
+- Feature : ID_7256, feature importance : 0.02525515659614157
+- Feature : ID_2348, feature importance : 0.02505470662846031
+- Feature : ID_15227, feature importance : 0.022747835975561518
+- Feature : ID_3358, feature importance : 0.02115796398142873
+
+
+ Estimator error | Estimator weight
+0.02777777777777777 | 0.024836620104564985
+0.021428571428571436 | 0.026694961921922965
+0.018248175182481757 | 0.02783995305241154
+0.01858736059479554 | 0.027708885285047176
+0.034090909090909095 | 0.02336047667408078
+0.046143790849673204 | 0.02115796398142873
+0.03520282307797725 | 0.023128220437187808
+0.022291862715505765 | 0.026412885000977354
+0.017710232715471345 | 0.02805280953306673
+0.018663886396167537 | 0.027679638823977667
+0.027858902867992336 | 0.02481566512589505
+0.0341078298159735 | 0.02335688786338655
+0.03414562148605144 | 0.02334887861563948
+0.02617818870822953 | 0.025262424854651414
+0.01601645755352073 | 0.028767088508110723
+0.034957662969399235 | 0.023178815494166248
+0.03498844729856049 | 0.02317244362162655
+0.026946988305207017 | 0.02505470662846031
+0.019977103287133865 | 0.0271952818681739
+0.022909831778723324 | 0.026217447961635363
+0.023172663227806176 | 0.02613588178904254
+0.012507665991362354 | 0.030519345666641676
+0.017384456647144293 | 0.028184823161120975
+0.02620472579234893 | 0.02525515659614157
+0.022526232530652127 | 0.026338148055291114
+0.019863563404278854 | 0.027235907673598708
+0.03408843662810632 | 0.02336100121635461
+0.019119657941341482 | 0.027507852483030712
+0.017676949526459464 | 0.028066186956174587
+0.021356691563775752 | 0.026718947231623772
+0.025681764350394928 | 0.025399729134038724
+0.02037360903064575 | 0.02705516062490764
+0.01736056766133082 | 0.028194599058129537
+0.024680568249571565 | 0.025684690215414873
+0.04078101549215162 | 0.022060183433649634
+0.0450322420392897 | 0.0213364371226952
+0.03709974260673198 | 0.022747835975561518
+0.034231627637995025 | 0.023330683024745575
+0.018806691171227356 | 0.027625375225425564
+2022-03-21 12:03:55,921 INFO: Done:	 Saving results
+2022-03-21 12:03:55,929 INFO: Start:	 Loading data
+2022-03-21 12:03:55,929 INFO: Done:	 Loading data
+2022-03-21 12:03:55,930 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : samba
+2022-03-21 12:03:55,930 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:03:55,931 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:03:55,931 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:03:55,931 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:03:55,931 INFO: Start:	 Generate classifier args
+2022-03-21 12:03:55,932 INFO: Start:	 Random best settings for samba
+2022-03-21 12:15:56,280 INFO: Done:	 Random best settings
+2022-03-21 12:15:56,281 INFO: Done:	 Generate classifier args
+2022-03-21 12:15:56,281 INFO: Start:	 Training
+2022-03-21 12:16:09,842 INFO: Done:	 Training
+2022-03-21 12:16:09,843 INFO: Start:	 Predicting
+2022-03-21 12:16:10,040 INFO: Done:	 Predicting
+2022-03-21 12:16:10,041 INFO: Info:	 Duration for training and predicting: 734.1116339750006[s]
+2022-03-21 12:16:10,041 INFO: Start:	 Getting results
+2022-03-21 12:16:10,075 INFO: Done:	 Getting results
+2022-03-21 12:16:10,076 INFO: Start:	 Saving preds
+2022-03-21 12:16:10,076 INFO: Classification on bleuets for metabolomics_bleuets with samba.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 44, relevance : <SamBA.relevances.ExpRelevance object at 0x7f8fd52e2f28>, distance : <SamBA.distances.PolarDist object at 0x7f8fd5332898>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f8fd5332400>, b : 2.874833377184386, pred_train : True, normalizer : RobustScaler(), normalize_dists : True, a : 1e-09
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8888888888888888
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       1 │         5 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:12:14
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.2727272727272727
+- Feature : ID_2068, feature importance : 0.13636363636363635
+- Feature : ID_2060, feature importance : 0.06818181818181818
+- Feature : ID_2551, feature importance : 0.045454545454545456
+- Feature : ID_3169, feature importance : 0.022727272727272728
+- Feature : ID_4352, feature importance : 0.022727272727272728
+- Feature : ID_15362, feature importance : 0.022727272727272728
+- Feature : ID_4973, feature importance : 0.022727272727272728
+- Feature : ID_4084, feature importance : 0.022727272727272728
+- Feature : ID_5338, feature importance : 0.022727272727272728
+- Feature : ID_1676, feature importance : 0.022727272727272728
+- Feature : ID_15476, feature importance : 0.022727272727272728
+- Feature : ID_2975, feature importance : 0.022727272727272728
+- Feature : ID_2470, feature importance : 0.022727272727272728
+- Feature : ID_4355, feature importance : 0.022727272727272728
+- Feature : ID_12959, feature importance : 0.022727272727272728
+- Feature : ID_6506, feature importance : 0.022727272727272728
+- Feature : ID_5687, feature importance : 0.022727272727272728
+- Feature : ID_3300, feature importance : 0.022727272727272728
+- Feature : ID_3024, feature importance : 0.022727272727272728
+- Feature : ID_4034, feature importance : 0.022727272727272728
+- Feature : ID_13450, feature importance : 0.022727272727272728
+- Feature : ID_3942, feature importance : 0.022727272727272728
+- Feature : ID_3028, feature importance : 0.022727272727272728
+- Feature : ID_3157, feature importance : 0.022727272727272728
+
+2022-03-21 12:16:10,079 INFO: Done:	 Saving results
+2022-03-21 12:16:10,086 INFO: Start:	 Loading data
+2022-03-21 12:16:10,087 INFO: Done:	 Loading data
+2022-03-21 12:16:10,087 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : random_forest
+2022-03-21 12:16:10,087 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:16:10,089 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:16:10,089 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:16:10,090 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:16:10,090 INFO: Start:	 Generate classifier args
+2022-03-21 12:16:10,090 INFO: Start:	 Random best settings for random_forest
+2022-03-21 12:16:58,860 INFO: Done:	 Random best settings
+2022-03-21 12:16:58,860 INFO: Done:	 Generate classifier args
+2022-03-21 12:16:58,860 INFO: Start:	 Training
+2022-03-21 12:16:59,199 INFO: Done:	 Training
+2022-03-21 12:16:59,200 INFO: Start:	 Predicting
+2022-03-21 12:16:59,220 INFO: Done:	 Predicting
+2022-03-21 12:16:59,220 INFO: Info:	 Duration for training and predicting: 49.134127245000855[s]
+2022-03-21 12:16:59,221 INFO: Start:	 Getting results
+2022-03-21 12:16:59,269 INFO: Done:	 Getting results
+2022-03-21 12:16:59,270 INFO: Start:	 Saving preds
+2022-03-21 12:16:59,270 INFO: Classification on bleuets for metabolomics_bleuets with random_forest.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 57, max_depth : 6, criterion : entropy, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8055555555555556
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       2 │         4 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:49
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.01562176262922063
+- Feature : ID_2068, feature importance : 0.012903669537052978
+- Feature : ID_4180, feature importance : 0.011744660158672478
+- Feature : ID_2797, feature importance : 0.011065299243586313
+- Feature : ID_2524, feature importance : 0.010794220044286873
+- Feature : ID_3325, feature importance : 0.010513892152722703
+- Feature : ID_6474, feature importance : 0.009949577131840633
+- Feature : ID_2817, feature importance : 0.009534027988686154
+- Feature : ID_3647, feature importance : 0.009149173473430196
+- Feature : ID_3097, feature importance : 0.008694385461072271
+- Feature : ID_6220, feature importance : 0.008549408857974778
+- Feature : ID_6563, feature importance : 0.00845144563451704
+- Feature : ID_2832, feature importance : 0.008419143740903723
+- Feature : ID_4371, feature importance : 0.008044250501999962
+- Feature : ID_13517, feature importance : 0.008024388096313572
+- Feature : ID_2396, feature importance : 0.008010963250262359
+- Feature : ID_5242, feature importance : 0.007799317851658331
+- Feature : ID_3609, feature importance : 0.007694325302436634
+- Feature : ID_1208, feature importance : 0.007683167208613702
+- Feature : ID_9657, feature importance : 0.007677409064225545
+- Feature : ID_3157, feature importance : 0.007600208794604347
+- Feature : ID_9383, feature importance : 0.007596565934543632
+- Feature : ID_13125, feature importance : 0.007548673881623908
+- Feature : ID_3942, feature importance : 0.00735757490238582
+- Feature : ID_5147, feature importance : 0.00735329263147729
+- Feature : ID_4989, feature importance : 0.0073468099047670895
+- Feature : ID_2989, feature importance : 0.007344895746207969
+- Feature : ID_3061, feature importance : 0.007340738771455306
+- Feature : ID_3676, feature importance : 0.007213060213323974
+- Feature : ID_14334, feature importance : 0.00717978881971805
+- Feature : ID_4659, feature importance : 0.00717978881971805
+- Feature : ID_1711, feature importance : 0.007157833403308395
+- Feature : ID_2935, feature importance : 0.007031213579493324
+- Feature : ID_6863, feature importance : 0.007029967496400102
+- Feature : ID_3357, feature importance : 0.0070288620042317
+- Feature : ID_1010, feature importance : 0.007000752982270969
+- Feature : ID_13528, feature importance : 0.006991737356014555
+- Feature : ID_3437, feature importance : 0.006891394686735411
+- Feature : ID_6334, feature importance : 0.006772377681478304
+- Feature : ID_3933, feature importance : 0.006734601240095812
+- Feature : ID_2089, feature importance : 0.006610039121003347
+- Feature : ID_8083, feature importance : 0.0065935698639392575
+- Feature : ID_6772, feature importance : 0.0065891712524664935
+- Feature : ID_5351, feature importance : 0.0065342346365560465
+- Feature : ID_4022, feature importance : 0.006527582964306024
+- Feature : ID_7146, feature importance : 0.006458731452569418
+- Feature : ID_8779, feature importance : 0.006455514068204832
+- Feature : ID_2746, feature importance : 0.006443411647191426
+- Feature : ID_4330, feature importance : 0.006424534422028715
+- Feature : ID_5904, feature importance : 0.006378955732484981
+
+2022-03-21 12:16:59,276 INFO: Done:	 Saving results
+2022-03-21 12:16:59,281 INFO: Start:	 Loading data
+2022-03-21 12:16:59,281 INFO: Done:	 Loading data
+2022-03-21 12:16:59,281 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : random_scm
+2022-03-21 12:16:59,281 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:16:59,282 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:16:59,282 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:16:59,282 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:16:59,283 INFO: Start:	 Generate classifier args
+2022-03-21 12:16:59,283 INFO: Start:	 Random best settings for random_scm
+2022-03-21 12:20:42,294 INFO: Done:	 Random best settings
+2022-03-21 12:20:42,294 INFO: Done:	 Generate classifier args
+2022-03-21 12:20:42,294 INFO: Start:	 Training
+2022-03-21 12:20:45,257 INFO: Done:	 Training
+2022-03-21 12:20:45,257 INFO: Start:	 Predicting
+2022-03-21 12:20:45,536 INFO: Done:	 Predicting
+2022-03-21 12:20:45,536 INFO: Info:	 Duration for training and predicting: 226.25492531499913[s]
+2022-03-21 12:20:45,536 INFO: Start:	 Getting results
+2022-03-21 12:20:45,769 INFO: Done:	 Getting results
+2022-03-21 12:20:45,769 INFO: Start:	 Saving preds
+2022-03-21 12:20:45,769 INFO: Classification on bleuets for metabolomics_bleuets with random_scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 179, max_rules : 11, max_samples : 0.8133348247645428, max_features : 0.10894264013660993, model_type : disjunction, p_options : [0.20724927990303865], random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8888888888888888
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       1 │         5 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:03:46
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.08433581418889845
+- Feature : ID_2068, feature importance : 0.08011902347945352
+- Feature : ID_2060, feature importance : 0.06325186064167383
+- Feature : ID_2524, feature importance : 0.038334460994953835
+- Feature : ID_4223, feature importance : 0.02663236237544161
+- Feature : ID_2836, feature importance : 0.02663236237544161
+- Feature : ID_3164, feature importance : 0.024804651232028956
+- Feature : ID_2551, feature importance : 0.021083953547224612
+- Feature : ID_3443, feature importance : 0.017754908250294407
+- Feature : ID_4542, feature importance : 0.01686716283777969
+- Feature : ID_3129, feature importance : 0.013316181187720806
+- Feature : ID_4713, feature importance : 0.01150033829848615
+- Feature : ID_6805, feature importance : 0.010541976773612306
+- Feature : ID_13292, feature importance : 0.010541976773612306
+- Feature : ID_3645, feature importance : 0.010120297702667813
+- Feature : ID_3609, feature importance : 0.00992186049281158
+- Feature : ID_4249, feature importance : 0.008877454125147203
+- Feature : ID_3738, feature importance : 0.008433581418889845
+- Feature : ID_9383, feature importance : 0.008433581418889845
+- Feature : ID_16536, feature importance : 0.008433581418889845
+- Feature : ID_2680, feature importance : 0.008433581418889845
+- Feature : ID_5075, feature importance : 0.008433581418889845
+- Feature : ID_3308, feature importance : 0.008433581418889845
+- Feature : ID_2773, feature importance : 0.008031982303704614
+- Feature : ID_3028, feature importance : 0.008031982303704614
+- Feature : ID_3580, feature importance : 0.007666892198990767
+- Feature : ID_3281, feature importance : 0.007666892198990767
+- Feature : ID_3942, feature importance : 0.007666892198990767
+- Feature : ID_4428, feature importance : 0.007333549059904212
+- Feature : ID_2707, feature importance : 0.007333549059904212
+- Feature : ID_2653, feature importance : 0.007027984515741536
+- Feature : ID_13051, feature importance : 0.006487370322222958
+- Feature : ID_471, feature importance : 0.006487370322222958
+- Feature : ID_8936, feature importance : 0.006487370322222958
+- Feature : ID_14886, feature importance : 0.00602398672777846
+- Feature : ID_11947, feature importance : 0.00602398672777846
+- Feature : ID_7763, feature importance : 0.00602398672777846
+- Feature : ID_13777, feature importance : 0.00602398672777846
+- Feature : ID_3112, feature importance : 0.005816263047510237
+- Feature : ID_4034, feature importance : 0.005622387612593229
+- Feature : ID_2940, feature importance : 0.005622387612593229
+- Feature : ID_9690, feature importance : 0.005622387612593229
+- Feature : ID_3706, feature importance : 0.005622387612593229
+- Feature : ID_8451, feature importance : 0.005622387612593229
+- Feature : ID_11704, feature importance : 0.005270988386806153
+- Feature : ID_16554, feature importance : 0.005270988386806153
+- Feature : ID_4142, feature importance : 0.005270988386806153
+- Feature : ID_12903, feature importance : 0.005270988386806153
+- Feature : ID_4180, feature importance : 0.005270988386806153
+- Feature : ID_2909, feature importance : 0.00496093024640579
+
+2022-03-21 12:20:45,774 INFO: Done:	 Saving results
+2022-03-21 12:20:45,779 INFO: Start:	 Loading data
+2022-03-21 12:20:45,779 INFO: Done:	 Loading data
+2022-03-21 12:20:45,779 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : scm
+2022-03-21 12:20:45,779 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:20:45,780 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:20:45,781 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:20:45,781 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:20:45,781 INFO: Start:	 Generate classifier args
+2022-03-21 12:20:45,781 INFO: Start:	 Random best settings for scm
+2022-03-21 12:20:54,272 INFO: Done:	 Random best settings
+2022-03-21 12:20:54,272 INFO: Done:	 Generate classifier args
+2022-03-21 12:20:54,272 INFO: Start:	 Training
+2022-03-21 12:20:54,409 INFO: Done:	 Training
+2022-03-21 12:20:54,409 INFO: Start:	 Predicting
+2022-03-21 12:20:54,412 INFO: Done:	 Predicting
+2022-03-21 12:20:54,412 INFO: Info:	 Duration for training and predicting: 8.632714453000517[s]
+2022-03-21 12:20:54,412 INFO: Start:	 Getting results
+2022-03-21 12:20:54,440 INFO: Done:	 Getting results
+2022-03-21 12:20:54,440 INFO: Start:	 Saving preds
+2022-03-21 12:20:54,441 INFO: Classification on bleuets for metabolomics_bleuets with scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 1, p : 0.24157278506031743, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9583333333333334
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9583333333333334
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9722222222222222
+		- Score on test : 0.8611111111111112
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      16 │         2 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       1 │         5 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:08
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 1.0
+Model used : X[676] > 51.361
+2022-03-21 12:20:54,444 INFO: Done:	 Saving results
+2022-03-21 12:20:54,444 INFO: Done:	 monoview benchmark
+2022-03-21 12:20:54,444 INFO: Start:	 multiview benchmark
+2022-03-21 12:20:54,445 INFO: Done:	 multiview benchmark
+2022-03-21 12:20:54,445 INFO: Start:	 Analyzing all results
+2022-03-21 12:20:54,562 INFO: Start:	 Score graph generation for accuracy_score
+2022-03-21 12:20:55,049 INFO: Done:	 Score graph generation for accuracy_score
+2022-03-21 12:20:55,050 INFO: Start:	 Score graph generation for f1_score
+2022-03-21 12:20:55,498 INFO: Done:	 Score graph generation for f1_score
+2022-03-21 12:20:55,498 INFO: Start:	 Score graph generation for balanced_accuracy*
+2022-03-21 12:20:55,946 INFO: Done:	 Score graph generation for balanced_accuracy*
+2022-03-21 12:20:55,946 INFO: Start:	 Label analysis figure generation
+2022-03-21 12:20:56,962 INFO: Done:	 Label analysis figures generation
+2022-03-21 12:21:39,546 INFO: Done:	 Analyzing all results
+2022-03-21 12:21:39,547 INFO: Start:	 Benchmark initialization
+2022-03-21 12:21:39,554 INFO: Done:	 Benchmark initialization
+2022-03-21 12:21:39,554 INFO: Start:	 monoview benchmark
+2022-03-21 12:21:39,560 INFO: Start:	 Loading data
+2022-03-21 12:21:39,560 INFO: Done:	 Loading data
+2022-03-21 12:21:39,560 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : decision_tree
+2022-03-21 12:21:39,560 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:21:39,562 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:21:39,562 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:21:39,562 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:21:39,562 INFO: Start:	 Generate classifier args
+2022-03-21 12:21:39,562 INFO: Start:	 Random best settings for decision_tree
+2022-03-21 12:21:51,779 INFO: Done:	 Random best settings
+2022-03-21 12:21:51,780 INFO: Done:	 Generate classifier args
+2022-03-21 12:21:51,780 INFO: Start:	 Training
+2022-03-21 12:21:52,131 INFO: Done:	 Training
+2022-03-21 12:21:52,132 INFO: Start:	 Predicting
+2022-03-21 12:21:52,135 INFO: Done:	 Predicting
+2022-03-21 12:21:52,135 INFO: Info:	 Duration for training and predicting: 12.57516293899971[s]
+2022-03-21 12:21:52,135 INFO: Start:	 Getting results
+2022-03-21 12:21:52,172 INFO: Done:	 Getting results
+2022-03-21 12:21:52,172 INFO: Start:	 Saving preds
+2022-03-21 12:21:52,172 INFO: Classification on bleuets for metabolomics_bleuets with decision_tree.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 86, criterion : gini, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8055555555555556
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       2 │         4 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:12
+
+ Classifier Interpretation : 
+First feature : 
+	ID_2068 <= 23.349260330200195
+Feature importances : 
+- Feature : ID_2068, feature importance : 0.7875222816399287
+- Feature : ID_7197, feature importance : 0.14276094276094284
+- Feature : ID_116, feature importance : 0.06971677559912855
+
+2022-03-21 12:21:52,177 INFO: Done:	 Saving results
+2022-03-21 12:21:52,187 INFO: Start:	 Loading data
+2022-03-21 12:21:52,187 INFO: Done:	 Loading data
+2022-03-21 12:21:52,188 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : adaboost
+2022-03-21 12:21:52,188 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:21:52,190 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:21:52,190 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:21:52,190 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:21:52,190 INFO: Start:	 Generate classifier args
+2022-03-21 12:21:52,190 INFO: Start:	 Random best settings for adaboost
+2022-03-21 12:22:37,821 INFO: Done:	 Random best settings
+2022-03-21 12:22:37,822 INFO: Done:	 Generate classifier args
+2022-03-21 12:22:37,822 INFO: Start:	 Training
+2022-03-21 12:22:38,906 INFO: Done:	 Training
+2022-03-21 12:22:38,907 INFO: Start:	 Predicting
+2022-03-21 12:22:38,966 INFO: Done:	 Predicting
+2022-03-21 12:22:38,966 INFO: Info:	 Duration for training and predicting: 46.77909387600084[s]
+2022-03-21 12:22:38,966 INFO: Start:	 Getting results
+2022-03-21 12:22:39,200 INFO: Done:	 Getting results
+2022-03-21 12:22:39,200 INFO: Start:	 Saving preds
+2022-03-21 12:22:39,200 INFO: Classification on bleuets for metabolomics_bleuets with adaboost.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 6, base_estimator : DecisionTreeClassifier
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8333333333333333
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       2 │         4 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:46
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_2068, feature importance : 0.19983652136208535
+- Feature : ID_8734, feature importance : 0.1821578672216119
+- Feature : ID_2551, feature importance : 0.16969646649981998
+- Feature : ID_3433, feature importance : 0.15606981224826713
+- Feature : ID_2877, feature importance : 0.15392480537109024
+- Feature : ID_676, feature importance : 0.13831452729712534
+
+
+ Estimator error | Estimator weight
+0.04166666666666666 | 0.19983652136208535
+0.0652173913043478 | 0.16969646649981998
+0.054263565891472854 | 0.1821578672216119
+0.10245901639344263 | 0.13831452729712534
+0.08202652750597955 | 0.15392480537109024
+0.07952769516232357 | 0.15606981224826713
+2022-03-21 12:22:39,203 INFO: Done:	 Saving results
+2022-03-21 12:22:39,210 INFO: Start:	 Loading data
+2022-03-21 12:22:39,210 INFO: Done:	 Loading data
+2022-03-21 12:22:39,210 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : samba
+2022-03-21 12:22:39,210 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:22:39,211 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:22:39,211 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:22:39,211 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:22:39,212 INFO: Start:	 Generate classifier args
+2022-03-21 12:22:39,212 INFO: Start:	 Random best settings for samba
+2022-03-21 12:30:47,347 INFO: Done:	 Random best settings
+2022-03-21 12:30:47,348 INFO: Done:	 Generate classifier args
+2022-03-21 12:30:47,348 INFO: Start:	 Training
+2022-03-21 12:30:51,300 INFO: Done:	 Training
+2022-03-21 12:30:51,300 INFO: Start:	 Predicting
+2022-03-21 12:30:51,346 INFO: Done:	 Predicting
+2022-03-21 12:30:51,346 INFO: Info:	 Duration for training and predicting: 492.13663519499823[s]
+2022-03-21 12:30:51,347 INFO: Start:	 Getting results
+2022-03-21 12:30:51,376 INFO: Done:	 Getting results
+2022-03-21 12:30:51,376 INFO: Start:	 Saving preds
+2022-03-21 12:30:51,376 INFO: Classification on bleuets for metabolomics_bleuets with samba.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 6, relevance : <SamBA.relevances.ExpRelevance object at 0x7f8f71871438>, distance : <SamBA.distances.PolarDist object at 0x7f8f71871048>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f8f71871780>, b : 3.196999114812812, pred_train : True, normalizer : RobustScaler(), normalize_dists : True, a : 1e-08
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8333333333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8333333333333334
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7222222222222222
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       3 │         3 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:08:12
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_3072, feature importance : 0.16666666666666666
+- Feature : ID_8734, feature importance : 0.16666666666666666
+- Feature : ID_2060, feature importance : 0.16666666666666666
+- Feature : ID_2551, feature importance : 0.16666666666666666
+- Feature : ID_2068, feature importance : 0.16666666666666666
+- Feature : ID_3844, feature importance : 0.16666666666666666
+
+2022-03-21 12:30:51,379 INFO: Done:	 Saving results
+2022-03-21 12:30:51,383 INFO: Start:	 Loading data
+2022-03-21 12:30:51,383 INFO: Done:	 Loading data
+2022-03-21 12:30:51,384 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : random_forest
+2022-03-21 12:30:51,384 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:30:51,385 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:30:51,385 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:30:51,385 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:30:51,385 INFO: Start:	 Generate classifier args
+2022-03-21 12:30:51,385 INFO: Start:	 Random best settings for random_forest
+2022-03-21 12:31:27,309 INFO: Done:	 Random best settings
+2022-03-21 12:31:27,309 INFO: Done:	 Generate classifier args
+2022-03-21 12:31:27,310 INFO: Start:	 Training
+2022-03-21 12:31:27,635 INFO: Done:	 Training
+2022-03-21 12:31:27,636 INFO: Start:	 Predicting
+2022-03-21 12:31:27,660 INFO: Done:	 Predicting
+2022-03-21 12:31:27,660 INFO: Info:	 Duration for training and predicting: 36.27712938699915[s]
+2022-03-21 12:31:27,660 INFO: Start:	 Getting results
+2022-03-21 12:31:27,704 INFO: Done:	 Getting results
+2022-03-21 12:31:27,704 INFO: Start:	 Saving preds
+2022-03-21 12:31:27,705 INFO: Classification on bleuets for metabolomics_bleuets with random_forest.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 78, max_depth : 8, criterion : gini, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8333333333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8333333333333334
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.6666666666666666
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       4 │         2 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:36
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_2524, feature importance : 0.020431070369700374
+- Feature : ID_676, feature importance : 0.017415731628767615
+- Feature : ID_2060, feature importance : 0.015843326666500686
+- Feature : ID_2068, feature importance : 0.015828932108423944
+- Feature : ID_5349, feature importance : 0.013790108190798662
+- Feature : ID_2396, feature importance : 0.01246611295196729
+- Feature : ID_3844, feature importance : 0.01087892260731767
+- Feature : ID_5338, feature importance : 0.010471698061710359
+- Feature : ID_2285, feature importance : 0.008771929824561403
+- Feature : ID_4159, feature importance : 0.008091635140815468
+- Feature : ID_4666, feature importance : 0.008008211159036707
+- Feature : ID_3552, feature importance : 0.007971729125575283
+- Feature : ID_3034, feature importance : 0.007479019413127714
+- Feature : ID_2935, feature importance : 0.0069860563678745494
+- Feature : ID_4129, feature importance : 0.006617385319210878
+- Feature : ID_4084, feature importance : 0.006617385319210877
+- Feature : ID_2877, feature importance : 0.006561023402805748
+- Feature : ID_3966, feature importance : 0.006448972367867967
+- Feature : ID_3376, feature importance : 0.006310629261448932
+- Feature : ID_8609, feature importance : 0.006310616507658268
+- Feature : ID_6524, feature importance : 0.0060839543598164274
+- Feature : ID_8526, feature importance : 0.006039034847546721
+- Feature : ID_3801, feature importance : 0.005947880808561924
+- Feature : ID_4034, feature importance : 0.005927785495764014
+- Feature : ID_152, feature importance : 0.00588319674292525
+- Feature : ID_3488, feature importance : 0.00586341415746691
+- Feature : ID_3028, feature importance : 0.00584847211195691
+- Feature : ID_6488, feature importance : 0.005789262820512821
+- Feature : ID_2475, feature importance : 0.005775749034791783
+- Feature : ID_14514, feature importance : 0.005775160977564031
+- Feature : ID_6099, feature importance : 0.005742232141327672
+- Feature : ID_2610, feature importance : 0.005494505494505492
+- Feature : ID_5381, feature importance : 0.0053884334746202595
+- Feature : ID_4930, feature importance : 0.005376344086021507
+- Feature : ID_5890, feature importance : 0.005305639633997844
+- Feature : ID_9918, feature importance : 0.005305639633997844
+- Feature : ID_7781, feature importance : 0.0051827145133433155
+- Feature : ID_10065, feature importance : 0.005149536052398786
+- Feature : ID_2658, feature importance : 0.005134119716408354
+- Feature : ID_3810, feature importance : 0.005116644750969186
+- Feature : ID_3118, feature importance : 0.005116644750969185
+- Feature : ID_6110, feature importance : 0.005052418845522291
+- Feature : ID_2381, feature importance : 0.005010483277862957
+- Feature : ID_3498, feature importance : 0.0049936814642697
+- Feature : ID_4428, feature importance : 0.0049919122150345685
+- Feature : ID_2730, feature importance : 0.004934002778830366
+- Feature : ID_3168, feature importance : 0.004932396890768032
+- Feature : ID_16399, feature importance : 0.004926932841371343
+- Feature : ID_6386, feature importance : 0.004924704924704923
+- Feature : ID_3092, feature importance : 0.0048975715642382315
+
+2022-03-21 12:31:27,708 INFO: Done:	 Saving results
+2022-03-21 12:31:27,712 INFO: Start:	 Loading data
+2022-03-21 12:31:27,712 INFO: Done:	 Loading data
+2022-03-21 12:31:27,713 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : random_scm
+2022-03-21 12:31:27,713 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:31:27,714 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:31:27,714 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:31:27,714 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:31:27,714 INFO: Start:	 Generate classifier args
+2022-03-21 12:31:27,714 INFO: Start:	 Random best settings for random_scm
+2022-03-21 12:36:57,079 INFO: Done:	 Random best settings
+2022-03-21 12:36:57,079 INFO: Done:	 Generate classifier args
+2022-03-21 12:36:57,079 INFO: Start:	 Training
+2022-03-21 12:37:06,159 INFO: Done:	 Training
+2022-03-21 12:37:06,159 INFO: Start:	 Predicting
+2022-03-21 12:37:06,970 INFO: Done:	 Predicting
+2022-03-21 12:37:06,970 INFO: Info:	 Duration for training and predicting: 339.25765580299776[s]
+2022-03-21 12:37:06,970 INFO: Start:	 Getting results
+2022-03-21 12:37:07,855 INFO: Done:	 Getting results
+2022-03-21 12:37:07,855 INFO: Start:	 Saving preds
+2022-03-21 12:37:07,856 INFO: Classification on bleuets for metabolomics_bleuets with random_scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 174, max_rules : 13, max_samples : 0.5706377147472844, max_features : 0.599568878188063, model_type : disjunction, p_options : [0.579953363931496], random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9861111111111112
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9861111111111112
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9907407407407407
+		- Score on test : 0.8055555555555556
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       2 │         4 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:05:39
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_2060, feature importance : 0.2090197291654346
+- Feature : ID_2068, feature importance : 0.15803471872094066
+- Feature : ID_676, feature importance : 0.1389546965523414
+- Feature : ID_2524, feature importance : 0.028759471334801813
+- Feature : ID_8225, feature importance : 0.013259818559347875
+- Feature : ID_2419, feature importance : 0.010134289898930162
+- Feature : ID_15843, feature importance : 0.0096736403580697
+- Feature : ID_4180, feature importance : 0.008867503661563893
+- Feature : ID_10985, feature importance : 0.007094002929251114
+- Feature : ID_2551, feature importance : 0.0068211566627414556
+- Feature : ID_4973, feature importance : 0.006692455593633126
+- Feature : ID_3056, feature importance : 0.006568521230788068
+- Feature : ID_4309, feature importance : 0.006508259568120288
+- Feature : ID_2396, feature importance : 0.006390993629955958
+- Feature : ID_1655, feature importance : 0.006168698199348795
+- Feature : ID_2898, feature importance : 0.003985394904073659
+- Feature : ID_16397, feature importance : 0.003941112738472841
+- Feature : ID_7197, feature importance : 0.003897803807280832
+- Feature : ID_8521, feature importance : 0.0038139800694898464
+- Feature : ID_1878, feature importance : 0.0038139800694898464
+- Feature : ID_1699, feature importance : 0.0037734058134314434
+- Feature : ID_3669, feature importance : 0.0037734058134314434
+- Feature : ID_6665, feature importance : 0.0037734058134314434
+- Feature : ID_2291, feature importance : 0.0037734058134314434
+- Feature : ID_11046, feature importance : 0.0037734058134314434
+- Feature : ID_3989, feature importance : 0.0037734058134314434
+- Feature : ID_5445, feature importance : 0.003733685752237428
+- Feature : ID_7850, feature importance : 0.003733685752237428
+- Feature : ID_8799, feature importance : 0.003694793192318288
+- Feature : ID_3492, feature importance : 0.003694793192318288
+- Feature : ID_10756, feature importance : 0.003694793192318288
+- Feature : ID_5056, feature importance : 0.003694793192318288
+- Feature : ID_922, feature importance : 0.003694793192318288
+- Feature : ID_14423, feature importance : 0.0036567025408510896
+- Feature : ID_14701, feature importance : 0.0036567025408510896
+- Feature : ID_6570, feature importance : 0.0036567025408510896
+- Feature : ID_2090, feature importance : 0.0036193892496179146
+- Feature : ID_14047, feature importance : 0.0036193892496179146
+- Feature : ID_4402, feature importance : 0.0035828297622480373
+- Feature : ID_13202, feature importance : 0.0035828297622480373
+- Feature : ID_12311, feature importance : 0.0035828297622480373
+- Feature : ID_5151, feature importance : 0.0035828297622480373
+- Feature : ID_14669, feature importance : 0.003547001464625557
+- Feature : ID_12863, feature importance : 0.003547001464625557
+- Feature : ID_7942, feature importance : 0.003547001464625557
+- Feature : ID_8017, feature importance : 0.003547001464625557
+- Feature : ID_14510, feature importance : 0.0035118826382431255
+- Feature : ID_10350, feature importance : 0.0035118826382431255
+- Feature : ID_12352, feature importance : 0.0035118826382431255
+- Feature : ID_1614, feature importance : 0.0035118826382431255
+
+2022-03-21 12:37:07,858 INFO: Done:	 Saving results
+2022-03-21 12:37:07,863 INFO: Start:	 Loading data
+2022-03-21 12:37:07,863 INFO: Done:	 Loading data
+2022-03-21 12:37:07,863 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : scm
+2022-03-21 12:37:07,863 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:37:07,864 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:37:07,864 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:37:07,864 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:37:07,864 INFO: Start:	 Generate classifier args
+2022-03-21 12:37:07,864 INFO: Start:	 Random best settings for scm
+2022-03-21 12:37:14,407 INFO: Done:	 Random best settings
+2022-03-21 12:37:14,407 INFO: Done:	 Generate classifier args
+2022-03-21 12:37:14,407 INFO: Start:	 Training
+2022-03-21 12:37:14,531 INFO: Done:	 Training
+2022-03-21 12:37:14,531 INFO: Start:	 Predicting
+2022-03-21 12:37:14,534 INFO: Done:	 Predicting
+2022-03-21 12:37:14,534 INFO: Info:	 Duration for training and predicting: 6.670985460001248[s]
+2022-03-21 12:37:14,534 INFO: Start:	 Getting results
+2022-03-21 12:37:14,558 INFO: Done:	 Getting results
+2022-03-21 12:37:14,559 INFO: Start:	 Saving preds
+2022-03-21 12:37:14,559 INFO: Classification on bleuets for metabolomics_bleuets with scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : conjunction, max_rules : 2, p : 0.2657909476510478, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9444444444444444
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9444444444444444
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8888888888888888
+		- Score on test : 0.75
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       3 │         3 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:06
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_2060, feature importance : 1.0
+Model used : X[2060] > 1413.745
+2022-03-21 12:37:14,562 INFO: Done:	 Saving results
+2022-03-21 12:37:14,562 INFO: Done:	 monoview benchmark
+2022-03-21 12:37:14,562 INFO: Start:	 multiview benchmark
+2022-03-21 12:37:14,562 INFO: Done:	 multiview benchmark
+2022-03-21 12:37:14,563 INFO: Start:	 Analyzing all results
+2022-03-21 12:37:14,651 INFO: Start:	 Score graph generation for accuracy_score
+2022-03-21 12:37:15,039 INFO: Done:	 Score graph generation for accuracy_score
+2022-03-21 12:37:15,039 INFO: Start:	 Score graph generation for f1_score
+2022-03-21 12:37:15,491 INFO: Done:	 Score graph generation for f1_score
+2022-03-21 12:37:15,491 INFO: Start:	 Score graph generation for balanced_accuracy*
+2022-03-21 12:37:15,989 INFO: Done:	 Score graph generation for balanced_accuracy*
+2022-03-21 12:37:15,989 INFO: Start:	 Label analysis figure generation
+2022-03-21 12:37:16,745 INFO: Done:	 Label analysis figures generation
+2022-03-21 12:37:51,996 INFO: Done:	 Analyzing all results
+2022-03-21 12:37:51,997 INFO: Start:	 Benchmark initialization
+2022-03-21 12:37:52,003 INFO: Done:	 Benchmark initialization
+2022-03-21 12:37:52,003 INFO: Start:	 monoview benchmark
+2022-03-21 12:37:52,007 INFO: Start:	 Loading data
+2022-03-21 12:37:52,007 INFO: Done:	 Loading data
+2022-03-21 12:37:52,008 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : decision_tree
+2022-03-21 12:37:52,008 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:37:52,009 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:37:52,009 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:37:52,009 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:37:52,009 INFO: Start:	 Generate classifier args
+2022-03-21 12:37:52,009 INFO: Start:	 Random best settings for decision_tree
+2022-03-21 12:38:07,230 INFO: Done:	 Random best settings
+2022-03-21 12:38:07,230 INFO: Done:	 Generate classifier args
+2022-03-21 12:38:07,230 INFO: Start:	 Training
+2022-03-21 12:38:07,533 INFO: Done:	 Training
+2022-03-21 12:38:07,533 INFO: Start:	 Predicting
+2022-03-21 12:38:07,536 INFO: Done:	 Predicting
+2022-03-21 12:38:07,536 INFO: Info:	 Duration for training and predicting: 15.529150966998714[s]
+2022-03-21 12:38:07,536 INFO: Start:	 Getting results
+2022-03-21 12:38:07,563 INFO: Done:	 Getting results
+2022-03-21 12:38:07,563 INFO: Start:	 Saving preds
+2022-03-21 12:38:07,563 INFO: Classification on bleuets for metabolomics_bleuets with decision_tree.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 192, criterion : gini, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8333333333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8333333333333334
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.6666666666666666
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       4 │         2 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:15
+
+ Classifier Interpretation : 
+First feature : 
+	ID_676 <= 119.80410385131836
+Feature importances : 
+- Feature : ID_676, feature importance : 0.7202380952380952
+- Feature : ID_8043, feature importance : 0.21031746031746038
+- Feature : ID_4903, feature importance : 0.06944444444444445
+
+2022-03-21 12:38:07,568 INFO: Done:	 Saving results
+2022-03-21 12:38:07,574 INFO: Start:	 Loading data
+2022-03-21 12:38:07,574 INFO: Done:	 Loading data
+2022-03-21 12:38:07,574 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : adaboost
+2022-03-21 12:38:07,574 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:38:07,575 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:38:07,575 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:38:07,575 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:38:07,575 INFO: Start:	 Generate classifier args
+2022-03-21 12:38:07,575 INFO: Start:	 Random best settings for adaboost
+2022-03-21 12:39:49,131 INFO: Done:	 Random best settings
+2022-03-21 12:39:49,132 INFO: Done:	 Generate classifier args
+2022-03-21 12:39:49,132 INFO: Start:	 Training
+2022-03-21 12:39:51,185 INFO: Done:	 Training
+2022-03-21 12:39:51,185 INFO: Start:	 Predicting
+2022-03-21 12:39:51,273 INFO: Done:	 Predicting
+2022-03-21 12:39:51,273 INFO: Info:	 Duration for training and predicting: 103.69902331000048[s]
+2022-03-21 12:39:51,273 INFO: Start:	 Getting results
+2022-03-21 12:39:51,458 INFO: Done:	 Getting results
+2022-03-21 12:39:51,458 INFO: Start:	 Saving preds
+2022-03-21 12:39:51,458 INFO: Classification on bleuets for metabolomics_bleuets with adaboost.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 12, base_estimator : DecisionTreeClassifier
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.75
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       3 │         3 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:01:43
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.2607607089647883
+- Feature : ID_12161, feature importance : 0.09075454421194414
+- Feature : ID_10763, feature importance : 0.08824911988026729
+- Feature : ID_3433, feature importance : 0.08520358594611542
+- Feature : ID_2551, feature importance : 0.08444393410341285
+- Feature : ID_3613, feature importance : 0.08329689229685393
+- Feature : ID_116, feature importance : 0.08157961832430724
+- Feature : ID_11633, feature importance : 0.07767507448304978
+- Feature : ID_2877, feature importance : 0.0764917522930743
+- Feature : ID_2060, feature importance : 0.07154476949618675
+
+
+ Estimator error | Estimator weight
+0.05555555555555554 | 0.1010535247148082
+0.08823529411764706 | 0.08329689229685393
+0.10483870967741937 | 0.0764917522930743
+0.10256410256410255 | 0.07736463693349337
+0.08568211068211068 | 0.08444393410341285
+0.07768537952515053 | 0.08824911988026729
+0.09218626091437673 | 0.08157961832430724
+0.1185865772005571 | 0.07154476949618675
+0.10176574314774858 | 0.07767507448304978
+0.08402825347351214 | 0.08520358594611542
+0.09041171812480006 | 0.08234254731648677
+0.07279932700418222 | 0.09075454421194414
+2022-03-21 12:39:51,462 INFO: Done:	 Saving results
+2022-03-21 12:39:51,468 INFO: Start:	 Loading data
+2022-03-21 12:39:51,468 INFO: Done:	 Loading data
+2022-03-21 12:39:51,468 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : samba
+2022-03-21 12:39:51,468 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:39:51,470 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:39:51,470 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:39:51,470 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:39:51,470 INFO: Start:	 Generate classifier args
+2022-03-21 12:39:51,470 INFO: Start:	 Random best settings for samba
+2022-03-21 12:47:52,160 INFO: Done:	 Random best settings
+2022-03-21 12:47:52,160 INFO: Done:	 Generate classifier args
+2022-03-21 12:47:52,160 INFO: Start:	 Training
+2022-03-21 12:47:56,058 INFO: Done:	 Training
+2022-03-21 12:47:56,058 INFO: Start:	 Predicting
+2022-03-21 12:47:56,108 INFO: Done:	 Predicting
+2022-03-21 12:47:56,108 INFO: Info:	 Duration for training and predicting: 484.64016222899954[s]
+2022-03-21 12:47:56,108 INFO: Start:	 Getting results
+2022-03-21 12:47:56,138 INFO: Done:	 Getting results
+2022-03-21 12:47:56,138 INFO: Start:	 Saving preds
+2022-03-21 12:47:56,138 INFO: Classification on bleuets for metabolomics_bleuets with samba.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 4, relevance : <SamBA.relevances.ExpRelevance object at 0x7f8fd549e1d0>, distance : <SamBA.distances.PolarDist object at 0x7f8f71c05048>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f8fd5a22390>, b : 1.4256502724882663, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 1e-09
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.75
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       3 │         3 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:08:04
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.5
+- Feature : ID_3613, feature importance : 0.25
+- Feature : ID_2060, feature importance : 0.25
+
+2022-03-21 12:47:56,141 INFO: Done:	 Saving results
+2022-03-21 12:47:56,145 INFO: Start:	 Loading data
+2022-03-21 12:47:56,145 INFO: Done:	 Loading data
+2022-03-21 12:47:56,145 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : random_forest
+2022-03-21 12:47:56,146 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:47:56,147 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:47:56,147 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:47:56,147 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:47:56,147 INFO: Start:	 Generate classifier args
+2022-03-21 12:47:56,147 INFO: Start:	 Random best settings for random_forest
+2022-03-21 12:48:35,422 INFO: Done:	 Random best settings
+2022-03-21 12:48:35,422 INFO: Done:	 Generate classifier args
+2022-03-21 12:48:35,422 INFO: Start:	 Training
+2022-03-21 12:48:35,511 INFO: Done:	 Training
+2022-03-21 12:48:35,511 INFO: Start:	 Predicting
+2022-03-21 12:48:35,521 INFO: Done:	 Predicting
+2022-03-21 12:48:35,522 INFO: Info:	 Duration for training and predicting: 39.37632928899984[s]
+2022-03-21 12:48:35,522 INFO: Start:	 Getting results
+2022-03-21 12:48:35,555 INFO: Done:	 Getting results
+2022-03-21 12:48:35,555 INFO: Start:	 Saving preds
+2022-03-21 12:48:35,555 INFO: Classification on bleuets for metabolomics_bleuets with random_forest.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 20, max_depth : 5, criterion : gini, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7916666666666666
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.7916666666666666
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.5833333333333334
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       5 │         1 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:39
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_2060, feature importance : 0.07779742816658324
+- Feature : ID_8083, feature importance : 0.036853983654953924
+- Feature : ID_922, feature importance : 0.02877373171490819
+- Feature : ID_5221, feature importance : 0.026
+- Feature : ID_3397, feature importance : 0.024318678342511512
+- Feature : ID_3229, feature importance : 0.024080875646093045
+- Feature : ID_2459, feature importance : 0.022033898305084752
+- Feature : ID_7733, feature importance : 0.02096256684491979
+- Feature : ID_11168, feature importance : 0.020361990950226252
+- Feature : ID_3344, feature importance : 0.01977540106951872
+- Feature : ID_12556, feature importance : 0.018846153846153842
+- Feature : ID_11760, feature importance : 0.018846153846153842
+- Feature : ID_3626, feature importance : 0.018757503001200476
+- Feature : ID_2835, feature importance : 0.018656716417910457
+- Feature : ID_1466, feature importance : 0.018328445747800595
+- Feature : ID_8408, feature importance : 0.016411312238728215
+- Feature : ID_11149, feature importance : 0.0161670918367347
+- Feature : ID_4576, feature importance : 0.015520361990950226
+- Feature : ID_11801, feature importance : 0.015467171717171718
+- Feature : ID_2624, feature importance : 0.01540876116071428
+- Feature : ID_7656, feature importance : 0.014689265536723164
+- Feature : ID_6547, feature importance : 0.01464406779661017
+- Feature : ID_11012, feature importance : 0.014533759772565737
+- Feature : ID_14242, feature importance : 0.014441998679286812
+- Feature : ID_10881, feature importance : 0.014000000000000009
+- Feature : ID_3715, feature importance : 0.013977352954911938
+- Feature : ID_4173, feature importance : 0.013438127090301004
+- Feature : ID_13425, feature importance : 0.012875477463712757
+- Feature : ID_4533, feature importance : 0.011889639804924914
+- Feature : ID_436, feature importance : 0.0118129614438064
+- Feature : ID_3669, feature importance : 0.011164934112497674
+- Feature : ID_3332, feature importance : 0.01102040816326531
+- Feature : ID_2299, feature importance : 0.010988867401871117
+- Feature : ID_6351, feature importance : 0.010980392156862745
+- Feature : ID_5111, feature importance : 0.010937062851064229
+- Feature : ID_3615, feature importance : 0.010932009167303292
+- Feature : ID_7512, feature importance : 0.010661419172932332
+- Feature : ID_10336, feature importance : 0.01062350866272435
+- Feature : ID_14670, feature importance : 0.010490580847723712
+- Feature : ID_6815, feature importance : 0.010389610389610384
+- Feature : ID_15734, feature importance : 0.010081429990069515
+- Feature : ID_4930, feature importance : 0.010008617189262355
+- Feature : ID_5120, feature importance : 0.009642857142857144
+- Feature : ID_11742, feature importance : 0.009244380247359395
+- Feature : ID_10389, feature importance : 0.00893743793445879
+- Feature : ID_14266, feature importance : 0.008511916654773797
+- Feature : ID_4373, feature importance : 0.008127698194662481
+- Feature : ID_12072, feature importance : 0.008080872100392955
+- Feature : ID_4226, feature importance : 0.007798723016114318
+- Feature : ID_15280, feature importance : 0.0077241124260355115
+
+2022-03-21 12:48:35,561 INFO: Done:	 Saving results
+2022-03-21 12:48:35,565 INFO: Start:	 Loading data
+2022-03-21 12:48:35,565 INFO: Done:	 Loading data
+2022-03-21 12:48:35,565 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : random_scm
+2022-03-21 12:48:35,565 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:48:35,567 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:48:35,567 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:48:35,567 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:48:35,567 INFO: Start:	 Generate classifier args
+2022-03-21 12:48:35,567 INFO: Start:	 Random best settings for random_scm
+2022-03-21 12:52:15,885 INFO: Done:	 Random best settings
+2022-03-21 12:52:15,886 INFO: Done:	 Generate classifier args
+2022-03-21 12:52:15,886 INFO: Start:	 Training
+2022-03-21 12:52:19,875 INFO: Done:	 Training
+2022-03-21 12:52:19,875 INFO: Start:	 Predicting
+2022-03-21 12:52:20,157 INFO: Done:	 Predicting
+2022-03-21 12:52:20,157 INFO: Info:	 Duration for training and predicting: 224.5923398010018[s]
+2022-03-21 12:52:20,158 INFO: Start:	 Getting results
+2022-03-21 12:52:20,449 INFO: Done:	 Getting results
+2022-03-21 12:52:20,449 INFO: Start:	 Saving preds
+2022-03-21 12:52:20,449 INFO: Classification on bleuets for metabolomics_bleuets with random_scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 160, max_rules : 9, max_samples : 0.7095635338078385, max_features : 0.19532613519693476, model_type : disjunction, p_options : [0.9574465853823346], random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9861111111111112
+		- Score on test : 1.0
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9861111111111112
+		- Score on test : 1.0
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9907407407407407
+		- Score on test : 1.0
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       0 │         6 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:03:44
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.07890030445910819
+- Feature : ID_2060, feature importance : 0.072189990499623
+- Feature : ID_2068, feature importance : 0.05649651430405278
+- Feature : ID_3028, feature importance : 0.029909919337439708
+- Feature : ID_2524, feature importance : 0.01853791875601732
+- Feature : ID_2419, feature importance : 0.017533400990912933
+- Feature : ID_3097, feature importance : 0.012840116887284724
+- Feature : ID_2551, feature importance : 0.012106395922297024
+- Feature : ID_4189, feature importance : 0.010593096432009896
+- Feature : ID_2302, feature importance : 0.010088663268580853
+- Feature : ID_2238, feature importance : 0.00941608571734213
+- Feature : ID_15843, feature importance : 0.008920502258534649
+- Feature : ID_3292, feature importance : 0.008766700495456466
+- Feature : ID_2459, feature importance : 0.008474477145607917
+- Feature : ID_3321, feature importance : 0.007944822324007422
+- Feature : ID_5630, feature importance : 0.007944822324007422
+- Feature : ID_15641, feature importance : 0.007062064288006598
+- Feature : ID_3684, feature importance : 0.006690376693900987
+- Feature : ID_4492, feature importance : 0.006518828573544552
+- Feature : ID_3615, feature importance : 0.006277390478228086
+- Feature : ID_3305, feature importance : 0.006277390478228086
+- Feature : ID_8609, feature importance : 0.006053197961148512
+- Feature : ID_3157, feature importance : 0.0058444669969709775
+- Feature : ID_16541, feature importance : 0.0058444669969709775
+- Feature : ID_2089, feature importance : 0.005649651430405278
+- Feature : ID_4759, feature importance : 0.005296548216004948
+- Feature : ID_1439, feature importance : 0.004984986556239951
+- Feature : ID_16367, feature importance : 0.004984986556239951
+- Feature : ID_4660, feature importance : 0.00484255836891881
+- Feature : ID_3473, feature importance : 0.00484255836891881
+- Feature : ID_2954, feature importance : 0.004708042858671065
+- Feature : ID_12826, feature importance : 0.004708042858671065
+- Feature : ID_15537, feature importance : 0.004460251129267324
+- Feature : ID_4084, feature importance : 0.0043458857156963675
+- Feature : ID_9277, feature importance : 0.004237238572803959
+- Feature : ID_2666, feature importance : 0.004237238572803959
+- Feature : ID_3852, feature importance : 0.004035465307432341
+- Feature : ID_10660, feature importance : 0.003852035066185417
+- Feature : ID_748, feature importance : 0.0036845552806990946
+- Feature : ID_2224, feature importance : 0.0036845552806990946
+- Feature : ID_1252, feature importance : 0.0036845552806990946
+- Feature : ID_9751, feature importance : 0.003531032144003299
+- Feature : ID_13795, feature importance : 0.003531032144003299
+- Feature : ID_2396, feature importance : 0.003531032144003299
+- Feature : ID_7872, feature importance : 0.003531032144003299
+- Feature : ID_1655, feature importance : 0.003531032144003299
+- Feature : ID_13756, feature importance : 0.003531032144003299
+- Feature : ID_2914, feature importance : 0.003531032144003299
+- Feature : ID_6233, feature importance : 0.003389790858243167
+- Feature : ID_9073, feature importance : 0.003389790858243167
+
+2022-03-21 12:52:20,452 INFO: Done:	 Saving results
+2022-03-21 12:52:20,456 INFO: Start:	 Loading data
+2022-03-21 12:52:20,456 INFO: Done:	 Loading data
+2022-03-21 12:52:20,456 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : scm
+2022-03-21 12:52:20,456 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:52:20,457 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:52:20,458 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:52:20,458 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:52:20,458 INFO: Start:	 Generate classifier args
+2022-03-21 12:52:20,458 INFO: Start:	 Random best settings for scm
+2022-03-21 12:52:26,737 INFO: Done:	 Random best settings
+2022-03-21 12:52:26,737 INFO: Done:	 Generate classifier args
+2022-03-21 12:52:26,737 INFO: Start:	 Training
+2022-03-21 12:52:26,853 INFO: Done:	 Training
+2022-03-21 12:52:26,854 INFO: Start:	 Predicting
+2022-03-21 12:52:26,856 INFO: Done:	 Predicting
+2022-03-21 12:52:26,856 INFO: Info:	 Duration for training and predicting: 6.40032542300105[s]
+2022-03-21 12:52:26,856 INFO: Start:	 Getting results
+2022-03-21 12:52:26,882 INFO: Done:	 Getting results
+2022-03-21 12:52:26,882 INFO: Start:	 Saving preds
+2022-03-21 12:52:26,882 INFO: Classification on bleuets for metabolomics_bleuets with scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 1, p : 0.3540669056816438, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9166666666666666
+		- Score on test : 1.0
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9166666666666666
+		- Score on test : 1.0
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9259259259259259
+		- Score on test : 1.0
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       0 │         6 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:06
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 1.0
+Model used : X[676] > 51.361
+2022-03-21 12:52:26,887 INFO: Done:	 Saving results
+2022-03-21 12:52:26,887 INFO: Done:	 monoview benchmark
+2022-03-21 12:52:26,887 INFO: Start:	 multiview benchmark
+2022-03-21 12:52:26,887 INFO: Done:	 multiview benchmark
+2022-03-21 12:52:26,888 INFO: Start:	 Analyzing all results
+2022-03-21 12:52:26,961 INFO: Start:	 Score graph generation for accuracy_score
+2022-03-21 12:52:27,346 INFO: Done:	 Score graph generation for accuracy_score
+2022-03-21 12:52:27,346 INFO: Start:	 Score graph generation for f1_score
+2022-03-21 12:52:27,737 INFO: Done:	 Score graph generation for f1_score
+2022-03-21 12:52:27,737 INFO: Start:	 Score graph generation for balanced_accuracy*
+2022-03-21 12:52:28,119 INFO: Done:	 Score graph generation for balanced_accuracy*
+2022-03-21 12:52:28,119 INFO: Start:	 Label analysis figure generation
+2022-03-21 12:52:28,797 INFO: Done:	 Label analysis figures generation
+2022-03-21 12:53:04,241 INFO: Done:	 Analyzing all results
+2022-03-21 12:53:04,242 INFO: Start:	 Benchmark initialization
+2022-03-21 12:53:04,248 INFO: Done:	 Benchmark initialization
+2022-03-21 12:53:04,248 INFO: Start:	 monoview benchmark
+2022-03-21 12:53:04,252 INFO: Start:	 Loading data
+2022-03-21 12:53:04,252 INFO: Done:	 Loading data
+2022-03-21 12:53:04,252 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : decision_tree
+2022-03-21 12:53:04,253 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:53:04,254 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:53:04,254 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:53:04,254 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:53:04,254 INFO: Start:	 Generate classifier args
+2022-03-21 12:53:04,254 INFO: Start:	 Random best settings for decision_tree
+2022-03-21 12:53:12,745 INFO: Done:	 Random best settings
+2022-03-21 12:53:12,745 INFO: Done:	 Generate classifier args
+2022-03-21 12:53:12,745 INFO: Start:	 Training
+2022-03-21 12:53:12,810 INFO: Done:	 Training
+2022-03-21 12:53:12,810 INFO: Start:	 Predicting
+2022-03-21 12:53:12,813 INFO: Done:	 Predicting
+2022-03-21 12:53:12,813 INFO: Info:	 Duration for training and predicting: 8.561196856000606[s]
+2022-03-21 12:53:12,814 INFO: Start:	 Getting results
+2022-03-21 12:53:12,841 INFO: Done:	 Getting results
+2022-03-21 12:53:12,841 INFO: Start:	 Saving preds
+2022-03-21 12:53:12,841 INFO: Classification on bleuets for metabolomics_bleuets with decision_tree.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 286, criterion : entropy, splitter : random, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9583333333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9583333333333334
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666667
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       1 │         5 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:08
+
+ Classifier Interpretation : 
+First feature : 
+	ID_2068 <= 25.675945363405184
+Feature importances : 
+- Feature : ID_2068, feature importance : 0.4952059716686678
+- Feature : ID_14099, feature importance : 0.20320003905459777
+- Feature : ID_14244, feature importance : 0.15270288171811583
+- Feature : ID_10186, feature importance : 0.14889110755861873
+
+2022-03-21 12:53:12,845 INFO: Done:	 Saving results
+2022-03-21 12:53:12,851 INFO: Start:	 Loading data
+2022-03-21 12:53:12,852 INFO: Done:	 Loading data
+2022-03-21 12:53:12,852 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : adaboost
+2022-03-21 12:53:12,852 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:53:12,854 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:53:12,854 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:53:12,854 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:53:12,854 INFO: Start:	 Generate classifier args
+2022-03-21 12:53:12,854 INFO: Start:	 Random best settings for adaboost
+2022-03-21 12:54:34,564 INFO: Done:	 Random best settings
+2022-03-21 12:54:34,564 INFO: Done:	 Generate classifier args
+2022-03-21 12:54:34,564 INFO: Start:	 Training
+2022-03-21 12:54:42,824 INFO: Done:	 Training
+2022-03-21 12:54:42,824 INFO: Start:	 Predicting
+2022-03-21 12:54:43,102 INFO: Done:	 Predicting
+2022-03-21 12:54:43,102 INFO: Info:	 Duration for training and predicting: 90.25105181699837[s]
+2022-03-21 12:54:43,102 INFO: Start:	 Getting results
+2022-03-21 12:54:43,321 INFO: Done:	 Getting results
+2022-03-21 12:54:43,322 INFO: Start:	 Saving preds
+2022-03-21 12:54:43,322 INFO: Classification on bleuets for metabolomics_bleuets with adaboost.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- Adaboost with n_estimators : 50, base_estimator : DecisionTreeClassifier
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666666
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.8888888888888888
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      17 │         1 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       1 │         5 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:01:30
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.10557647310168615
+- Feature : ID_2551, feature importance : 0.10298879348928437
+- Feature : ID_5916, feature importance : 0.08297059884744867
+- Feature : ID_2060, feature importance : 0.06228088986878985
+- Feature : ID_2068, feature importance : 0.03913049144688056
+- Feature : ID_8344, feature importance : 0.037558234057500514
+- Feature : ID_2396, feature importance : 0.03519089651029595
+- Feature : ID_4042, feature importance : 0.023974916036880456
+- Feature : ID_7896, feature importance : 0.022939240392407058
+- Feature : ID_886, feature importance : 0.022698800251850566
+- Feature : ID_13924, feature importance : 0.021827563109103363
+- Feature : ID_3560, feature importance : 0.021396639985490795
+- Feature : ID_16438, feature importance : 0.021289082147852377
+- Feature : ID_7509, feature importance : 0.021066992728290025
+- Feature : ID_3525, feature importance : 0.02105203246774883
+- Feature : ID_6205, feature importance : 0.021047502793035765
+- Feature : ID_10057, feature importance : 0.020727637147587453
+- Feature : ID_16005, feature importance : 0.020632121939748317
+- Feature : ID_116, feature importance : 0.020458027252372207
+- Feature : ID_3698, feature importance : 0.020056638931190675
+- Feature : ID_2047, feature importance : 0.01977332970737998
+- Feature : ID_11723, feature importance : 0.01951878506346409
+- Feature : ID_7358, feature importance : 0.01944607594946707
+- Feature : ID_7781, feature importance : 0.019392189402630735
+- Feature : ID_4309, feature importance : 0.019320520894986506
+- Feature : ID_3399, feature importance : 0.018747589583251116
+- Feature : ID_4580, feature importance : 0.018716074974643254
+- Feature : ID_4055, feature importance : 0.018121923295907855
+- Feature : ID_2483, feature importance : 0.01792331838215374
+- Feature : ID_13011, feature importance : 0.017876150459280427
+- Feature : ID_226, feature importance : 0.017290457777319954
+- Feature : ID_922, feature importance : 0.016666799999000226
+- Feature : ID_2704, feature importance : 0.01627246164946091
+- Feature : ID_15591, feature importance : 0.016070750355610293
+
+
+ Estimator error | Estimator weight
+0.04166666666666666 | 0.025139151892017333
+0.050724637681159396 | 0.023485865428193295
+0.04580152671755724 | 0.024345890541166575
+0.088 | 0.018747589583251116
+0.11621620338725601 | 0.01626579633319702
+0.08345265490629934 | 0.019212859859561532
+0.08523989374462194 | 0.019027316706830003
+0.055665491256713426 | 0.022698800251850566
+0.06338378552559268 | 0.02159193374939657
+0.08125455118550322 | 0.01944607594946707
+0.07087322436197145 | 0.020632121939748317
+0.11613084419519856 | 0.01627246164946091
+0.08623925673963961 | 0.018925100177098933
+0.06484530774804442 | 0.021396639985490795
+0.04786673225866424 | 0.023974916036880456
+0.07892680134588961 | 0.01969940330286171
+0.06566357583203683 | 0.021289082147852377
+0.054425084813992546 | 0.022890003320603862
+0.05904113344986553 | 0.022198060780054894
+0.07231649111378011 | 0.020458027252372207
+0.06990186549241767 | 0.02075114551374335
+0.0883159716613014 | 0.018716074974643254
+0.08175770526088255 | 0.019392189402630735
+0.08628855349345002 | 0.018920085845445404
+0.06738362052088717 | 0.021066992728290025
+0.1187382741590248 | 0.016070750355610293
+0.1022087393531681 | 0.017421615977345817
+0.11117690237697758 | 0.016666799999000226
+0.09660795694735287 | 0.01792331838215374
+0.09211025632646437 | 0.018345374197938986
+0.07731459071797178 | 0.019878893381410436
+0.06738602044610356 | 0.02106668654761835
+0.06750097576759756 | 0.02105203246774883
+0.054109907793975245 | 0.022939240392407058
+0.06166129644351751 | 0.021827563109103363
+0.08140494058948174 | 0.0194299378309663
+0.06753654602060995 | 0.021047502793035765
+0.07009273787095005 | 0.020727637147587453
+0.09573412933599415 | 0.018003919767708824
+0.07825909168255124 | 0.01977332970737998
+0.07574783631879067 | 0.020056638931190675
+0.09899160815811607 | 0.01770671465224678
+0.09712261872761552 | 0.017876150459280427
+0.09446755957554076 | 0.018121923295907855
+0.06589400385911517 | 0.021259018288426985
+0.0854568748384893 | 0.01900503154888138
+0.08058011933921928 | 0.01951878506346409
+0.06691813122318001 | 0.021126571679171733
+0.08243129200642624 | 0.019320520894986506
+0.10371965368489684 | 0.017290457777319954
+2022-03-21 12:54:43,324 INFO: Done:	 Saving results
+2022-03-21 12:54:43,329 INFO: Start:	 Loading data
+2022-03-21 12:54:43,329 INFO: Done:	 Loading data
+2022-03-21 12:54:43,329 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : samba
+2022-03-21 12:54:43,329 INFO: Start:	 Determine Train/Test split
+2022-03-21 12:54:43,330 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 12:54:43,330 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 12:54:43,330 INFO: Done:	 Determine Train/Test split
+2022-03-21 12:54:43,330 INFO: Start:	 Generate classifier args
+2022-03-21 12:54:43,330 INFO: Start:	 Random best settings for samba
+2022-03-21 13:02:09,313 INFO: Done:	 Random best settings
+2022-03-21 13:02:09,313 INFO: Done:	 Generate classifier args
+2022-03-21 13:02:09,313 INFO: Start:	 Training
+2022-03-21 13:02:14,518 INFO: Done:	 Training
+2022-03-21 13:02:14,518 INFO: Start:	 Predicting
+2022-03-21 13:02:14,581 INFO: Done:	 Predicting
+2022-03-21 13:02:14,582 INFO: Info:	 Duration for training and predicting: 451.25279571600186[s]
+2022-03-21 13:02:14,582 INFO: Start:	 Getting results
+2022-03-21 13:02:14,609 INFO: Done:	 Getting results
+2022-03-21 13:02:14,610 INFO: Start:	 Saving preds
+2022-03-21 13:02:14,610 INFO: Classification on bleuets for metabolomics_bleuets with samba.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 13, relevance : <SamBA.relevances.ExpRelevance object at 0x7f8f712edc18>, distance : <SamBA.distances.EuclidianDist object at 0x7f8f712ed240>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f8f712ed668>, b : 2.1856284572378817, pred_train : False, normalizer : RobustScaler(), normalize_dists : True, a : 1e-09
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.875
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9166666666666667
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      15 │         3 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       0 │         6 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:07:31
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.6923076923076923
+- Feature : ID_2551, feature importance : 0.3076923076923077
+
+2022-03-21 13:02:14,613 INFO: Done:	 Saving results
+2022-03-21 13:02:14,618 INFO: Start:	 Loading data
+2022-03-21 13:02:14,619 INFO: Done:	 Loading data
+2022-03-21 13:02:14,619 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : random_forest
+2022-03-21 13:02:14,619 INFO: Start:	 Determine Train/Test split
+2022-03-21 13:02:14,620 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 13:02:14,620 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 13:02:14,620 INFO: Done:	 Determine Train/Test split
+2022-03-21 13:02:14,620 INFO: Start:	 Generate classifier args
+2022-03-21 13:02:14,620 INFO: Start:	 Random best settings for random_forest
+2022-03-21 13:02:49,396 INFO: Done:	 Random best settings
+2022-03-21 13:02:49,396 INFO: Done:	 Generate classifier args
+2022-03-21 13:02:49,396 INFO: Start:	 Training
+2022-03-21 13:02:49,406 INFO: Done:	 Training
+2022-03-21 13:02:49,406 INFO: Start:	 Predicting
+2022-03-21 13:02:49,410 INFO: Done:	 Predicting
+2022-03-21 13:02:49,410 INFO: Info:	 Duration for training and predicting: 34.79162168000039[s]
+2022-03-21 13:02:49,410 INFO: Start:	 Getting results
+2022-03-21 13:02:49,436 INFO: Done:	 Getting results
+2022-03-21 13:02:49,436 INFO: Start:	 Saving preds
+2022-03-21 13:02:49,436 INFO: Classification on bleuets for metabolomics_bleuets with random_forest.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 1, max_depth : 8, criterion : entropy, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9583333333333334
+		- Score on test : 0.8333333333333334
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9583333333333334
+		- Score on test : 0.8333333333333334
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9537037037037037
+		- Score on test : 0.8333333333333334
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      15 │         3 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       1 │         5 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:34
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_2551, feature importance : 0.42270178310635403
+- Feature : ID_3613, feature importance : 0.41687829780634267
+- Feature : ID_13225, feature importance : 0.08746775387179317
+- Feature : ID_7929, feature importance : 0.07295216521551022
+
+2022-03-21 13:02:49,439 INFO: Done:	 Saving results
+2022-03-21 13:02:49,443 INFO: Start:	 Loading data
+2022-03-21 13:02:49,443 INFO: Done:	 Loading data
+2022-03-21 13:02:49,443 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : random_scm
+2022-03-21 13:02:49,443 INFO: Start:	 Determine Train/Test split
+2022-03-21 13:02:49,445 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 13:02:49,445 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 13:02:49,445 INFO: Done:	 Determine Train/Test split
+2022-03-21 13:02:49,445 INFO: Start:	 Generate classifier args
+2022-03-21 13:02:49,445 INFO: Start:	 Random best settings for random_scm
+2022-03-21 13:08:00,745 INFO: Done:	 Random best settings
+2022-03-21 13:08:00,745 INFO: Done:	 Generate classifier args
+2022-03-21 13:08:00,745 INFO: Start:	 Training
+2022-03-21 13:08:08,117 INFO: Done:	 Training
+2022-03-21 13:08:08,117 INFO: Start:	 Predicting
+2022-03-21 13:08:08,744 INFO: Done:	 Predicting
+2022-03-21 13:08:08,745 INFO: Info:	 Duration for training and predicting: 319.3014342449969[s]
+2022-03-21 13:08:08,745 INFO: Start:	 Getting results
+2022-03-21 13:08:09,477 INFO: Done:	 Getting results
+2022-03-21 13:08:09,477 INFO: Start:	 Saving preds
+2022-03-21 13:08:09,477 INFO: Classification on bleuets for metabolomics_bleuets with random_scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 275, max_rules : 11, max_samples : 0.5727046224215079, max_features : 0.312825935512553, model_type : disjunction, p_options : [0.5732830828011354], random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9861111111111112
+		- Score on test : 1.0
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9861111111111112
+		- Score on test : 1.0
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9907407407407407
+		- Score on test : 1.0
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      18 │         0 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       0 │         6 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:05:19
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.17196553567861064
+- Feature : ID_2060, feature importance : 0.0678980135132764
+- Feature : ID_2068, feature importance : 0.06523446112146569
+- Feature : ID_2551, feature importance : 0.0436020897217812
+- Feature : ID_2524, feature importance : 0.019392913805875316
+- Feature : ID_3615, feature importance : 0.012023606559642694
+- Feature : ID_2773, feature importance : 0.011132969036706198
+- Feature : ID_3300, feature importance : 0.00869176377805496
+- Feature : ID_2419, feature importance : 0.0069366960921015556
+- Feature : ID_3325, feature importance : 0.00651882283354122
+- Feature : ID_2886, feature importance : 0.006365438766869662
+- Feature : ID_3157, feature importance : 0.0062914220370223406
+- Feature : ID_3433, feature importance : 0.005945739507515618
+- Feature : ID_5147, feature importance : 0.0058178741417625945
+- Feature : ID_15468, feature importance : 0.00500983606651779
+- Feature : ID_2880, feature importance : 0.0048094426238570786
+- Feature : ID_2670, feature importance : 0.004565926541636466
+- Feature : ID_5206, feature importance : 0.004565926541636466
+- Feature : ID_2223, feature importance : 0.004453187614682479
+- Feature : ID_2459, feature importance : 0.00429414519987239
+- Feature : ID_3097, feature importance : 0.004243625844579775
+- Feature : ID_3344, feature importance : 0.004243625844579775
+- Feature : ID_13687, feature importance : 0.004194281358014893
+- Feature : ID_3128, feature importance : 0.004194281358014893
+- Feature : ID_4642, feature importance : 0.004146071227462998
+- Feature : ID_8083, feature importance : 0.004098956781696373
+- Feature : ID_12886, feature importance : 0.004007868853214231
+- Feature : ID_16483, feature importance : 0.004007868853214231
+- Feature : ID_4084, feature importance : 0.0039638263383437455
+- Feature : ID_2653, feature importance : 0.003920741269448705
+- Feature : ID_9171, feature importance : 0.003757377049888342
+- Feature : ID_3508, feature importance : 0.0032206088999042932
+- Feature : ID_10257, feature importance : 0.002774678436840622
+- Feature : ID_2410, feature importance : 0.002774678436840622
+- Feature : ID_5829, feature importance : 0.002652266152862359
+- Feature : ID_13906, feature importance : 0.002652266152862359
+- Feature : ID_16288, feature importance : 0.0026138275129658035
+- Feature : ID_2873, feature importance : 0.0026138275129658035
+- Feature : ID_3296, feature importance : 0.0026138275129658035
+- Feature : ID_3730, feature importance : 0.0025764871199234346
+- Feature : ID_4269, feature importance : 0.0025764871199234346
+- Feature : ID_27, feature importance : 0.002504918033258895
+- Feature : ID_8875, feature importance : 0.002504918033258895
+- Feature : ID_2470, feature importance : 0.002470604087597814
+- Feature : ID_9503, feature importance : 0.002470604087597814
+- Feature : ID_9024, feature importance : 0.0024372175458735193
+- Feature : ID_8442, feature importance : 0.0024372175458735193
+- Feature : ID_2741, feature importance : 0.0024372175458735193
+- Feature : ID_11986, feature importance : 0.0024372175458735193
+- Feature : ID_15122, feature importance : 0.0024372175458735193
+
+2022-03-21 13:08:09,480 INFO: Done:	 Saving results
+2022-03-21 13:08:09,485 INFO: Start:	 Loading data
+2022-03-21 13:08:09,486 INFO: Done:	 Loading data
+2022-03-21 13:08:09,486 INFO: Info:	 Classification - Database:bleuets View:metabolomics_bleuets train ratio:0.75, CrossValidation k-folds: 7, cores:4, algorithm : scm
+2022-03-21 13:08:09,486 INFO: Start:	 Determine Train/Test split
+2022-03-21 13:08:09,487 INFO: Info:	 Shape X_train:(72, 16645), Length of y_train:72
+2022-03-21 13:08:09,487 INFO: Info:	 Shape X_test:(24, 16645), Length of y_test:24
+2022-03-21 13:08:09,487 INFO: Done:	 Determine Train/Test split
+2022-03-21 13:08:09,487 INFO: Start:	 Generate classifier args
+2022-03-21 13:08:09,487 INFO: Start:	 Random best settings for scm
+2022-03-21 13:08:15,912 INFO: Done:	 Random best settings
+2022-03-21 13:08:15,912 INFO: Done:	 Generate classifier args
+2022-03-21 13:08:15,912 INFO: Start:	 Training
+2022-03-21 13:08:16,065 INFO: Done:	 Training
+2022-03-21 13:08:16,065 INFO: Start:	 Predicting
+2022-03-21 13:08:16,067 INFO: Done:	 Predicting
+2022-03-21 13:08:16,068 INFO: Info:	 Duration for training and predicting: 6.581874349998543[s]
+2022-03-21 13:08:16,068 INFO: Start:	 Getting results
+2022-03-21 13:08:16,091 INFO: Done:	 Getting results
+2022-03-21 13:08:16,091 INFO: Start:	 Saving preds
+2022-03-21 13:08:16,091 INFO: Classification on bleuets for metabolomics_bleuets with scm.
+
+Database configuration : 
+	- Database name : bleuets
+	- View name : metabolomics_bleuets	 View shape : (96, 16645)
+	- Learning Rate : 0.75
+	- Labels used : ["Av2", "Bv2", "Bv4"], ["Av4"]
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : disjunction, max_rules : 6, p : 0.16927556542429611, random_state : RandomState(MT19937)
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9722222222222222
+		- Score on test : 0.7916666666666666
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9722222222222222
+		- Score on test : 0.7916666666666666
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9814814814814814
+		- Score on test : 0.8611111111111112
+
+Test set confusion matrix : 
+
+╒═══════════════════════╤═════════════════════════╤═══════════╕
+│                       │   ["Av2", "Bv2", "Bv4"] │   ["Av4"] │
+╞═══════════════════════╪═════════════════════════╪═══════════╡
+│ ["Av2", "Bv2", "Bv4"] │                      13 │         5 │
+├───────────────────────┼─────────────────────────┼───────────┤
+│ ["Av4"]               │                       0 │         6 │
+╘═══════════════════════╧═════════════════════════╧═══════════╛
+
+
+
+ Classification took 0:00:06
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_676, feature importance : 0.5
+- Feature : ID_182, feature importance : 0.5
+Model used : X[676] > 50.869 or X[182] <= 3.297
+2022-03-21 13:08:16,094 INFO: Done:	 Saving results
+2022-03-21 13:08:16,094 INFO: Done:	 monoview benchmark
+2022-03-21 13:08:16,094 INFO: Start:	 multiview benchmark
+2022-03-21 13:08:16,094 INFO: Done:	 multiview benchmark
+2022-03-21 13:08:16,095 INFO: Start:	 Analyzing all results
+2022-03-21 13:08:16,162 INFO: Start:	 Score graph generation for accuracy_score
+2022-03-21 13:08:16,530 INFO: Done:	 Score graph generation for accuracy_score
+2022-03-21 13:08:16,530 INFO: Start:	 Score graph generation for f1_score
+2022-03-21 13:08:16,898 INFO: Done:	 Score graph generation for f1_score
+2022-03-21 13:08:16,898 INFO: Start:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:08:17,269 INFO: Done:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:08:17,269 INFO: Start:	 Label analysis figure generation
+2022-03-21 13:08:18,035 INFO: Done:	 Label analysis figures generation
+2022-03-21 13:08:51,379 INFO: Done:	 Analyzing all results
+2022-03-21 13:08:51,379 INFO: Done:	 Executing all the needed benchmarks
+2022-03-21 13:08:51,379 INFO: Start:	 Analyzing predictions
+2022-03-21 13:08:51,380 INFO: Start:	 Analyzing all results
+2022-03-21 13:08:51,550 INFO: Start:	 Score graph generation for accuracy_score
+2022-03-21 13:08:51,916 INFO: Done:	 Score graph generation for accuracy_score
+2022-03-21 13:08:51,916 INFO: Start:	 Score graph generation for f1_score
+2022-03-21 13:08:52,281 INFO: Done:	 Score graph generation for f1_score
+2022-03-21 13:08:52,282 INFO: Start:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:08:52,646 INFO: Done:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:08:52,647 INFO: Start:	 Label analysis figure generation
+2022-03-21 13:08:53,294 INFO: Done:	 Label analysis figures generation
+2022-03-21 13:09:26,844 INFO: Start:	 Score graph generation for accuracy_score
+2022-03-21 13:09:27,212 INFO: Done:	 Score graph generation for accuracy_score
+2022-03-21 13:09:27,212 INFO: Start:	 Score graph generation for f1_score
+2022-03-21 13:09:27,584 INFO: Done:	 Score graph generation for f1_score
+2022-03-21 13:09:27,584 INFO: Start:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:09:27,958 INFO: Done:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:09:27,958 INFO: Start:	 Label analysis figure generation
+2022-03-21 13:09:28,606 INFO: Done:	 Label analysis figures generation
+2022-03-21 13:10:02,352 INFO: Start:	 Score graph generation for accuracy_score
+2022-03-21 13:10:02,719 INFO: Done:	 Score graph generation for accuracy_score
+2022-03-21 13:10:02,719 INFO: Start:	 Score graph generation for f1_score
+2022-03-21 13:10:03,087 INFO: Done:	 Score graph generation for f1_score
+2022-03-21 13:10:03,087 INFO: Start:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:10:03,456 INFO: Done:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:10:03,456 INFO: Start:	 Label analysis figure generation
+2022-03-21 13:10:04,106 INFO: Done:	 Label analysis figures generation
+2022-03-21 13:10:37,487 INFO: Start:	 Score graph generation for accuracy_score
+2022-03-21 13:10:37,853 INFO: Done:	 Score graph generation for accuracy_score
+2022-03-21 13:10:37,853 INFO: Start:	 Score graph generation for f1_score
+2022-03-21 13:10:38,220 INFO: Done:	 Score graph generation for f1_score
+2022-03-21 13:10:38,220 INFO: Start:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:10:38,588 INFO: Done:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:10:38,588 INFO: Start:	 Label analysis figure generation
+2022-03-21 13:10:39,239 INFO: Done:	 Label analysis figures generation
+2022-03-21 13:11:12,640 INFO: Start:	 Score graph generation for accuracy_score
+2022-03-21 13:11:13,007 INFO: Done:	 Score graph generation for accuracy_score
+2022-03-21 13:11:13,007 INFO: Start:	 Score graph generation for f1_score
+2022-03-21 13:11:13,375 INFO: Done:	 Score graph generation for f1_score
+2022-03-21 13:11:13,375 INFO: Start:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:11:13,750 INFO: Done:	 Score graph generation for balanced_accuracy*
+2022-03-21 13:11:13,751 INFO: Start:	 Label analysis figure generation
+2022-03-21 13:11:14,400 INFO: Done:	 Label analysis figures generation
+2022-03-21 13:11:47,971 INFO: Done:	 Analyzing all results
+2022-03-21 13:11:49,269 INFO: Start:	 Global label analysis figure generation
+2022-03-21 13:11:49,917 INFO: Done:	 Global label analysis figures generation
+2022-03-21 13:12:23,399 INFO: Done:	 Analyzing predictions

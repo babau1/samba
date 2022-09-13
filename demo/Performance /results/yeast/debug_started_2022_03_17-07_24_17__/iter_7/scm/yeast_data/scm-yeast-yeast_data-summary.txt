@@ -1,0 +1,45 @@
+Classification on yeast for yeast_data with scm.
+
+Database configuration : 
+	- Database name : yeast
+	- View name : yeast_data	 View shape : (1484, 8)
+	- Learning Rate : 0.75
+	- Labels used : CYT, non-CYT
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : conjunction, max_rules : 2, p : 0.35606611717804226, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.531895777178796
+		- Score on test : 0.5094339622641509
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.531895777178796
+		- Score on test : 0.5094339622641509
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.6480989608806556
+		- Score on test : 0.6196416497633537
+
+Test set confusion matrix : 
+
+╒═════════╤═══════╤═══════════╕
+│         │   CYT │   non-CYT │
+╞═════════╪═══════╪═══════════╡
+│ CYT     │   106 │        10 │
+├─────────┼───────┼───────────┤
+│ non-CYT │   172 │        83 │
+╘═════════╧═══════╧═══════════╛
+
+
+
+ Classification took 0:00:02
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 0, feature importance : 0.5
+- Feature index : 2, feature importance : 0.5
+Model used : X[2] <= 0.450 and X[0] <= 1.000

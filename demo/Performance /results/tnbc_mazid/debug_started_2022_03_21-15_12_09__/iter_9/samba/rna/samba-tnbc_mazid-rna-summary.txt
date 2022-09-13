@@ -1,0 +1,47 @@
+Classification on tnbc_mazid for rna with samba.
+
+Database configuration : 
+	- Database name : tnbc_mazid
+	- View name : rna	 View shape : (902, 2000)
+	- Learning Rate : 0.7494456762749445
+	- Labels used : Non-TNBC, TNBC
+	- Number of cross validation folds : 5
+
+Classifier configuration : 
+	- SamBAClf with n_estimators : 6, relevance : <SamBA.relevances.ExpRelevance object at 0x7f131ee8fba8>, distance : <SamBA.distances.EuclidianDist object at 0x7f131ee8f748>, train_weighting : <SamBA.samba.ExpTrainWeighting object at 0x7f131ee8f5c0>, b : 2.806233911270746, pred_train : True, normalizer : RobustScaler(), normalize_dists : True, a : 1e-08
+	- Executed on 4 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9734513274336283
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9734513274336283
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 1.0
+		- Score on test : 0.9623909623909623
+
+Test set confusion matrix : 
+
+╒══════════╤════════════╤════════╕
+│          │   Non-TNBC │   TNBC │
+╞══════════╪════════════╪════════╡
+│ Non-TNBC │        185 │      4 │
+├──────────┼────────────┼────────┤
+│ TNBC     │          2 │     35 │
+╘══════════╧════════════╧════════╛
+
+
+
+ Classification took 0:05:04
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature : ID_202, feature importance : 0.3333333333333333
+- Feature : ID_581, feature importance : 0.16666666666666666
+- Feature : ID_1408, feature importance : 0.16666666666666666
+- Feature : ID_279, feature importance : 0.16666666666666666
+- Feature : ID_1550, feature importance : 0.16666666666666666

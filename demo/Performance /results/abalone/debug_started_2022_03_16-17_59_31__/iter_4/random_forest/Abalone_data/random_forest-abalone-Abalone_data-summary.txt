@@ -1,0 +1,50 @@
+Classification on abalone for Abalone_data with random_forest.
+
+Database configuration : 
+	- Database name : abalone
+	- View name : Abalone_data	 View shape : (4177, 8)
+	- Learning Rate : 0.7498204452956667
+	- Labels used : <10, >=10
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- RandomForest with n_estimators : 261, max_depth : 9, criterion : gini, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.898786717752235
+		- Score on test : 0.7961722488038278
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.898786717752235
+		- Score on test : 0.7961722488038279
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.8988769817968292
+		- Score on test : 0.7962941934916704
+
+Test set confusion matrix : 
+
+╒══════╤═══════╤════════╕
+│      │   <10 │   >=10 │
+╞══════╪═══════╪════════╡
+│ <10  │   395 │    129 │
+├──────┼───────┼────────┤
+│ >=10 │    84 │    437 │
+╘══════╧═══════╧════════╛
+
+
+
+ Classification took 0:01:04
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 7, feature importance : 0.2613456378055623
+- Feature index : 4, feature importance : 0.1522988958524622
+- Feature index : 3, feature importance : 0.14067292342081417
+- Feature index : 6, feature importance : 0.12884335065235086
+- Feature index : 5, feature importance : 0.10169757853964395
+- Feature index : 2, feature importance : 0.09413355786280779
+- Feature index : 1, feature importance : 0.06383629007100555
+- Feature index : 0, feature importance : 0.057171765795353185

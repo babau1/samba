@@ -1,0 +1,75 @@
+Classification on ionosphere for ionosphere_data with random_scm.
+
+Database configuration : 
+	- Database name : ionosphere
+	- View name : ionosphere_data	 View shape : (351, 34)
+	- Learning Rate : 0.7492877492877493
+	- Labels used : bad, good
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- ScmBagging with n_estimators : 185, max_rules : 14, max_samples : 0.6945521886374668, max_features : 0.5337086673881943, model_type : conjunction, p_options : [0.9456351974789223], random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9467680608365019
+		- Score on test : 0.9431818181818182
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.9467680608365019
+		- Score on test : 0.9431818181818182
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.9467770363842376
+		- Score on test : 0.9285714285714286
+
+Test set confusion matrix : 
+
+╒══════╤═══════╤════════╕
+│      │   bad │   good │
+╞══════╪═══════╪════════╡
+│ bad  │    28 │      4 │
+├──────┼───────┼────────┤
+│ good │     1 │     55 │
+╘══════╧═══════╧════════╛
+
+
+
+ Classification took 0:00:35
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 3, feature importance : 0.06916020897798159
+- Feature index : 5, feature importance : 0.0613661958298176
+- Feature index : 26, feature importance : 0.05284351162993178
+- Feature index : 7, feature importance : 0.05133518304994358
+- Feature index : 15, feature importance : 0.047961381421602126
+- Feature index : 13, feature importance : 0.04752349555470243
+- Feature index : 4, feature importance : 0.044963795082752
+- Feature index : 6, feature importance : 0.044660395655742875
+- Feature index : 23, feature importance : 0.037075409980514805
+- Feature index : 28, feature importance : 0.036558584749678574
+- Feature index : 2, feature importance : 0.03374856930696259
+- Feature index : 0, feature importance : 0.03266719477632343
+- Feature index : 1, feature importance : 0.027715068482911703
+- Feature index : 9, feature importance : 0.027214928602718316
+- Feature index : 31, feature importance : 0.027163482612921112
+- Feature index : 25, feature importance : 0.02654036109163915
+- Feature index : 20, feature importance : 0.02630568842514466
+- Feature index : 33, feature importance : 0.025747688973702196
+- Feature index : 17, feature importance : 0.024453993816935297
+- Feature index : 30, feature importance : 0.024341302601189052
+- Feature index : 29, feature importance : 0.022795823070954825
+- Feature index : 10, feature importance : 0.02240945318839627
+- Feature index : 18, feature importance : 0.02219628359801913
+- Feature index : 11, feature importance : 0.020915489642503185
+- Feature index : 24, feature importance : 0.020421167725342124
+- Feature index : 12, feature importance : 0.01873694770675721
+- Feature index : 21, feature importance : 0.01783988630813642
+- Feature index : 32, feature importance : 0.017723690782898885
+- Feature index : 14, feature importance : 0.0166319596174272
+- Feature index : 19, feature importance : 0.013363852408495951
+- Feature index : 22, feature importance : 0.012982028053967493
+- Feature index : 27, feature importance : 0.012398028266878986
+- Feature index : 16, feature importance : 0.012238949007107402

@@ -1,0 +1,45 @@
+Classification on pima for pima with decision_tree.
+
+Database configuration : 
+	- Database name : pima
+	- View name : pima	 View shape : (768, 8)
+	- Learning Rate : 0.75
+	- Labels used : No, Yes
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- DecisionTree with max_depth : 1, criterion : gini, splitter : best, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.7569444444444444
+		- Score on test : 0.7291666666666666
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.7569444444444444
+		- Score on test : 0.7291666666666665
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.6932935323383085
+		- Score on test : 0.6604179104477612
+
+Test set confusion matrix : 
+
+╒═════╤══════╤═══════╕
+│     │   No │   Yes │
+╞═════╪══════╪═══════╡
+│ No  │  111 │    14 │
+├─────┼──────┼───────┤
+│ Yes │   38 │    29 │
+╘═════╧══════╧═══════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+First featrue : 
+	1 <= 143.5
+Feature importances : 
+- Feature index : 1, feature importance : 1.0

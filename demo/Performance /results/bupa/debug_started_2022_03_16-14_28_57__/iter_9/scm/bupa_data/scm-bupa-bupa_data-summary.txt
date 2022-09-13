@@ -1,0 +1,47 @@
+Classification on bupa for bupa_data with scm.
+
+Database configuration : 
+	- Database name : bupa
+	- View name : bupa_data	 View shape : (345, 6)
+	- Learning Rate : 0.7478260869565218
+	- Labels used : 1, 2
+	- Number of cross validation folds : 7
+
+Classifier configuration : 
+	- SCM with model_type : conjunction, max_rules : 4, p : 0.7591421366199682, random_state : RandomState(MT19937)
+	- Executed on 6 core(s) 
+
+
+	For Accuracy score using {}, (higher is better) : 
+		- Score on train : 0.6201550387596899
+		- Score on test : 0.5977011494252874
+
+	For F1 score using average: micro, {} (higher is better) : 
+		- Score on train : 0.6201550387596899
+		- Score on test : 0.5977011494252874
+
+	For Balanced accuracy score using {}, (higher is better) : 
+		- Score on train : 0.6474074074074074
+		- Score on test : 0.6324324324324324
+
+Test set confusion matrix : 
+
+╒════╤═════╤═════╕
+│    │   1 │   2 │
+╞════╪═════╪═════╡
+│  1 │  32 │   5 │
+├────┼─────┼─────┤
+│  2 │  30 │  20 │
+╘════╧═════╧═════╛
+
+
+
+ Classification took 0:00:01
+
+ Classifier Interpretation : 
+Feature importances : 
+- Feature index : 0, feature importance : 0.25
+- Feature index : 3, feature importance : 0.25
+- Feature index : 4, feature importance : 0.25
+- Feature index : 5, feature importance : 0.25
+Model used : X[4] > 21.000 and X[5] <= 5.000 and X[3] > 16.000 and X[0] > 81.000
