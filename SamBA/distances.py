@@ -69,7 +69,7 @@ class MultiEnvDist(Distances):
 
 class ExpEuclidianDist(Distances):
 
-    def get_dist(self, sample, set, feature_mask):
+    def get_dist(self, sample, set, feature_mask, *args, **kwargs):
         norms = self.get_norms(sample, set, feature_mask)
         norms = norms/np.sum(norms)
         return np.exp(norms)
@@ -90,9 +90,8 @@ class PolarDist(Distances):
 
 class ExpPolarDist(PolarDist):
 
-    def get_dist(self,  sample, set, feature_mask):
-        return np.exp(1/PolarDist.__call__(self, sample, set, feature_mask,
-                                         base_val=base_val, *args, **kwargs))
+    def get_dist(self,  sample, set, feature_mask, *args, **kwargs):
+        return np.exp(1/PolarDist.get_dist(self, sample, set, feature_mask,))
 
 
 class MixedDistance(Distances):

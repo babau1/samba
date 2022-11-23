@@ -130,7 +130,7 @@ class NeighborHoodClassifier(BaseEnsemble, ClassifierMixin, VizSamba):
         for iter_index in range(self.n_estimators-1):
             self._boost_loop(X, sign_y, iter_index+1, save_data)
             if np.isnan(self.neig_weights[0, iter_index+1]):
-                print("Broken because perfect {}/{}".format(iter_index+2, self.n_estimators))
+                # print("Broken because perfect {}/{}".format(iter_index+2, self.n_estimators))
                 self.n_estimators = iter_index+2
                 self.neig_weights = np.zeros((X.shape[0], self.n_estimators))
                 self.neig_weights[:, iter_index+1] = 1
