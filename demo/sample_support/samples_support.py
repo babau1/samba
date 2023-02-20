@@ -163,4 +163,4 @@ for view_ind in range(dset_file["Metadata"].attrs["nbView"]):
     print(X.shape)
     fig = plot_step(X, y, normalizer=RobustScaler(), title=view_name)
 
-    fig.write_image("{}_converge_norm.pdf".format(view_name), width=1000, height=500)
+    fig.write_image("figures/{}_converge_norm.pdf".format(view_name), width=1000, height=500)

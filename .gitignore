@@ -8,3 +8,4 @@ build
 htmlcov
 *.coverage*
 *.egg-info
+*figures/*

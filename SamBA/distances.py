@@ -1,4 +1,5 @@
 import numpy as np
+import math
 from sklearn.gaussian_process.kernels import RBF
 
 class Distances:
@@ -15,7 +16,10 @@ class Distances:
 
     def get_norms(self, sample, set, feature_mask):
         indices = self.keep_chosen_features(set, feature_mask)
-        norms = np.linalg.norm(sample[indices] - set[:, indices], axis=1)
+        if len(indices)<2:
+            norms = np.abs(set[:, indices]-float(sample[indices]))
+        else:
+            norms = np.linalg.norm(sample[indices] - set[:, indices], axis=1)
         return norms
 
     def __call__(self, sample, set, feature_mask, base_val=0, *args, **kwargs):

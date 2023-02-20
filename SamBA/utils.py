@@ -1,17 +1,19 @@
 import numpy as np
-from SamBA.samba import *
-from SamBA.relevances import *
+from SamBA.difficulties import ExpTrainWeighting, SqExpTrainWeighting, ZeroOneTrainWeighting
+from SamBA.relevances import ExpRelevance, MarginRelevance
 from SamBA.distances import *
 from sklearn.preprocessing import RobustScaler
 
 
-def set_class_from_str(string):
+def set_class_from_str(string, classes=None):
     if isinstance(string, str):
-        classes = [ExpTrainWeighting, RobustScaler, SqExpTrainWeighting,
-                   ZeroOneTrainWeighting, ExpRelevance, MarginRelevance,
-                   ExpEuclidianDist, EuclidianDist, ExpPolarDist, PolarDist,
-                   RobustScaler]
-        for avail_class in classes:
+        all_classes = [ExpTrainWeighting, RobustScaler, SqExpTrainWeighting,
+                       ZeroOneTrainWeighting, ExpRelevance, MarginRelevance,
+                       ExpEuclidianDist, EuclidianDist, ExpPolarDist, PolarDist,
+                       RobustScaler]
+        if classes is not None:
+            all_classes.append(classes)
+        for avail_class in all_classes:
             if string == avail_class.__name__:
                 return avail_class()
         raise ValueError(

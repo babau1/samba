@@ -15,16 +15,16 @@ class VizSamba():
             new_X = self.normalizer.fit_transform(X)
         else:
             new_X = X.copy()
-        if self.support_feats.shape[0] == 1:
+        if self.support_feats_.shape[0] == 1:
             sec_dim = np.random.RandomState(rs).uniform(0,1, size=new_X.shape[0])
             fig = self._plot_2d(X, y, sec_dim=sec_dim, contour=contour, feature_ids=feature_ids)
-        elif self.support_feats.shape[0]==2 or force_2d:
+        elif self.support_feats_.shape[0]==2 or force_2d:
             if force_2d:
                 best_feats = np.argsort(-self.feature_importances_)[:2]
-                supp = self.support_feats
-                self.support_feats = best_feats
+                supp = self.support_feats_
+                self.support_feats_ = best_feats
             fig = self._plot_2d(X, y, contour=contour, feature_ids=feature_ids)
-            self.support_feats = supp
+            self.support_feats_ = supp
         else:
             best_feats = np.argsort(-self.feature_importances_)[:3]
             fig = go.Figure()
@@ -75,44 +75,74 @@ class VizSamba():
     def _plot_2d(self, X, y, sec_dim=None, contour=False,
                  random_state=np.random.RandomState(42),
                  n_estimators=None, title="", template="plotly",
-                 feature_ids=None):
+                 feature_ids=None, test_samples=None, test_labels=None,
+                 size=5, test_preds=None, symbols = ["x", "circle"],
+                 n_steps=10 ):
         if sec_dim is None:
             if X.shape[1] < 2 :
-                sec_dim = np.random.uniform(low=X.min(), high=X.max(),
-                                            size=X.shape[0],
-                                            random_state=random_state)
-            elif X.shape[1] == 2 or len(self.support_feats)<2:
-                feat_1 = self.support_feats[0]
-                sec_dim = X[:, [_ for _ in [0, 1] if _ != feat_1][0]]
-            elif len(self.support_feats)<2:
-                feat = np.random.choice(X.shape[1], size=1, random_state=random_state)
-                sec_dim = X[:, feat]
+                sec_index = 0
+                # sec_dim = np.random.uniform(low=X.min(), high=X.max(),
+                #                             size=X.shape[0],
+                #                             random_state=random_state)
+                # if test_samples is not None:
+                    # sec_dim_test = np.random.uniform(low=test_samples.min(), high=test_samples.max(),
+                    #                             size=test_samples.shape[0],
+                    #                             random_state=random_state)
+            # elif len(self.support_feats)==2:
+            #     feat_1 = self.support_feats[0]
+            #     sec_index = self.support_feats[1]
+                # sec_dim = X[:, [_ for _ in [0, 1] if _ != feat_1][0]]
+                # if test_samples is not None:
+                #     sec_dim_test = test_samples[:, [_ for _ in [0, 1] if _ != feat_1][0]]
+            elif len(self.support_feats_)<2:
+                sec_index = np.random.choice(X.shape[1], size=1, random_state=random_state)
+                # sec_dim = X[:, feat]
+                # if test_samples is not None:
+                #     sec_dim_test = test_samples[:, feat]
             else:
-                sec_dim = X[:, self.support_feats[1]]
+                sec_index = self.support_feats_[1]
+                # sec_dim = X[:, self.support_feats[1]]
+                # if test_samples is not None:
+                #     sec_dim_test = test_samples[:, self.support_feats[1]]
         fig = go.Figure()
         labels = np.unique(y)
-        preds = self._predict_vote(X, n_estimators=n_estimators)
-        preds = self.zero_binarizer.fit_transform(np.sign(preds))
-        symbols = np.array(["x" if label == y[0] else "circle" for label in preds])
+        preds = self.predict(X)
+
+        # preds = self.zero_binarizer.fit_transform(np.sign(preds))
+        # print(self._predict_vote(X, n_estimators=n_estimators))
+        colors = np.array(["Blue" if label == 1 else "Red" for label in preds])
+
+        if test_preds is not None:
+            colors_test = np.array(["Blue" if label == 1 else "Red" for label in test_preds])
         for label in labels:
             if contour:
                 opacity = 0.9
             else:
                 opacity = 0.7
-            indices = np.where(np.sign(y) == label)[0]
-            fig.add_trace(go.Scatter(x=X[indices, self.support_feats[0]],
-                                     y=sec_dim[indices],
+            indices = np.where(y == label)[0]
+            fig.add_trace(go.Scatter(x=X[indices, self.support_feats_[0]],
+                                     y=X[indices, sec_index],
                                      opacity=opacity,
                                      name="Class {}".format(label + 1),
                                      mode="markers",
-                                     marker=dict(
-                                         size=5, symbol=symbols[indices])))
+                                     marker=dict(symbol = symbols[int(label)],
+                                     size=size, color=colors[indices])))
+            if test_samples is not None:
+                indices = np.where(np.sign(test_labels) == label)[0]
+                fig.add_trace(go.Scatter(x=test_samples[indices, self.support_feats_[0]],
+                                         y=test_samples[indices, sec_index],
+                                         opacity=opacity,
+                                         name="Class {}".format(label + 1),
+                                         mode="markers",
+                                         marker=dict(symbol=symbols[int(label)],
+                                         size=2*size, color=colors_test[indices])))
         if contour:
+            mesh_space = generate_mesh_space(X, n_steps=n_steps)
             fig.add_trace(go.Contour(
-                z=-self._predict_vote(X, n_estimators=n_estimators),
-                x=X[:, self.support_feats[0]],
-                y=sec_dim,
-                line_smoothing=0.85,
+                z=self.predict_proba(mesh_space,)[:, 1],
+                x=mesh_space[:, self.support_feats_[0]],
+                y=mesh_space[:,sec_index],
+                line_smoothing=0.0,
                 contours_coloring='heatmap',
                 colorscale='RdBu',
                 showscale=False
@@ -120,16 +150,15 @@ class VizSamba():
             fig.update_layout(paper_bgcolor='rgba(0,0,0,0)',
                               plot_bgcolor='rgba(0,0,0,0)',
                               showlegend=False, margin=dict(l=0, r=0, t=0, b=0))
-            # fig.update_traces(marker_coloraxis=None)
-            # fig.update_xaxes(visible=False)
-            # fig.update_yaxes(visible=False)
+            fig.update_xaxes(visible=False, showgrid=False)
+            fig.update_yaxes(visible=False, showgrid=False)
             if n_estimators is not None and isinstance(self.base_estimator, DecisionTreeClassifier) and self.base_estimator.max_depth == 1:
                 fig.update_layout(title=title+"<br> Feat: {}, threshold: {}".format(self.estimators_[n_estimators-1].tree_.feature[0],
                                                                          self.estimators_[n_estimators-1].tree_.threshold[0] ),
                                   template=template)
         if feature_ids is not None:
-            fig.update_layout(xaxis_title=feature_ids[self.support_feats[0]].decode(),
-                              yaxis_title=feature_ids[self.support_feats[1]].decode())
+            fig.update_layout(xaxis_title=feature_ids[self.support_feats_[0]].decode(),
+                              yaxis_title=feature_ids[self.support_feats_[1]].decode())
         return fig
 
     def plot_contour_gif(self, X, y, sec_dim=None,
@@ -174,8 +203,8 @@ class VizSamba():
                                                       "Pred Train":pred_train,
                                                       "Margin": vote*sample_class,
                                                       "Class": sample_class,
-                                                      "X": sample[4],
-                                                      "Y": sample[5],
+                                                      "X": sample[0],
+                                                      "Y": sample[1],
                                                       "Weight":weight}
             self.saved_ind+=1
 
@@ -183,3 +212,13 @@ class VizSamba():
         fig = px.scatter(self.saved_data, x="X", y="Y", animation_frame="Iteration",
            color="Pred", symbol="Class", color_continuous_scale='Bluered', template=template)
         return fig
+
+def generate_mesh_space(X, n_steps=10, ):
+    mesh_space_x1, mesh_space_x2 = np.meshgrid(
+        np.linspace(np.min(X[:, 0]), np.max(X[:, 0]), n_steps),
+        np.linspace(np.min(X[:, 1]), np.max(X[:, 1]), n_steps))
+    mesh_space = np.concatenate(((mesh_space_x1.flatten()).reshape(
+        (n_steps ** 2, 1)), (mesh_space_x2.flatten()).reshape(
+        (n_steps ** 2, 1))),
+        axis=1)
+    return mesh_space

@@ -118,5 +118,5 @@ for file_name in ["/home/baptiste/Documents/Datasets/UCI/both/ionosphere.hdf5",
         print(X.shape)
         fig = plot_step(X, y, b=2.0, normalizer=RobustScaler(), title=view_name)
 
-        fig.write_image("{}_converge_norm.png".format(view_name), width=1000, height=500)
+        fig.write_image("figures/{}_converge_norm.png".format(view_name), width=1000, height=500)
     quit()
