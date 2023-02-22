@@ -16,6 +16,9 @@ from sklearn.ensemble import RandomForestClassifier
 from randomscm.randomscm import RandomScmClassifier
 from cb_boost.cb_boost import CBBoostClassifier
 from pyscm.scm import SetCoveringMachineClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import SplineTransformer
+from sklearn.pipeline import Pipeline
 
 
 def add_label_noise(y_train, noise_percentage=0.10, rs=None):
@@ -247,7 +250,13 @@ def plot_contour(datasets=["spiral", "moons", "circles", ], noise=None,
 
 
 if __name__=="__main__":
+    log_reg_regu = LogisticRegression(C=10)
+    log_reg_n_regu = LogisticRegression(C=10001.0)
+    spline = SplineTransformer(n_knots=4, knots="quantile", degree=4)
     classifiers = [
+        # LogisticRegression(Cs=10,),
+        LogisticRegression(C=10001.0, ),
+        Pipeline([("spline", spline), ("ridge", log_reg_n_regu)]),
         AdaBoostClassifier(),
                    NeighborHoodClassifier(n_estimators=4,
                                          normalizer=None,
