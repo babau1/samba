@@ -1,13 +1,11 @@
-from sklearn.base import ClassifierMixin, clone
+from sklearn.base import clone
 from sklearn.ensemble import BaseEnsemble
-from sklearn.metrics import accuracy_score
 import pandas as pd
-from sklearn.preprocessing import LabelBinarizer, RobustScaler, LabelEncoder
+from sklearn.preprocessing import LabelEncoder
 from plotly import graph_objects as go
 import plotly
 from six import iteritems
 from sklearn.utils import safe_mask
-from sklearn.pipeline import Pipeline
 from sklearn.utils.validation import _check_sample_weight
 from sklearn.utils.class_weight import compute_sample_weight
 from sklearn.base import check_X_y, check_array
@@ -20,10 +18,122 @@ from SamBA.neighborhood_classifiers import NHClassifier
 from SamBA.utils import set_class_from_str
 
 
-
-
-
 class NeighborHoodClassifier(NHClassifier, VizSamba):
+
+    """
+    An Neighborhood classifier generalizaing boosting with a similarity measure.
+    It is an ensemble method that learns a set of features the with the same greedy method as Adaboost.
+    However, it predicts using a similarity function on the subset of features selected during training.
+    This class implements the algorithm known as SamBA [1].
+
+
+    Parameters
+    ----------
+    base_estimator : object, default=None
+        The base estimator from which the boosted ensemble is built.
+        Support for sample weighting is required, as well as proper
+        ``classes_`` and ``n_classes_`` attributes. If ``None``, then
+        the base estimator is :class:`~sklearn.tree.DecisionTreeClassifier`
+        initialized with `max_depth=1`.
+        .. versionadded:: 1.2
+           `base_estimator` was renamed to `estimator`.
+    n_estimators : int, default=50
+        The maximum number of estimators at which boosting is terminated.
+        In case of perfect fit, the learning procedure is stopped early.
+        Values must be in the range `[1, inf)`.
+    estimator_params : list of str, default=tuple()
+        The list of attributes to use as parameters when instantiating a
+        new base estimator. If none are given, default parameters are used.
+    relevance : object or string, default="ExpRelevance"
+        The relevance function used to compute the weight of each estimator on
+        each trinaing sample. All the available ones are provided in the
+        relevances.py module.
+    distance : object or string, default="EuclidianDist"
+        The similarity measure used to compute the estimated weights in the
+        prediction function. All the available ones are provided in the
+        distences.py module.
+    difficulty: object or string, default="ExpTrainWeighting"
+        The difficutly function used to compute the difficulty of a sample,
+        during the learning process. A difficult sample will be overweighted
+        to try to classify it. All the available ones are provided in the
+        difficulties.py module.
+    keep_selected_features : bool, default=True
+        If Ture, the similarity measure is computed only on the features
+        selected during learning, if False it is computed on all the features.
+        One of the main advantage of SamBA is to perform feature selection. Set
+        to False uniquely if our are sure that the similarity on the entire
+        set of features of X has sense.
+    vote_compensate : bool, default=True
+        If True, the algorithm will focus on each iteration on the samples that
+        are the most difficult for the vote of all the preovous iterations.
+        If False, on of the last iteration.
+    b : float, default=1.0
+        Hyper-parameter b controls the impact of the similarity on the weight
+        estimation function, a bigger b means that only the closest samples
+        have a meaningful vote, whereas a smaller b means that all the samples
+        have a meaningful vote.
+    a : float, default=0.1
+        Hyper-parameter a controls the smoothness of the decision border, and
+        the maximum weight of a sample in the weight estimation function.
+    normalizer : object, default=None
+        As SamBA relies on similarity functions, if the data needs to be
+        normalized, one can set normalizer to RobustScaler, from the sklearn
+        library.
+    forced_diversity : bool, default=False
+        If True, forced SamBA to choose different features at each iteration.
+        Can be useful in the context of biomarker discovery, or in the case
+        of an infinite loop.
+    pred_train : bool, default=False
+        If True, the difficulty of a sample is computed as a majority vote of
+        experts, with the weights learned during the traning phase. If False,
+        the weights of each traning sample a re-evaluated with the weight
+        estimation fuunction for the difficulty computation.
+        Intuitively, True leads to sparse votes that converge quickly but are
+        prone to overfitting, and False leads to longer trnaing phases,
+        but with possibly less overfitting.
+    normalize_dists : bool, default=True
+        During the prediction phase, if True the distances of all the samples
+        are normalized, if not, they are fed raw to the weight estimation
+        function. Has small impact on the prediction. Some approximation errors
+         can happen when normalizing, but a normalized vector is easier to
+         understand for interpretation.
+    class_weight : dict, list of dict or "balanced", default=None
+        Weights associated with classes in the form ``{class_label: weight}``.
+        If None, all classes are supposed to have weight one. For
+        multi-output problems, a list of dicts can be provided in the same
+        order as the columns of y.
+        Note that for multioutput (including multilabel) weights should be
+        defined for each class of every column in its own dict. For example,
+        for four-class multilabel classification weights should be
+        [{0: 1, 1: 1}, {0: 1, 1: 5}, {0: 1, 1: 1}, {0: 1, 1: 1}] instead of
+        [{1:1}, {2:5}, {3:1}, {4:1}].
+        The "balanced" mode uses the values of y to automatically adjust
+        weights inversely proportional to class frequencies in the input data
+        as ``n_samples / (n_classes * np.bincount(y))``
+        For multi-output, the weights of each column of y will be multiplied.
+        Note that these weights will be multiplied with sample_weight (passed
+        through the fit method) if sample_weight is specified.
+
+    Attributes
+    ----------
+    base_estimator_ : estimator
+        The base estimator from which the ensemble is grown.
+    estimators_ : list of classifiers
+        The collection of fitted sub-estimators.
+    classes_ : ndarray of shape (n_classes,)
+        The classes labels.
+    n_classes_ : int
+        The number of classes.
+    neig_weights_ : ndarray of floats, shape (n_estimators, n_samples)
+        Weights for each estimator in the boosted ensemble,
+        on each trnaing sample.
+    feature_importances_ : ndarray of shape (n_features,)
+        The impurity-based feature importances if supported by the
+        ``estimator`` (when based on decision trees).
+        Warning: impurity-based feature importances can be misleading for
+        high cardinality features (many unique values). See
+        :func:`sklearn.inspection.permutation_importance` as an alternative.
+    """
 
     def __init__(self,
                  base_estimator=None,
@@ -34,7 +144,7 @@ class NeighborHoodClassifier(NHClassifier, VizSamba):
                  difficulty="ExpTrainWeighting",
                  keep_selected_features=True,
                  vote_compensate=True,
-                 b=1,
+                 b=1.0,
                  a=0.1,
                  normalizer=None,
                  forced_diversity=False,
@@ -59,7 +169,6 @@ class NeighborHoodClassifier(NHClassifier, VizSamba):
         self.class_weight = class_weight
 
     def fit(self, X, y, save_data=False, sample_weight=None, **fit_params):
-        # Todo : label binarizer inside not outside
         self._validate_estimator(default=DecisionTreeClassifier(max_depth=1))
         self._validate_functions()
         self.label_encoder_ = LabelEncoder()
@@ -94,7 +203,6 @@ class NeighborHoodClassifier(NHClassifier, VizSamba):
             self._boost_loop(X, sign_y, iter_index+1, save_data,
                              sample_weight=sample_weight)
             if np.isnan(self.neig_weights_[0, iter_index + 1]):
-                # print("Broken because perfect {}/{}".format(iter_index+2, self.n_estimators))
                 self.n_estimators = iter_index+2
                 self.neig_weights_ = np.zeros((X.shape[0], self.n_estimators))
                 self.neig_weights_[:, iter_index + 1] = 1
@@ -175,7 +283,7 @@ class NeighborHoodClassifier(NHClassifier, VizSamba):
     def _step_predict_on_train(self, X):
         preds = np.zeros((X.shape[0], self.n_estimators))
         for n_estimators in range(self.n_estimators):
-            preds[:, n_estimators] = self.zero_binarizer.fit_transform(np.sign(
+            preds[:, n_estimators] = self.minus_binarizer_.inverse_transform(np.sign(
                 self._predict_on_train(X, n_estimators=n_estimators + 1))).reshape(
                 X.shape[0])
         return preds
@@ -232,7 +340,6 @@ class NeighborHoodClassifier(NHClassifier, VizSamba):
                 vote = base_decision
             votes[sample_index] = vote
         return votes
-               # /np.max(np.abs(self.votes))
 
     def single_sample_importances(self, X, transform=False, ):
         weights_mat = np.zeros((X.shape[0], X.shape[1]))
@@ -284,7 +391,6 @@ class NeighborHoodClassifier(NHClassifier, VizSamba):
             X_msk = np.ma.array(X, mask=safe_mask(X, mask))
             X_msk.fill_value=0
             X_msk = X_msk.filled()
-            # X_msk = np.ma.array(X, mask=safe_mask(X, mask))
         else:
             X_msk = X
         next_estimator.fit(X_msk, y,
@@ -338,75 +444,26 @@ class NeighborHoodClassifier(NHClassifier, VizSamba):
         self.saved_ind_ = 0
         self.train_weights_ = np.ones((X.shape[0], self.n_estimators + 1)) / X.shape[0]
         self.neig_weights_ = np.ones((X.shape[0], self.n_estimators))
-        # self.estim_weights = np.ones(self.n_estimators) / self.n_estimators
         self.estimators_ = []
         self.feature_importances_ = np.zeros(X.shape[1])
-
-
-
 
 
 if __name__ == "__main__":
 
     from sklearn.model_selection import train_test_split
     from sklearn.metrics import accuracy_score
-    import plotly.express as px
     from SamBA.utils import gen_four_blobs
     rs = np.random.RandomState(7)
-    #
+
     X, y = gen_four_blobs(rs, n_samples=1000, unit=200)
 
-    #
-    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.10, random_state=rs)
-    #
-    # classifier = NeighborHoodClassifier(n_estimators=5)
-    # classifier.fit(X_train, y_train, save_data=True)
-    #
-    # from sklearn.ensemble import AdaBoostClassifier
-    # from sklearn.tree import DecisionTreeClassifier
-    # ada = AdaBoostClassifier(n_estimators=10, base_estimator=DecisionTreeClassifier(max_depth=1))
-    # ada.fit(X_train, y_train)
-    # print(accuracy_score(ada.predict(X_train), y_train))
-    # print(accuracy_score(ada.predict(X_test), y_test))
-    #
-    #
-    # print(accuracy_score(classifier.predict(X_train), y_train))
-    # print(accuracy_score(classifier.predict(X_test), y_test))
-    #
-    from sklearn.datasets import make_moons
-    # #
-    # X, y = make_moons(n_samples=1000, shuffle=True, noise=0.1,
-    #                   random_state=rs)
-    # X = np.load("/home/baptiste/Documents/Datasets/cardiac_montreal/Cardiac_risk_LCMS/neg.npy")
-    # y = np.load(
-    #     "/home/baptiste/Documents/Datasets/cardiac_montreal/Cardiac_risk_LCMS/labels_neg.npy")
     X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.9, shuffle=True, random_state=rs)
 
-    classifier = NeighborHoodClassifier(
-        base_estimator=DecisionTreeClassifier(max_depth=1,
-                                              splitter='best'),
-        train_weighting=ExpTrainWeighting(),
-        n_estimators=20,
-        estimator_params=tuple(),
-        keep_selected_features=True,
-        normalizer=None)
+    classifier = NeighborHoodClassifier()
 
     classifier.fit(X_train, y_train)
     preds_train = classifier._step_predict_on_train(X_train)
     preds = classifier.predict(X_train)
-    np.set_printoptions(edgeitems=30, linewidth=100000,
-                        formatter=dict(float=lambda x: "%.3g" % x))
-    # print(preds[:10, :])
-    # print(y_train[:10])
-    # print(preds_train[:10, :])
-    fig = go.Figure(data=plotly.graph_objs.Scatter(x=X_train[:10, 0], y=X_train[:10, 1], mode="markers", hovertext=[str(_) for _ in range(10)]))
-    fig.show()
+    print("Train accuracy", accuracy_score(y_train, preds))
+    print("Test accuracy", accuracy_score(y_test, classifier.predict(X_test)))
 
-    # fig=px.scatter(classifier.saved_data, x="X", y="Y", animation_frame="Iteration",
-    #            color="Pred", size="Weight", symbol="Class", color_continuous_scale='Bluered')
-    # fig.show()
-    # #
-    # print([accuracy_score(y_train, pred) for pred in np.transpose(classifier.step_predict(X_train))])
-    # print([accuracy_score(y_test, pred) for pred in np.transpose(classifier.step_predict(X_test))])
-    # print(len(classifier.support_feats), X.shape[1],
-    #       classifier.feature_importances_[classifier.support_feats])

@@ -8,4 +8,6 @@ build
 htmlcov
 *.coverage*
 *.egg-info
-*figures/*
+demo/Contour Plots/figures/*
+demo/Performance/figures/*
+*.html
