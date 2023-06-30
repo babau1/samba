@@ -1,0 +1,38 @@
+# The base configuration of the benchmark
+log: True
+name: 'metagenome'
+label: "uai2023"
+debug: False
+file_type: ".hdf5"
+pathf: "../dataset/"
+random_state: 42
+nb_cores: 8
+res_dir: "../../results/"
+split: 0.20
+nb_folds: 5
+nb_class: 2
+cl_type: ["monoview"]
+algos_monoview:
+  - samba
+  - decision_tree
+  - random_forest
+  - adaboost
+  - svm_rbf
+  - knn
+  - lasso
+  - xgboost
+  - gradient_boosting
+stats_iter: 10
+metrics:
+  f1_score:
+    average: 'binary'
+  accuracy_score: {}
+  balanced_accuracy: {}
+metric_princ: "balanced_accuracy"
+hps_type: "Random"
+hps_args:
+  n_iter: 50
+  equivalent_draws: False
+
+
+

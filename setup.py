@@ -3,13 +3,13 @@ import shutil
 from setuptools import setup, find_packages
 from distutils.command.clean import clean as _clean
 from distutils.command.sdist import sdist
-import SamBA
+import samba
 
-try:
-    import numpy
-except:
-    raise 'Cannot build iw without numpy'
-    sys.exit()
+# try:
+#     import numpy
+# except:
+#     raise 'Cannot build  without numpy'
+#     sys.exit()
 
 # --------------------------------------------------------------------
 # Clean target redefinition - force clean everything supprimer de la liste '^core\.*$',
@@ -102,11 +102,11 @@ def setup_package():
 
     name = 'samba'
     version = get_version()
-    multiview_generator_dir = 'SamBA'
-    set_version(multiview_generator_dir, version)
-    description = 'SamBA '
+    dir = 'samba'
+    set_version(dir, version)
+    description = 'SamBA - Sample Boosting Classifier'
     here = os.path.abspath(os.path.dirname(__file__))
-    with open(os.path.join(here, 'README.rst'), encoding='utf-8') as readme:
+    with open(os.path.join(here, 'README.md'), encoding='utf-8') as readme:
         long_description = readme.read()
     group = 'dev'
     url = 'https://gitlab.lis-lab.fr/{}/{}'.format(group, name)
@@ -133,17 +133,10 @@ def setup_package():
     keywords = ('machine learning, supervised learning, classification, '
                 'datat generation, multi-view, multi-modal, multi-class')
     packages = find_packages(exclude=['*.tests'])
-    install_requires = ['scikit-learn>=0.19', 'numpy', 'scipy', "plotly",
-                        "h5py", 'pyyaml', 'tabulate', 'pandas', ]
+    install_requires = ['numpy', 'scikit-learn>=0.19', 'scipy', "plotly",
+                        "h5py", 'pyyaml', 'tabulate', 'pandas', "six", ]
     python_requires = '>=3.5'
-    extras_require = {
-        'dev': ['pytest', 'pytest-cov'],
-        'doc': ['sphinx>=1.8', 'numpydoc', 'sphinx_gallery', 'matplotlib', "jupyter",
-                'pandoc', 'nbsphinx', 'nbsphinx_link', 'sphinx_rtd_theme', 'sphinx-autoapi']}
     include_package_data = True
-
-    command_options = {'build_sphinx': {'build_dir':('setup.py', './docs/build/')}}
-
     setup(name=name,
           version=version,
           description=description,
@@ -158,9 +151,8 @@ def setup_package():
           packages=packages,
           install_requires=install_requires,
           python_requires=python_requires,
-          extras_require=extras_require,
           include_package_data=include_package_data,
-          command_options=command_options)
+          )
 
 
 if __name__ == "__main__":

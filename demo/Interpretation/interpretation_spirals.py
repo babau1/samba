@@ -1,8 +1,8 @@
 import numpy as np
 import plotly.express as px
 from sklearn.model_selection import StratifiedShuffleSplit
-from SamBA.samba import NeighborHoodClassifier
-from SamBA.distances import EuclidianDist
+from samba.samba import SamBAClassifier
+from samba.distances import EuclidianDist
 from sklearn.metrics import balanced_accuracy_score
 
 
@@ -30,7 +30,7 @@ def make_spirals(n_samples, rs):
     y = res[:, -1]
     return X, y
 
-clf = NeighborHoodClassifier(n_estimators=17, forced_diversity=True, distance=EuclidianDist(), b=4, a=1e-10)
+clf = SamBAClassifier(n_estimators=17, forced_diversity=True, distance=EuclidianDist(), b=4, a=1e-10)
 n_splits = 1
 rs = np.random.RandomState(42)
 X, y = make_spirals(n_samples=1000, rs=rs)
@@ -67,4 +67,4 @@ for split_ind, (train_index, test_index) in enumerate(sss.split(X, y)):
     fig.update_yaxes(visible=True, showgrid=False, tickmode = 'linear',
                      tick0 = 1, dtick = 1)
     fig.write_image("figures/feature_importances_samples.pdf", width=1000, height=500 )
-    fig.show()
+    # fig.show()

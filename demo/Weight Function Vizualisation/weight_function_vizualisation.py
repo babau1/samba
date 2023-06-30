@@ -31,7 +31,7 @@ def gen_data(precision, random_state, locs=[0.25,0.75], scale=0.1,
     return X, Xs, w, w_x
 
 
-def plot_figure(X, xs, w, w_x, fig, a_s=[0, 0.02], bs=[1.5,4], row=1, b=2, ind_b=0):
+def plot_figure(X, xs, w, w_x, fig=None, a_s=[0, 0.02], bs=[1.5,4], row=1, b=2, ind_b=0):
     if row!=1 or ind_b!=1:
         legend=False
     else:
@@ -87,6 +87,57 @@ def plot_figure(X, xs, w, w_x, fig, a_s=[0, 0.02], bs=[1.5,4], row=1, b=2, ind_b
     fig.update_yaxes(showline=True, linecolor='black', showgrid=False)
     return fig
 
+def plot_single_figure(X, xs, w, w_x, a_s=[0, 0.02], bs=[1.5,4], row=1, b=2, ind_b=0):
+    fig=go.Figure()
+    for ind_x, x in enumerate(xs):
+        dists = np.array(
+            [1 / (a_s[0] + (np.linalg.norm(x - x_1_i)) ** b) for x_1_i in X])
+        w_x[ind_x] = np.sum(
+            [w_i * dist / np.sum(dists) for w_i, dist in zip(w, dists)])
+    mean = np.zeros(precision) + np.mean(w_x)
+
+
+    for sample, weight in zip(X, w):
+        fig.add_shape(type="line", xref="x", yref="y", x0=sample, y0=0,
+                      x1=sample,
+                      y1=weight, line=dict(color="#A9A9A9", width=2, ))
+
+    fig.add_trace(
+        go.Scatter(x=X, y=w, mode='markers',
+                   name=r"$\Large{\text{Empirical: }\Omega_{t,i}}$",
+                   marker=dict(color="black"),
+                   showlegend=True
+                   ))
+
+    fig.add_trace(go.Scatter(x=xs, y=mean, mode='lines',
+                             name=r"$\Large{\text{Mean: }\frac{1}{m}\sum_{i=1}^m \Omega_{t,i}}$",
+                             line={"color":colors[2]},
+                   showlegend=True))
+    fig.add_trace(go.Scatter(x=xs, y=w_x, mode='lines',
+                            name=r"$\Large{\text{Estimated: }\omega^{0,"+"{}".format(b)+r"}_t(x)}$",
+                             line={"color": colors[0]},
+                   showlegend=True))
+    for ind_x, x in enumerate(xs):
+        dists = np.array(
+            [1 / (a_s[1] + (np.linalg.norm(x - x_1_i)) ** b) for x_1_i in X])
+        w_x[ind_x] = np.sum(
+            [w_i * dist / np.sum(dists) for w_i, dist in zip(w, dists)])
+    fig.add_trace(
+        go.Scatter(x=xs, y=w_x, mode='lines',
+                   name=r"$\Large{\text{Estimated: }\omega^{0.02,"+"{}".format(b)+r"}_t(x)}$",
+                   line={"color":colors[1]},
+                   showlegend=True),)
+
+    fig.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)',
+        xaxis_title="X",
+        yaxis_title="Weight",
+        font=dict(family="Computer Modern", size=25))
+    fig.update_xaxes(showline=True, linecolor='black', showgrid=False)
+    fig.update_yaxes(showline=True, linecolor='black', showgrid=False)
+    return fig
+
+
 
 precision = 2000
 blob_size = 20
@@ -97,21 +148,42 @@ blob_size = 20
 random_state = np.random.RandomState(42)
 
 
-# X, xs, w, w_x = gen_data(precision, random_state, locs=[0.25,0.75], scale=0.1,
-#              blob_size=blob_size, lin_space_lag=0.05, weights=[0.4,0.05],
-#                          noisy_sm=[], noisy_bg=[])
-#
-# fig = plot_figure(X, xs, w, w_x,)
+X, xs, w, w_x = gen_data(precision, random_state, locs=[0.25,0.75], scale=0.1,
+             blob_size=blob_size, lin_space_lag=0.05, weights=[0.4,0.05],
+                         noisy_sm=[], noisy_bg=[])
+
+fig = plot_single_figure(X, xs, w, w_x)
 # fig.show()
-# fig.write_image("weight_viz_1d.pdf", height=500, width=1000)
-#
-#
-# X, xs, w, w_x = gen_data(precision, random_state, locs=[0.25,0.75], scale=0.1,
-#              blob_size=blob_size, lin_space_lag=0.05, weights=[0.4,0.05])
-#
-# fig = plot_figure(X, xs, w, w_x)
+fig.update_layout(legend=dict(
+    # font=dict(size=50),
+    # orientation="h",
+    yanchor="top",
+    y=0.99,
+    xanchor="right",
+    x=0.99
+))
+fig.write_image("figures/weight_viz_1d.pdf", height=500, width=1000)
 # fig.show()
-# fig.write_image("weight_viz_1d_noisy.pdf", height=500, width=1000)
+
+
+
+X, xs, w, w_x = gen_data(precision, random_state, locs=[0.25,0.75], scale=0.1,
+             blob_size=blob_size, lin_space_lag=0.05, weights=[0.4,0.05])
+
+
+fig = plot_single_figure(X, xs, w, w_x)
+# fig.show()
+# fig.update_layout(legend=dict(
+#     # font=dict(size=50),
+#     # orientation="h",
+#     yanchor="top",
+#     y=0.99,
+#     xanchor="right",
+#     x=0.99
+# ))
+fig.write_image("figures/weight_viz_1d_noisy.pdf", height=500, width=1000)
+
+
 bs = [1.5,4]
 fig = make_subplots(rows=2, cols=len(bs),
                     subplot_titles=("Pure, b = 1.5", "Pure, b = 4", "Noisy, b = 1.5", "Noisy, b = 4"))
@@ -128,5 +200,5 @@ for ind_b, b in enumerate(bs):
                  blob_size=blob_size, lin_space_lag=0.05, weights=[0.4,0.05])
 
     fig = plot_figure(X, xs, w, w_x, fig, row=2, b=b, ind_b=ind_b)
-fig.show()
+# fig.show()
 fig.write_image("figures/weight_viz_1d_noisy_b1.pdf", height=1000, width=2000)

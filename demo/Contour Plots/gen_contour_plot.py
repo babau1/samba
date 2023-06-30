@@ -1,6 +1,6 @@
-from SamBA.samba import NeighborHoodClassifier
-from SamBA.distances import *
-from SamBA.relevances import *
+from samba.samba import SamBAClassifier
+from samba.distances import *
+from samba.relevances import *
 from sklearn.datasets import make_moons, make_gaussian_quantiles
 from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.ensemble import AdaBoostClassifier
@@ -21,6 +21,19 @@ from sklearn.preprocessing import SplineTransformer
 from sklearn.pipeline import Pipeline
 from lineartree.lineartree import LinearTreeClassifier
 from xgboost import XGBClassifier
+import re
+
+alg_dict = {
+    "NeighborHoodClassifier":r"\algo",
+    "AdaBoostClassifier": "Adaboost",
+    "XGBClassifier":"XGBoost",
+    "GradientBoostingClassifier":"Grad. Boost.",
+    "SVC":"SVM-RBF",
+    "KNeighborsClassifier":"KNN",
+    "RandomForestClassifier":"Random Forest",
+    "DecisionTreeClassifier":"Decision Tree",
+    "LassoClf":"Lasso"
+}
 
 class LassoClf(Lasso):
 
@@ -31,9 +44,11 @@ class LassoClf(Lasso):
 
     def predict_proba(self, X):
         preds = Lasso.predict(self, X)
+        print(preds)
         probs = np.zeros(shape=(X.shape[0], 2))
         for ind, pred in enumerate(preds):
             probs[ind] = [1-pred, pred]
+        print(probs)
         return probs
 
 
@@ -100,7 +115,8 @@ def plot_contour_fig(X, y, clf=AdaBoostClassifier(), contour=True,
                                                  color=colors_test[indices])))
 
     if contour:
-        mesh_space = generate_mesh_space(X, n_steps=n_steps)
+        X_conc = np.concatenate((X, test_samples), axis=0)
+        mesh_space = generate_mesh_space(X_conc, n_steps=n_steps)
         fig.add_trace(go.Contour(
             z=clf.predict_proba(mesh_space)[:, 1],
             x=mesh_space[:, support_feats[0]],
@@ -171,13 +187,26 @@ def make_spirals(n_samples, rs):
     y = res[:, -1]
     return X, y
 
+def format_latex(latex):
+    for key, val in alg_dict.items():
+        latex = latex.replace(key, val)
+    latex = latex.replace("\\toprule\n", "")
+    latex = latex.replace("\\midrule\n", "")
+    latex = latex.replace("\\bottomrule\n", "")
+    latex = latex.replace("\n", " \\hline\n")
+    latex = latex.replace("_", ".")
+    latex = re.sub("& +0.", "& .", latex)
+    latex = latex.replace("& .7 ", "& .70 ")
+    latex = latex.replace("& .8 ", "& .80 ")
+    return latex
+
 def plot_contour(datasets=["spiral", "moons", "circles", ], noise=None,
                  n_samples=400, rs=np.random.RandomState(42), b=2, a=0.1,
                  pred_train=True, n_estimators=2, n_splits=10, n_steps=200,
                  classifiers = [AdaBoostClassifier()]):
-    cols = [("Dataset", "")]+ [(clf.__class__.__name__, set) for clf in classifiers for set in ["Train", "Test"] ]
+    cols = ["Dataset"]+ [clf.__class__.__name__ for clf in classifiers]
     res_df = pd.DataFrame(columns=cols)
-    res_df.columns = pd.MultiIndex.from_tuples(res_df.columns, names=['Algorithm', 'Set'])
+    # res_df.columns = pd.MultiIndex.from_tuples(res_df.columns, names=['Algorithm', 'Set'])
 
     for dataset in datasets:
         print(dataset)
@@ -230,17 +259,19 @@ def plot_contour(datasets=["spiral", "moons", "circles", ], noise=None,
                 print("\t", clf.__class__.__name__, accuracy_score(y_test, clf.predict(X_test)))
         mean_accs = accs.mean(axis=2).round(2)
         std_accs = accs.std(axis=2).round(2)
-        con_dict = dict(((clf.__class__.__name__, set),
-                                     "${}$ \scriptsize$\pm {}$".format(mean_accs[clf_ind,set_ind],
-                                                                       std_accs[clf_ind,set_ind]))
-                                    for clf_ind, clf in enumerate(classifiers)
-                                    for set_ind, set in enumerate(['Train', 'Test']))
-        con_dict[('Dataset', "")] = dataset
+        # con_dict = dict(((clf.__class__.__name__, set),
+        #                              "${}$ \scriptsize$\pm {}$".format(mean_accs[clf_ind,set_ind],
+        #                                                                std_accs[clf_ind,set_ind]))
+        #                             for clf_ind, clf in enumerate(classifiers)
+        #                             for set_ind, set in enumerate(['Train', 'Test']))
+        con_dict = dict((clf.__class__.__name__, "${}$ \scriptsize$\pm {}$".format(mean_accs[clf_ind, 1],std_accs[clf_ind, 1]))
+                        for clf_ind, clf in enumerate(classifiers))
+        con_dict['Dataset'] = dataset
 
         res_df = res_df.append(con_dict,
                                ignore_index=True)
-        print(res_df.to_latex(escape=False, index=False,
-                              column_format="|l|"+"".join(["c|" for _ in range(len(classifiers)*2)])))
+        print(format_latex(res_df.to_latex(escape=False, index=False,
+                              column_format="|l|"+"".join(["c|" for _ in range(len(classifiers)*2)]))))
 
         if "Noisy" not in dataset:
             plot_contour_img(classifiers, X_train, y_train, X_test,
@@ -252,8 +283,7 @@ if __name__=="__main__":
     log_reg_n_regu = LogisticRegression(C=10001.0)
     spline = SplineTransformer(n_knots=4, knots="quantile", degree=4)
     classifiers = [
-        AdaBoostClassifier(),
-                   NeighborHoodClassifier(n_estimators=4,
+        SamBAClassifier(n_estimators=4,
                                          normalizer=None,
                                          relevance=ExpRelevance(),
                                          distance=EuclidianDist(),
@@ -263,21 +293,23 @@ if __name__=="__main__":
                                          # forced_diversity=False,
                                           forced_diversity=True,
                                           ),
+                    AdaBoostClassifier(),
+                   XGBClassifier(),
+                   GradientBoostingClassifier(),
                    SVC(probability=True, C=0.1, gamma=1.1),
                    KNeighborsClassifier(),
                    RandomForestClassifier(),
                    DecisionTreeClassifier(),
-                    LassoClf(),
-                    LinearTreeClassifier(base_estimator=LogisticRegression()),
-                    XGBClassifier(),
-                    GradientBoostingClassifier()
+                   LassoClf(alpha=0),
+                   # LinearTreeClassifier(base_estimator=LogisticRegression()),
+
 
 
     ]
     plot_contour(n_samples=1000, noise=None,
-                 # datasets=['Moons', 'Spirals', "Moons Noisy", "Spirals Noisy",],# "moons", "circles", "spiral"],
-                 datasets=["Spirals", "Moons"],
+                 datasets=['Moons', 'Spirals', "Moons Noisy", "Spirals Noisy",],# "moons", "circles", "spiral"],
+                 # datasets=["Spirals", "Moons"],
                  rs=np.random.RandomState(42), classifiers=classifiers,
                  # n_splits=10,
-                 n_splits=1,
+                 n_splits=10,
                  n_steps=500)
