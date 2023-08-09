@@ -48,13 +48,21 @@ In addition, we provide a `csv` version for each data type, and one for the labe
 ## Cite the paper
 
 ```
-@inproceedings{
-bauvin2023sample,
-title={Sample Boosting Algorithm (Sam{BA}) - An Interpretable Greedy Ensemble Classifier Based On Local Expertise For Fat Data},
-author={Baptiste Bauvin and C{\'e}cile Capponi and Florence Clerc and Pascal Germain and Sokol Ko{\c{c}}o and Jacques Corbeil},
-booktitle={The 39th Conference on Uncertainty in Artificial Intelligence},
-year={2023},
-url={https://openreview.net/forum?id=0k_DN90uWF}
+
+@InProceedings{pmlr-v216-bauvin23a,
+  title = 	 {Sample {B}oosting {A}lgorithm ({SamBA}) - An interpretable greedy ensemble classifier based on local expertise for fat data},
+  author =       {Bauvin, Baptiste and Capponi, C\'{e}cile and Clerc, Florence and Germain, Pascal and Ko\c{c}o, Sokol and Corbeil, Jacques},
+  booktitle = 	 {Proceedings of the Thirty-Ninth Conference on Uncertainty in Artificial Intelligence},
+  pages = 	 {130--140},
+  year = 	 {2023},
+  editor = 	 {Evans, Robin J. and Shpitser, Ilya},
+  volume = 	 {216},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {31 Jul--04 Aug},
+  publisher =    {PMLR},
+  pdf = 	 {https://proceedings.mlr.press/v216/bauvin23a/bauvin23a.pdf},
+  url = 	 {https://proceedings.mlr.press/v216/bauvin23a.html},
+  abstract = 	 {Ensemble methods are a very diverse family of algorithms with a wide range of applications. One of the most commonly used is boosting, with the prominent Adaboost. Adaboost relies on greedily learning base classifiers that rectify the error from previous iterations. Then, it combines them through a weighted majority vote, based on their quality on the entire learning set. In this paper, we propose a supervised binary classification framework that propagates the local knowledge acquired during the boosting iterations to the prediction function. Based on this general framework, we introduce SamBA, an interpretable greedy ensemble method designed for fat datasets, with a large number of dimensions and a small number of samples. SamBA learns local classifiers and combines them, using a similarity function, to optimize its efficiency in data extraction. We provide a theoretical analysis of SamBA, yielding convergence and generalization guarantees. In addition, we highlight SamBA’s empirical behavior in an extensive experimental analysis on both real biological and generated datasets, comparing it to state-of-the-art ensemble methods and similarity-based approaches.}
 }
 ```
 

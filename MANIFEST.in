@@ -1,5 +1,0 @@
-include *.txt
-include *.rst
-include docs/*.rst docs/*.py
-include multiview_generator/tests/*.py
-include demo/*.py demo/*.yml demo/*.ipynb

@@ -109,19 +109,18 @@ def setup_package():
     with open(os.path.join(here, 'README.md'), encoding='utf-8') as readme:
         long_description = readme.read()
     group = 'dev'
-    url = 'https://gitlab.lis-lab.fr/{}/{}'.format(group, name)
+    url = 'https://github.com/babau1/samba'.format(group, name)
     project_urls = {
-        'Documentation': 'http://{}.pages.lis-lab.fr/{}'.format(group, name),
         'Source': url,
         'Tracker': '{}/issues'.format(url)}
     author = 'Baptiste BAUVIN'
-    author_email = 'contact.dev@lis-lab.fr'
-    license = 'newBSD'
+    author_email = 'baptiste.bauvin.work@gmail.com'
+    license = 'GNU GPLv3'
     classifiers = [
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: GNU Lesser General Public License'
-        ' v3 or later (LGPLv3+)',
+        'License :: OSI Approved :: GNU General Public License'
+        ' v3 or later (GPLv3+)',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
@@ -131,8 +130,8 @@ def setup_package():
         'Operating System :: POSIX :: Linux',
         'Operating System :: MacOS'],
     keywords = ('machine learning, supervised learning, classification, '
-                'datat generation, multi-view, multi-modal, multi-class')
-    packages = find_packages(exclude=['*.tests'])
+                'ensemble methods, boosting, local')
+    packages = find_packages()
     install_requires = ['numpy', 'scikit-learn>=0.19', 'scipy', "plotly",
                         "h5py", 'pyyaml', 'tabulate', 'pandas', "six", ]
     python_requires = '>=3.5'
